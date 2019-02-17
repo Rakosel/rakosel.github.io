@@ -49,8 +49,9 @@
 			
 		// cont: TEMP, RTC, DEBUG + Settings
 		 function txjstmp(s, d) {
-  			var	as1=$('.pst1');
+  			var as1=$('.pst1');
 			var as0=$('.pst0');
+			var sct0=$('.setcnt');
 			 //ENbt = 1;
 			// alert("dw45")
 			 
@@ -114,6 +115,7 @@
 			//var	as=$('.pst1');
 			//var as0=$('.pst0');
 					sdmc_sh();
+					sct0.addClass('collapse show');
 					as1.removeClass('badge-warning');
 					as1.addClass('badge-success');
 					as1.text("ВКЛ");
@@ -121,6 +123,7 @@
 				else if(temp_json.debug == "OFF")
 				{
 					sdmc_rm();
+					sct0.removeClass('collapse show');
 					as1.removeClass('badge-success');
 					as1.addClass('badge-warning');
 					as1.text("ВЫКЛ");
