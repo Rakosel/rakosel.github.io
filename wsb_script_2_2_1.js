@@ -201,7 +201,7 @@
   				if (typeof d === 'string') {
   					console.log("priem ok!");
 					try
-					{uart_json = JSON.parse(d);console.log(d)}
+					{uart_json = JSON.parse(d);}
 					catch(e)
 					{return 0;}
   					
