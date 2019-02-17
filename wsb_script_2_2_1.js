@@ -1,5 +1,5 @@
   		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
-		var maOBJ;
+		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
   		var uart_json = {};
 		var temp_json = {};
@@ -194,7 +194,7 @@
   			//rs = to(refr, 8);
 			$("#btn1").prop("disabled", false);
   			if (s != 200) {
-  				str_out1 += "Send command error"+'\n1';
+  				str_out1 += "Send command error"+'\n';
   				//clearTimeout(rs.handle);
   				console.log("Connection proplem!");
   			} else {
@@ -208,7 +208,7 @@
   				}
   				else
   				{uart_json.uart_out="null";uart_json.uart_in="null";}
-  				str_out1 += uart_json.uart_out + '\n1';
+  				str_out1 += uart_json.uart_out + '\n';
 				console.log(uart_json.uart_out);
   			}
 			var esp_uart_out_val  = $("#esp_urx")
@@ -456,6 +456,7 @@
   		window.onload = function() {
 			//$(".collapse").collapse('hide');
 			maOBJ = $("#tmpo").serializeArray(); 
+			seOBJ = $("#scntf").serializeArray(); 
 			$('.bt0st').attr("value", "off");
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
