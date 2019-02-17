@@ -114,7 +114,7 @@
 			//var	as=$('.pst1');
 			//var as0=$('.pst0');
 					sdmc_sh();
-					as1.removeClass('badge-danger');
+					as1.removeClass('badge-warning');
 					as1.addClass('badge-success');
 					as1.text("ВКЛ");
 				}
@@ -127,7 +127,6 @@
 				}
 				else
 					{
-					alert("11");
 					as1.removeClass('badge-success');
 					as1.addClass('badge-danger');
 					as1.text("ОШИБКА");
