@@ -474,3 +474,4 @@
 			{$(".collapse").collapse('show');}
 			}*/
   		}
+ 
