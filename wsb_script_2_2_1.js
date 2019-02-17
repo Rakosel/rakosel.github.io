@@ -60,6 +60,10 @@
 				as0.removeClass('badge-success');
 				as0.addClass('badge-danger');
 				as0.text("Ошибка");
+				as1.removeClass('badge-success');
+				as1.addClass('badge-danger');
+				as1.text("ОШИБКА");
+				$('.swdeb').removeAttr('disabled'); 
 				console.log("Connection proplem!");
 				return 0;					  
   				//clearTimeout(rs.handle);
