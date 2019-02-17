@@ -452,7 +452,7 @@
 
   		window.onload = function() {
 			//$(".collapse").collapse('hide');
-			maOBJ = $('form').serializeArray(); 
+			maOBJ = $("#tmpo").serializeArray(); 
 			$('.bt0st').attr("value", "off");
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
