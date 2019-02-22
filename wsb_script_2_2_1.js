@@ -474,6 +474,7 @@
 			i=0;
 			//$(".bsn0").collapse('show');
 			smgh();
+			$('.macnt').load('https://rakosel.github.io/WSB_page_main.html').html();
 			//clresf();
 			/*function smgh()
 			{
