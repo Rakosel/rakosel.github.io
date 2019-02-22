@@ -194,9 +194,12 @@
   		//function to(cb, x) {
   		//	return setTimeout(cb, 1000 * x);
   		//}
+	// autotimer opros rtc
   		function refr() {
   			//if (!stopAll)
-  				fetch('/temp_out.json?n=' + Math.random(), 'GET', txjstmp, 10);
+  			fetch('/temp_out.json?n=' + Math.random(), 'GET', txjstmp, 10);
+			if ($("#auza").checked == true)
+			{sub_grad();}
   		}
   		function txjs_ua(s, d) {
   			//console.log("function TransmitJS(s, d)");
@@ -330,6 +333,13 @@
 							{$('.swdebl').text("Включить режим настройки");this.setAttribute("disabled", "false");sdeb("OFF");}
 
 		});
+
+		// timer->autozamer html
+		/*$("#auza").click(function autmr()
+		{
+			if ($("#auza").checked == true)
+
+		});*/
 		
 		// SUBMIT debug
 		function sdeb(bl)
@@ -455,6 +465,8 @@
   			xhr.timeout = time_out * 100;
   			xhr.send();
   		}
+
+
 		/*
 		$('.tst0').click(function tst11() 	
 		{
