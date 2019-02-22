@@ -15,6 +15,8 @@
 		function refr_rtc()
 		{
 			fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 30);
+			if ($("#auza").checked == true)
+			{sub_grad();}
 			//console.log("refr_rtc");
 		}
 		
@@ -194,13 +196,6 @@
   		//function to(cb, x) {
   		//	return setTimeout(cb, 1000 * x);
   		//}
-	// autotimer opros rtc
-  		function refr() {
-  			//if (!stopAll)
-  			fetch('/temp_out.json?n=' + Math.random(), 'GET', txjstmp, 10);
-			if ($("#auza").checked == true)
-			{sub_grad();}
-  		}
   		function txjs_ua(s, d) {
   			//console.log("function TransmitJS(s, d)");
   			//console.log(s,d);
