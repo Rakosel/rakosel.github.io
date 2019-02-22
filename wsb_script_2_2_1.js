@@ -6,9 +6,10 @@
 		var scrPos = 0, ovShBtn0 = false;
 		var ast;
 		// reverse panelki dlya debug
-		var sds,mds;
+		var sds,mds,sets;
 		sds = $('.sideset');
 		mds = $('.macnt');
+		sets = $('.setcnt');
 		
 		// rtc time auto from server
 		function refr_rtc()
@@ -163,6 +164,9 @@
 			sds.addClass('collapse show');
 			mds.removeClass('collapse show');
 			mds.addClass('collapse hide');
+			sets.removeClass('collapse hide');
+			sets.addClass('collapse show');
+			sets.load('https://rakosel.github.io/WSB_page_slave.html').html();
 		}
 		
 		function sdmc_rm()
@@ -171,6 +175,8 @@
 			mds.addClass('collapse show');
 			sds.removeClass('collapse show');
 			sds.addClass('collapse hide');
+			sets.removeClass('collapse show');
+			sets.addClass('collapse hide');
 		}
 		
 		function ftvall(cl)
