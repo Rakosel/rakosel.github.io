@@ -1,10 +1,8 @@
-        <form id = "scntf" class="needs-validation" novalidate>
+       <form id = "scntf" class="needs-validation" novalidate>
 				<p class="h5 modal-title text-center">Настройка датчика LM75_1</p>				  
 				<div class="form-group row">
-				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Pointer</div>
-				  <div class="col-xs-3 col-md-3 mb-2 offset-lg-0 col-lg-2 offset-xl-0 col-xl-2"><input type="text" class="form-control" id = "lm75p_1" name="temperature" value="" required>
-					</div>
-					<div class="col-xs-3 col-md-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3"><select id="lm75_poil1" class="form-control">
+				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 col-sm-3 offset-sm-1 col-3 offset-1">Pointer</div>
+<div class="col-xs-3 col-md-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-sm-4 col-5"><select id="lm75_poil1" class="form-control">
        				<option selected>Выбор...</option>
         			<!--<option>...</option>
 					http://www.tigir.com/javascript_select.htm
@@ -14,18 +12,13 @@
 					-->
 					</select>
 				  </div>
-					<div class="col">
-					<p class="text-white lm75sl_1">ОК</p>
-					</div>
 				</div>
 				<div class="form-group row">
-					<div class="offset-xl-1 offset-lg-1 col-lg-2 col-md-2 offset-md-1">Config</div>
-					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0"><input type="text" class="form-control" id = "lm75c_1" name="temperature" value="" required>
-					</div>
-					<div class=" offset-lg-0 col-lg-4 col-md-3">
-						<!-- М.б. задават ь через js -->
-						<span>D0 </span> 
-						<input type="checkbox" name="gLM75ch0" id="gLM75ch0">
+				  <div class="offset-xl-1 offset-lg-1 col-lg-2 col-md-2 offset-md-1 offset-sm-1 col-sm-3 col-3 offset-1">Config</div>
+<div class=" offset-lg-0 col-md-3 col-lg-4 offset-md-0 col-xl-3 offset-sm-0 col-sm-5 col-6">
+				<!-- М.б. задават ь через js -->
+				<span>D0 </span> 
+				<input type="checkbox" name="gLM75ch0" id="gLM75ch0">
 						<span>D1 </span> 
 						<input type="checkbox" name="gLM75ch1" id="gLM75ch1">
 						<span>D2 </span> 
@@ -36,40 +29,35 @@
 						<input type="checkbox" name="gLM75ch7" id="gLM75ch7">
 						<!-- Disabled - Attr('Checked') -->
 					</div>
-					<div class="col">
-					<p class="text-white lm75sp_1">ОК</p>
-					</div>
 				  </div>
 				<div class="form-group row">
-					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Thyst</div>
-					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0">
-					  <input type="text" class="form-control" id = "lm75Th_1" name="temperature" value="" required></div>
-					<div class="col col-xs-3 col-xl-3 offset-xl-0 col-lg-4 col-md-5">
-						<input type="range" class="form-control-range" id="lm75sc_1">
+				  <div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-2 col-2 offset-1">Thyst</div>
+<div class="col col-xs-3 col-xl-3 offset-xl-0 col-lg-4 col-md-4 offset-lg-0 offset-md-0 offset-sm-0 col-sm-7 col-7">
+				<input type="range" class="form-control-range" id="lm75sc_1">
 					</div>
-					<div class="col">
+					<div class="col-2 col-xl-1 col-sm-1 offset-sm-0">
 						<p class="text-white lm75thy_1">C&deg</p>
 					</div>
 				</div>
 				<div class="form-group row">
-				  <div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Tos</div>
-				  <div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0"><input type="text" class="form-control" id = "lm75Os_1" name="temperature" value="" required></div>
-					<div class="col col-xs-3 col-xl-3 offset-xl-0 col-lg-4 col-md-5">
-						<input type="range" class="form-control-range" id="lm75so_1">
+				  <div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-2 offset-1 col-2">Tos</div>
+<div class="col col-xs-3 col-xl-3 offset-xl-0 col-lg-4 col-md-4 offset-lg-0 offset-md-0 offset-sm-0 col-sm-7">
+				<input type="range" class="form-control-range" id="lm75so_1">
 					</div>
-					<div class="col">
+					<div class="col-2 col-xl-1 col-sm-1">
 						<p class="text-white lm75tos_1">C&deg</p>
 					</div>
 				</div>	
 				<div class="form-group row">
-					<div class="col-xs-3 mb-2 col-md-4 offset-lg-1 col-lg-3 offset-md-1"><button type="button" id="btnlm751" class="btn btn-primary" onclick="btn_lm75_1()">Задать</button></div>
+					<div class="col-xs-3 offset-lg-1 col-lg-3 offset-md-1 offset-sm-1 col-xl-2 col-md-3 col-sm-3 offset-1 col-4"><button type="button" id="btnlm751" class="btn btn-primary" onclick="btn_lm75_1()">Задать</button></div>
+				  <div class="col-xl-1 offset-xl-0 col-3 offset-0">
+					<p class="text-white btns_lm75_1">ОК</p>
+					</div>
 				</div>
 				<p class="h5 modal-title text-center">Настройка датчика LM75_2</p>				  
 				<div class="form-group row">
-				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Pointer2</div>
-				  <div class="col-xs-3 col-md-3 mb-2 offset-lg-0 col-lg-2 offset-xl-0 col-xl-2"><input type="text" class="form-control" id = "lm75p_2" name="temperature" value="" required>
-				  </div>
-					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="lm75_poil2" class="form-control">
+				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3 offset-1 col-3">Pointer2</div>
+<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-6 offset-md-0 col-md-4 col-sm-4 offset-sm-0 offset-0"><select id="lm75_poil2" class="form-control">
        				<option selected>Выбор...</option>
         			<!--<option>...</option>
 					http://www.tigir.com/javascript_select.htm
@@ -79,18 +67,13 @@
 					-->
 					</select>
 				  </div>
-				  <div class="col">
-					<p class="text-white lm75sl_2">ОК</p>
-				  </div>
 				</div>
 				<div class="form-group row">
-				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Config2</div>
-					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0"><input type="text" class="form-control" id = "lm75c_2" name="temperature" value="" required>
-					</div>
-					<div class=" offset-lg-0 col-lg-4 col-md-3">
-						<!-- М.б. задават ь через js -->
-						<span>D0 </span> 
-					  <input type="checkbox" name="gLM752ch0" id="gLM752ch0"> 
+				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 col-sm-3 offset-sm-1 offset-1 col-3">Config2</div>
+<div class=" offset-lg-0 col-lg-4 col-xl-3 col-md-5 col-sm-5 col-6 offset-0">
+				<!-- М.б. задават ь через js -->
+				<span>D0 </span> 
+			  <input type="checkbox" name="gLM752ch0" id="gLM752ch0"> 
 						<span>D1 </span> 
 					  <input type="checkbox" name="gLM752ch1" id="gLM752ch1">
 						<span>D2 </span> 
@@ -101,33 +84,30 @@
 					  <input type="checkbox" name="gLM752ch4" id="gLM752ch4">
 						<!-- Disabled - Attr('Checked') -->
 					</div>
-					<div class="col">
-					<p class="text-white lm75p_2">ОК</p>
-				  </div>
 				  </div>
 				<div class="form-group row">
-					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Thyst2</div>
-					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0">
-						<input type="text" class="form-control" id = "lm75Th_2" name="temperature" value="" required></div>
-					<div class="col col-xs-3 col-xl-3 offset-xl-0 col-lg-4 col-md-4">
-						<input type="range" class="form-control-range" id="lm75sc_2">
-					</div>
-				  <div class="col">
-					<p class="text-white lm75thy_2">ОК</p>
+				  <div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-2 col-2 offset-1">Thyst2</div>
+<div class="col col-xs-3 col-xl-3 offset-xl-0 col-lg-4 col-md-4 col-sm-7 col-7">
+				<input type="range" class="form-control-range" id="lm75sc_2">
+				  </div>
+				  <div class="col-2 col-xl-1 col-sm-1">
+					<p class="text-white lm75thy_2">C&deg</p>
 				  </div>
 				</div>
 				<div class="form-group row">
-					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Tos2</div>
-				  <div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0"><input type="text" class="form-control" id = "lm75Os_2" name="temperature" value="" required></div>
-					<div class="col col-xs-3 col-xl-3 offset-xl-0 col-lg-4 col-md-4">
-						<input type="range" class="form-control-range" id="lm75so_2">
-					</div>
-				  <div class="col">
-					<p class="text-white lm75tos_2">ОК</p>
+				  <div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-2 offset-1 col-2">Tos2</div>
+<div class="col col-xs-3 col-xl-3 offset-xl-0 col-lg-4 col-md-4 col-sm-7 col-7">
+				<input type="range" class="form-control-range" id="lm75so_2">
+				  </div>
+				  <div class="col-2 col-xl-1 col-sm-1">
+					<p class="text-white lm75tos_2">C&deg</p>
 				  </div>
 				</div>
 				<div class="form-group row">
-					<div class="col-xs-3 mb-2 col-md-4 offset-lg-1 col-lg-3 offset-md-1"><button type="button" id="btnlm752" class="btn btn-primary" onclick="btn_lm75_2()">Задать</button></div>
+					<div class="col-xs-3 offset-lg-1 col-lg-3 offset-md-1 col-xl-1 col-md-3 offset-sm-1 col-sm-3 offset-1 col-4"><button type="button" id="btnlm752" class="btn btn-primary" onclick="btn_lm75_2()">Задать</button></div>
+					<div class="col-2 col-xl-1 offset-0">
+					<p class="text-white btns_lm75_2">ОК</p>
+				  </div>
 				</div>
 				<p class="h5 modal-title text-center">Настройка датчика BME280_1</p>				  
 				<div class="form-group row">
@@ -139,7 +119,7 @@
 				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Status</div>
 					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0"><input type="text" class="form-control" id = "bm1_st" name="temperature" value="" required>
 					</div>
-					<div class=" offset-lg-0 col-xl-7 col-lg-5 col-md-6">
+					<div class=" offset-lg-0 col-lg-5 col-md-6 col-xl-5">
 						<!-- М.б. задават ь через js -->
 						<span>measuring[D0] </span> 
 					  <input type="checkbox" name="gBM2801ch0" id="gBM2801ch0"> 
@@ -160,9 +140,6 @@
 					-->
 					</select>
 				  </div>
-				  <div class="col">
-					<p class="text-white bm1l_m">ОК</p>
-				  </div>
 				</div>
 				<div class="form-group row">
 					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Filter</div>
@@ -175,9 +152,6 @@
 					CreatElement
 					-->
 					</select>
-				  </div>
-				  <div class="col">
-					<p class="text-white bm1l_f">ОК</p>
 				  </div>
 				</div>
 				<div class="form-group row">
@@ -192,12 +166,12 @@
 					-->
 					</select>
 				  </div>
-				  <div class="col">
-					<p class="text-white bm1l_t_st">ОК</p>
-				  </div>
 				</div>
 				<div class="form-group row">
-					<div class="col-xs-3 mb-2 col-md-4 offset-lg-1 col-lg-3 offset-md-1"><button type="button" id="btnbm2801" class="btn btn-primary" onclick="btn_bm280_1()">Задать</button></div>
+					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnbm2801" class="btn btn-primary" onclick="btn_bm280_1()">Задать</button></div>
+					<div class="col-2 col-xl-1 offset-xl-0">
+					<p class="text-white btns_bme280_1">ОК</p>
+				  	</div>
 				</div>
 				<p class="h5 modal-title text-center">Настройка датчика BME280_2</p>				  
 				<div class="form-group row">
@@ -209,7 +183,7 @@
 				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Status</div>
 					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0"><input type="text" class="form-control" id = "bm2_st" name="temperature" value="" required>
 					</div>
-					<div class=" offset-lg-0 col-xl-7 col-lg-5 col-md-6">
+					<div class="offset-lg-0 col-lg-5 col-md-6 col-xl-5">
 						<!-- М.б. задават ь через js -->
 						<span>measuring[D0] </span> 
 					  <input type="checkbox" name="gBM2802ch0" id="gBM2802ch0"> 
@@ -230,9 +204,6 @@
 					-->
 					</select>
 				  </div>
-				  <div class="col">
-					<p class="text-white bm2l_m">ОК</p>
-				  </div>
 				</div>
 				<div class="form-group row">
 					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Filter</div>
@@ -245,9 +216,6 @@
 					CreatElement
 					-->
 					</select>
-				  </div>
-				  <div class="col">
-					<p class="text-white bm2l_f">ОК</p>
 				  </div>
 				</div>
 				<div class="form-group row">
@@ -262,21 +230,18 @@
 					-->
 					</select>
 				  </div>
-				  <div class="col">
-					<p class="text-white bm2l_t_st">ОК</p>
-				  </div>
 				</div>
 				<div class="form-group row">
-					<div class="col-xs-3 mb-2 col-md-4 offset-lg-1 col-lg-3 offset-md-1"><button type="button" id="btnbm2802" class="btn btn-primary" onclick="btn_bm280_2()">Задать</button></div>
+					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnbm2802" class="btn btn-primary" onclick="btn_bm280_2()">Задать</button></div>
+					<div class="col-2 col-xl-1 offset-xl-0">
+					<p class="text-white btns_bme280_2">ОК</p>
+				  	</div>
 				</div>
 				<p class="h5 modal-title text-center">Настройка датчика SHT30</p>
 				<div class="form-group row">
 				<div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Status</div>
 				<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0"><input type="text" class="form-control" id = "sht30_st" name="temperature" value="" required></div>
 				<div class="col-lg-2 offset-xl-0 col-xl-2 offset-md-0 col-md-3 offset-lg-0"><button type="button" id="btn_sht30_info" class="btn btn-primary" onclick="btn_sht30_info()">Подробнее</button></div>
-				<div class="col">
-				  <p class="text-white sht30l_st">ОК</p>
-				  </div>
 				</div>
 					<div class="form-group row">
 					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">mode</div>
@@ -290,12 +255,9 @@
 					-->
 					</select>
 				  </div>
-				  <div class="col">
-					<p class="text-white sht30l_m">ОК</p>
-				  </div>
 				</div>
 				<div class="form-group row">
-				  <div class="offset-xl-1 offset-lg-1 offset-md-1 col-md-2 col-lg-3 col-xl-2">Measure speed</div>
+				  <div class="offset-xl-1 offset-lg-1 offset-md-1 col-md-2 col-xl-2 col-lg-2">Measure speed</div>
 					<div class="col-xs-3 col-md-3 offset-lg-0 mb-2 offset-xl-0 col-lg-3">
 					<select id="sht30_rep" class="form-control">
        				<option selected>Приоритет...</option>
@@ -318,9 +280,6 @@
 					-->
 					</select>
 					</div>
-					<div class="col">
-						<p class="text-white sht30l_mps">ОК</p>
-				  	</div>
 				  </div>
 				<div class="form-group row">
 					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Heater</div>
@@ -334,26 +293,23 @@
 					-->
 					</select>
 				  </div>
-				  <div class="col">
-					<p class="text-white sht30l_h">ОК</p>
-				  </div>
 				</div>
 				<div class="form-group row">
-					<div class="col-xs-3 mb-2 col-md-4 offset-lg-1 col-lg-3 offset-md-1"><button type="button" id="btnsht30" class="btn btn-primary" onclick="btn_sht30()">Задать</button></div>
+					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnsht30" class="btn btn-primary" onclick="btn_sht30()">Задать</button></div>
+					<div class="col-2 col-xl-1 offset-xl-0">
+					<p class="text-white btns_sht30">ОК</p>
+				  	</div>
 				</div>
 				<p class="h5 modal-title text-center">Настройка датчика SHT31</p>
 				<div class="form-group row">
-				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Status</div>
-				<div class="col-xs-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0 col-md-3"><input type="text" class="form-control" id = "sht31_st" name="temperature" value="" required>
+				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3">Status</div>
+				<div class="col-xs-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0 col-md-3 col-sm-3"><input type="text" class="form-control" id = "sht31_st" name="temperature" value="" required>
 					</div>
-				<div class="col-lg-2 offset-xl-0 col-xl-2 offset-md-0 col-md-3 offset-lg-0"><button type="button" id="btn_sht31_info" class="btn btn-primary" onclick="btn_sht31_info()">Подробнее</button></div>
-				<div class="col">
-				  <p class="text-white sht31l_st">ОК</p>
-				  </div>
+				<div class="col-lg-2 offset-xl-0 col-xl-2 offset-md-0 col-md-3 offset-lg-0 col-sm-4 offset-sm-0"><button type="button" id="btn_sht31_info" class="btn btn-primary" onclick="btn_sht31_info()">Подробнее</button></div>
 				</div>
 					<div class="form-group row">
-					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">mode</div>
-					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="sht31_m" class="form-control">
+					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3">mode</div>
+					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3 col-sm-4"><select id="sht31_m" class="form-control">
        				<option selected>Выбор...</option>
         			<!--<option>...</option>
 					http://www.tigir.com/javascript_select.htm
@@ -363,13 +319,10 @@
 					-->
 					</select>
 				  </div>
-				  <div class="col">
-					<p class="text-white sht31l_m">ОК</p>
-				  </div>
 				</div>
 				<div class="form-group row">
-				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Measure speed</div>
-					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0">
+				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3">Measure speed</div>
+					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0 col-xl-3 col-sm-4">
 					<select id="sht31_rep" class="form-control">
        				<option selected>Приоритет...</option>
         			<!--<option>...</option>
@@ -380,7 +333,7 @@
 					-->
 					</select>
 					</div>
-					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0">
+					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0 col-sm-3">
 					<select id="sht31_mps" class="form-control">
        				<option selected>mps...</option>
         			<!--<option>...</option>
@@ -391,13 +344,10 @@
 					-->
 					</select>
 					</div>
-					<div class="col">
-						<p class="text-white sht31l_mps">ОК</p>
-				  	</div>
 				  </div>
 				<div class="form-group row">
-					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Heater</div>
-					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="sht31_h" class="form-control">
+					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 col-sm-3 offset-sm-1">Heater</div>
+					<div class="col-xs-3 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3 col-sm-4"><select id="sht31_h" class="form-control">
        				<option selected>Выбор...</option>
         			<!--<option>...</option>
 					http://www.tigir.com/javascript_select.htm
@@ -407,26 +357,24 @@
 					-->
 					</select>
 				  </div>
-				  <div class="col">
-					<p class="text-white sht31l_h">ОК</p>
-				  </div>
 				</div>
 				<div class="form-group row">
-					<div class="col-xs-3 mb-2 col-md-4 offset-lg-1 col-lg-3 offset-md-1"><button type="button" id="btnsht31" class="btn btn-primary" onclick="btn_sht31()">Задать</button></div>
+					<div class="col-xs-3 offset-lg-1 col-lg-3 offset-md-1 offset-sm-1 col-xl-2 col-md-3 col-sm-3"><button type="button" id="btnsht31" class="btn btn-primary" onclick="btn_sht31()">Задать</button>
+					</div>
+					<div class="col-2 col-xl-1 offset-xl-0">
+					<p class="text-white btns_sht31">ОК</p>
+				  	</div>
 				</div>
 				<p class="h5 modal-title text-center">Настройка датчика HTU21D</p>
 				<div class="form-group row">
-				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Status</div>
-				<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0"><input type="text" class="form-control" id = "htu21d_st" name="temperature" value="" required>
+				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3">Status</div>
+				<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0 col-sm-4 offset-sm-0"><input type="text" class="form-control" id = "htu21d_st" name="temperature" value="" required>
 					</div>
-				<div class="col-lg-2 offset-xl-0 col-xl-2 offset-md-0 col-md-3 offset-lg-0"><button type="button" id="btn_htu21d_info" class="btn btn-primary" onclick="btn_htu21d_info()">Подробнее</button></div>
-				<div class="col">
-				  <p class="text-white htu21dl_st">ОК</p>
-				  </div>
+				<div class="col-lg-2 offset-xl-0 col-xl-2 offset-md-0 col-md-3 offset-lg-0 col-sm-3 offset-sm-0"><button type="button" id="btn_htu21d_info" class="btn btn-primary" onclick="btn_htu21d_info()">Подробнее</button></div>
 				</div>
 					<div class="form-group row">
-					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">mode</div>
-					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="htu21d_m" class="form-control">
+					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3">mode</div>
+					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-sm-4 offset-sm-0 col-md-4"><select id="htu21d_m" class="form-control">
        				<option selected>Выбор...</option>
         			<!--<option>...</option>
 					http://www.tigir.com/javascript_select.htm
@@ -436,13 +384,10 @@
 					-->
 					</select>
 				  </div>
-				  <div class="col">
-					<p class="text-white htu21dl_m">ОК</p>
-				  </div>
 				</div>
 				<div class="form-group row">
-					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Heater</div>
-					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="sht30_h" class="form-control">
+					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3">Heater</div>
+					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 offset-md-0 offset-sm-0 col-sm-4 col-md-4"><select id="sht30_h" class="form-control">
        				<option selected>Выбор...</option>
         			<!--<option>...</option>
 					http://www.tigir.com/javascript_select.htm
@@ -452,11 +397,11 @@
 					-->
 					</select>
 				  </div>
-				  <div class="col">
-					<p class="text-white sht30l_h">ОК</p>
-				  </div>
 				</div>
 				<div class="form-group row">
-					<div class="col-xs-3 mb-2 col-md-4 offset-lg-1 col-lg-3 offset-md-1"><button type="button" id="btnsht30" class="btn btn-primary" onclick="btn_sht30()">Задать</button></div>
+					<div class="col-xs-3 offset-lg-1 col-lg-3 offset-md-1 offset-sm-1 col-xl-2 col-md-3 col-sm-2"><button type="button" id="btnsht30" class="btn btn-primary" onclick="btn_sht30()">Задать</button></div>
+					<div class="col col-sm-2 col-lg-2 col-md-2 col-xl-1 offset-xl-0 offset-sm-0">
+					<p class="text-white btns_htu21d">ОК</p>
+				  </div>
 				</div>
 				</form>
