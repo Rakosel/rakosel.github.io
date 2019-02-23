@@ -23,8 +23,9 @@
 		// zapros temperature
 		function sub_grad() 
   		{
-			console.log("maOBJ");
-			console.log(maOBJ);
+				maOBJ = $('form').serializeArray(); 
+				console.log("maOBJ1");
+				console.log(maOBJ);
 			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
 			fetch('/temp_out.json?n=' + Math.random(), 'GET', txjstmp, 30);
 			
@@ -473,10 +474,8 @@
   		window.onload = function() {
 			//$(".collapse").collapse('hide');
 			$('.macnt').load('https://rakosel.github.io/WSB_page_main.html').html();
-			maOBJ = $('form').serializeArray(); 
-			seOBJ = $("#scntf").serializeArray(); 
-				console.log("maOBJ");
-				console.log(maOBJ);
+			//maOBJ = $('form').serializeArray(); 
+			seOBJ = $("#scntf").serializeArray();
 			$('.bt0st').attr("value", "off");
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
