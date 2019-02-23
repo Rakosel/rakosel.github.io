@@ -1,6 +1,6 @@
-  //upd15 	https://rakosel.github.io/wsb_script_2_2_1.js
+  //upd16 	https://rakosel.github.io/wsb_script_2_2_1.js
   // #176		add btn_lm75_1s()
-  // #174		
+  // #44 dorabotka uart_submit + checkbox with ua fetch		
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
@@ -8,6 +8,7 @@
 		var temp_json = {};
 		var scrPos = 0, ovShBtn0 = false;
 		var ast;
+		var ua_mode=0;
 		// reverse panelki dlya debug
 		var sds,mds,sets;
 		sds = $('.sideset');
@@ -41,18 +42,57 @@
 		
   		function submit_uart() 
   		{
-			
   			$("#btn1").prop("disabled", true);
 			// spt0 - preobrazovanie ot mysora na UART
   			lines_in = spt0();
   			url = "";
   			uart_json.uart_out = "null";
+				
+				if ($("#uart_get_ch").prop("checked"))
+				{ua_mode=1;}
+				else
+				{ua_mode=0;}
+				
   			for (i = 0; i < lines_in.length; i++)
   			{
   				uart_json.uart_in = lines_in[i];
-  				fetch('/uart.json?n=' + encodeURIComponent(JSON.stringify(uart_json))+'&', 'GET', txjs_ua, 30);
+					if(ua_mode==0)
+					{fetch('/uart.json?n=' + encodeURIComponent(JSON.stringify(uart_json))+'&', 'GET', txjs_ua, 30);}
+					else
+					{fetch('/uart_get?n=' + encodeURIComponent(JSON.stringify(uart_json))+'&', 'GET', txjs_ua, 30);}						
   			}
 			
+  		}
+
+  		function txjs_ua(s, d) {
+			$("#btn1").prop("disabled", false);
+  			if (s != 200) {
+  				str_out1 += "Send command error"+'\n';
+  				//clearTimeout(rs.handle);
+  				console.log("Connection proplem!");
+  			} else {
+  				if (typeof d === 'string') {
+  					console.log("priem ok!");
+					try
+					{uart_json = JSON.parse(d);}
+					catch(e)
+					{console.log(e);return 0;}
+  				}
+  				else
+  				{uart_json.uart_out="null";uart_json.uart_in="null";}
+  				str_out1 += uart_json.uart_out + '\n';
+				console.log(uart_json.uart_out);
+  			}
+			var esp_uart_out_val  = $("#esp_urx")
+			if(esp_uart_out_val.val()!="")
+  			{esp_uart_out_val.val(esp_uart_out_val.val()+str_out1);}
+			else
+			{esp_uart_out_val.val(str_out1);}
+			console.log(str_out1);
+			str_out1="";
+  			//clearTimeout(rs.handle);
+  			//rs = to(refr, 3);
+  			//refr();
   		}
 			
 		// cont: TEMP, RTC, DEBUG + Settings
@@ -199,38 +239,7 @@
       		var lines = $('#esp_tx').val().replace(/^[\n]+$/g,'').split(/[\n]+/);
       		return lines;
   		}
-  
-  		function txjs_ua(s, d) {
-			$("#btn1").prop("disabled", false);
-  			if (s != 200) {
-  				str_out1 += "Send command error"+'\n';
-  				//clearTimeout(rs.handle);
-  				console.log("Connection proplem!");
-  			} else {
-  				if (typeof d === 'string') {
-  					console.log("priem ok!");
-					try
-					{uart_json = JSON.parse(d);}
-					catch(e)
-					{return 0;}
-  					
-  				}
-  				else
-  				{uart_json.uart_out="null";uart_json.uart_in="null";}
-  				str_out1 += uart_json.uart_out + '\n';
-				console.log(uart_json.uart_out);
-  			}
-			var esp_uart_out_val  = $("#esp_urx")
-			if(esp_uart_out_val.val()!="")
-  			{esp_uart_out_val.val(esp_uart_out_val.val()+str_out1);}
-			else
-			{esp_uart_out_val.val(str_out1);}
-			console.log(str_out1);
-			str_out1="";
-  			//clearTimeout(rs.handle);
-  			//rs = to(refr, 3);
-  			//refr();
-  		}
+
 
 		function smgh()
 		{
