@@ -25,7 +25,7 @@
 		function sub_grad() 
   		{
 				maOBJ = $('form').serializeArray(); 
-				console.log("maOBJ1");
+				console.log("maOBJ");
 				console.log(maOBJ);
 			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
 			fetch('/temp_out.json?n=' + Math.random(), 'GET', txjstmp, 30);
