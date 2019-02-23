@@ -170,12 +170,10 @@
 			sets.removeClass('collapse hide');
 			sets.addClass('collapse show');
 			sets.load('https://rakosel.github.io/WSB_page_slave.html').html();
-
 		}
 
 		function btn_lm75_1s()
 		{
-			 alert("1");
 			$("#lm75_poil1").append( $('<option value="1">Temp</option>'));
 			$("#lm75_poil1").append( $('<option value="2">Conf</option>'));
 			$("#lm75_poil1").append( $('<option value="3">Thyst</option>'));
