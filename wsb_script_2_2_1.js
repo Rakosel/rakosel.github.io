@@ -1,4 +1,4 @@
- //upd6
+ //upd7 #336
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
@@ -326,12 +326,20 @@
 						//var el = document.getElementsByClassName('.bt0st');
 						if (this.checked == true)
 							{$('.swdebl').text("Выключить режим настройки");this.setAttribute("disabled", "true");sdeb("ON");			 		
-							 	$("#auza").removeAttr('checked');}
+							 	$("#auza").removeAttr('checked'); sens_sel_load();}
 							else
 							{$('.swdebl').text("Включить режим настройки");this.setAttribute("disabled", "false");sdeb("OFF");
 								$("#auza").prop('checked', true);}
 
 		});
+
+		function sens_sel_load()
+		{
+			$("#lm75_poil1").append( $('<option value="1">Temp</option>'));
+			$("#lm75_poil1").append( $('<option value="2">Conf</option>'));
+			$("#lm75_poil1").append( $('<option value="3">Thyst</option>'));
+			$("#lm75_poil1").append( $('<option value="4">Tos</option>'));
+		}
 
 		// timer->autozamer html
 		/*$("#auza").click(function autmr()
