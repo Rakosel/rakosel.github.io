@@ -1,4 +1,4 @@
-  //upd16 	https://rakosel.github.io/wsb_script_2_2_1.js
+  //upd17b 	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #176		add btn_lm75_1s()
   // #44 dorabotka uart_submit + checkbox with ua fetch		
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -392,7 +392,7 @@
 			$('.bt0st').attr("value", "off");
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
-			rs = setInterval(refr_rtc, 2000);
+			//rs = setInterval(refr_rtc, 2000);
 			i=0;
 			//$(".bsn0").collapse('show');
 			smgh();
