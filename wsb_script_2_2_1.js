@@ -1,4 +1,4 @@
-  //upd10 	https://rakosel.github.io/wsb_script_2_2_1.js
+  //upd11 	https://rakosel.github.io/wsb_script_2_2_1.js
   // #162		add sens_sel_load
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
@@ -161,15 +161,6 @@
   		}
 		
 		
-		function sens_sel_load()
-		{
-			alert("1");
-			$("#lm75_poil1").append( $('<option value="1">Temp</option>'));
-			$("#lm75_poil1").append( $('<option value="2">Conf</option>'));
-			$("#lm75_poil1").append( $('<option value="3">Thyst</option>'));
-			$("#lm75_poil1").append( $('<option value="4">Tos</option>'));
-		}
-		
 		function sdmc_sh()
 		{
 			mds.removeClass('collapse show');
@@ -179,7 +170,11 @@
 			sets.removeClass('collapse hide');
 			sets.addClass('collapse show');
 			sets.load('https://rakosel.github.io/WSB_page_slave.html').html();
-			sens_sel_load();
+			alert("1");
+			$("#lm75_poil1").append( $('<option value="1">Temp</option>'));
+			$("#lm75_poil1").append( $('<option value="2">Conf</option>'));
+			$("#lm75_poil1").append( $('<option value="3">Thyst</option>'));
+			$("#lm75_poil1").append( $('<option value="4">Tos</option>'));
 		}
 		
 		function sdmc_rm()
