@@ -166,9 +166,9 @@
 			sds.addClass('collapse show');
 			mds.removeClass('collapse show');
 			mds.addClass('collapse hide');
-			sets.removeClass('hide11111111111');
+			sets.addClass('collapse hide');
+			//sets.removeClass('collapse show');
 			sets.load('https://rakosel.github.io/WSB_page_slave.html').html();
-			sets.addClass('collapse show');
 		}
 		
 		function sdmc_rm()
