@@ -71,6 +71,7 @@
   				//clearTimeout(rs.handle);
   
   			} else {
+				as1.removeClass('badge-danger');
 				as0.removeClass('badge-danger');
 				as0.addClass('badge-success');
 				as0.text("ОК ");
