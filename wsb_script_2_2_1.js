@@ -1,4 +1,4 @@
- //upd0
+ //upd1
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
@@ -24,7 +24,7 @@
 		// zapros temperature
 		function sub_grad() 
   		{
-				maOBJ = $('form').serializeArray(); 
+				maOBJ = $("#tmpo").serializeArray(); 
 				console.log("maOBJ");
 				console.log(maOBJ);
 			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
