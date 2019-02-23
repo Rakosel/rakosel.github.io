@@ -54,7 +54,6 @@
 		 function txjstmp(s, d) {
   			var as1=$('.pst1');
 			var as0=$('.pst0');
-			var sct0=$('.setcnt');
 			 //ENbt = 1;
 			// alert("dw45")
 			 
@@ -122,7 +121,6 @@
 			//var	as=$('.pst1');
 			//var as0=$('.pst0');
 					sdmc_sh();
-					sct0.addClass('collapse show');
 					as1.removeClass('badge-warning');
 					as1.addClass('badge-success');
 					as1.text("ВКЛ");
@@ -130,7 +128,6 @@
 				else if(temp_json.debug == "OFF")
 				{
 					sdmc_rm();
-					sct0.removeClass('collapse show');
 					as1.removeClass('badge-success');
 					as1.addClass('badge-warning');
 					as1.text("ВЫКЛ");
@@ -166,8 +163,8 @@
 			mds.addClass('collapse hide');
 			sds.removeClass('collapse hide');
 			sds.addClass('collapse show');
-			//sets.addClass('collapse hide');
-			//sets.removeClass('collapse show');
+			sets.removeClass('collapse hide');
+			sets.addClass('collapse show');
 			sets.load('https://rakosel.github.io/WSB_page_slave.html').html();
 		}
 		
@@ -177,8 +174,8 @@
 			mds.addClass('collapse show');
 			sds.removeClass('collapse show');
 			sds.addClass('collapse hide');
-			//sets.removeClass('collapse show');
-			//sets.addClass('collapse hide');
+			sets.removeClass('collapse show');
+			sets.addClass('collapse hide');
 		}
 		
 		function ftvall(cl)
