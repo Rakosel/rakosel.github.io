@@ -1,6 +1,6 @@
-  //upd14 	https://rakosel.github.io/wsb_script_2_2_1.js
+  //upd15 	https://rakosel.github.io/wsb_script_2_2_1.js
   // #176		add btn_lm75_1s()
-  // #174		add test
+  // #174		
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
@@ -171,15 +171,11 @@
 			sds.addClass('collapse show');
 			sets.removeClass('collapse hide');
 			sets.addClass('collapse show');
-			btn_lm75_1s();
 		}
 
 		function btn_lm75_1s()
 		{
-			$("#lm75_poil1").append( $('<option value="1">Temp</option>'));
-			$("#lm75_poil1").append( $('<option value="2">Conf</option>'));
-			$("#lm75_poil1").append( $('<option value="3">Thyst</option>'));
-			$("#lm75_poil1").append( $('<option value="4">Tos</option>'));
+
 		}
 		
 		function sdmc_rm()
