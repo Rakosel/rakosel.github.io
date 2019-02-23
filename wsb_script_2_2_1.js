@@ -472,7 +472,7 @@
 
   		window.onload = function() {
 			//$(".collapse").collapse('hide');
-			maOBJ = $("#tmpo").serializeArray(); 
+			maOBJ = $('form').serializeArray(); 
 			seOBJ = $("#scntf").serializeArray(); 
 				console.log("maOBJ");
 				console.log(maOBJ);
