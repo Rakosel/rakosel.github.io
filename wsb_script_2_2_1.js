@@ -14,7 +14,7 @@
 		// rtc time auto from server
 		function refr_rtc()
 		{
-			fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 30);
+			//fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 30);
 			if ($("#auza").checked == true)
 			{sub_grad();}
 			//console.log("refr_rtc");
