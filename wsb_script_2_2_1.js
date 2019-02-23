@@ -1,4 +1,4 @@
- //upd3
+ //upd4
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
@@ -15,7 +15,7 @@
 		// rtc time auto from server
 		function refr_rtc()
 		{
-			//fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 30);
+			fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 30);
 			if ($("#auza").prop("checked"))
 			{sub_grad();}
 			//console.log("refr_rtc");
