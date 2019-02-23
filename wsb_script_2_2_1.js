@@ -1,5 +1,6 @@
-  //upd13 	https://rakosel.github.io/wsb_script_2_2_1.js
+  //upd14 	https://rakosel.github.io/wsb_script_2_2_1.js
   // #176		add btn_lm75_1s()
+  // #174		add test
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
@@ -163,13 +164,14 @@
 		
 		function sdmc_sh()
 		{
+			sets.load('https://rakosel.github.io/WSB_page_slave.html').html();
 			mds.removeClass('collapse show');
 			mds.addClass('collapse hide');
 			sds.removeClass('collapse hide');
 			sds.addClass('collapse show');
 			sets.removeClass('collapse hide');
 			sets.addClass('collapse show');
-			sets.load('https://rakosel.github.io/WSB_page_slave.html').html();
+			btn_lm75_1s();
 		}
 
 		function btn_lm75_1s()
