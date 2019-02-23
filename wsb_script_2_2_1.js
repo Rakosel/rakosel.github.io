@@ -177,8 +177,8 @@
 			mds.addClass('collapse show');
 			sds.removeClass('collapse show');
 			sds.addClass('collapse hide');
-			sets.removeClass('collapse show');
-			sets.addClass('collapse hide');
+			//sets.removeClass('collapse show');
+			//sets.addClass('collapse hide');
 		}
 		
 		function ftvall(cl)
