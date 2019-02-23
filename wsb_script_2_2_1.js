@@ -1,4 +1,4 @@
- //upd7 #336
+ //upd7 #336	https://rakosel.github.io/wsb_script_2_2_1.js
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
