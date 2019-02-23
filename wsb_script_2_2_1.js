@@ -472,6 +472,7 @@
 
   		window.onload = function() {
 			//$(".collapse").collapse('hide');
+			$('.macnt').load('https://rakosel.github.io/WSB_page_main.html').html();
 			maOBJ = $('form').serializeArray(); 
 			seOBJ = $("#scntf").serializeArray(); 
 				console.log("maOBJ");
@@ -483,7 +484,6 @@
 			i=0;
 			//$(".bsn0").collapse('show');
 			smgh();
-			$('.macnt').load('https://rakosel.github.io/WSB_page_main.html').html();
 			//clresf();
 			/*function smgh()
 			{
