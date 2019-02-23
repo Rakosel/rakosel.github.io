@@ -1,4 +1,4 @@
- //upd4
+ //upd5
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
@@ -59,7 +59,7 @@
 			var as0=$('.pst0');
 			 //ENbt = 1;
 			// alert("dw45")
-			 
+
 			 
   			if (s != 200) {
 				as0.removeClass('badge-success');
@@ -325,9 +325,11 @@
 		{
 						//var el = document.getElementsByClassName('.bt0st');
 						if (this.checked == true)
-							{$('.swdebl').text("Выключить режим настройки");this.setAttribute("disabled", "true");sdeb("ON");}
+							{$('.swdebl').text("Выключить режим настройки");this.setAttribute("disabled", "true");sdeb("ON");			 		
+							 	$("#auza").attr('checked', false);}
 							else
-							{$('.swdebl').text("Включить режим настройки");this.setAttribute("disabled", "false");sdeb("OFF");}
+							{$('.swdebl').text("Включить режим настройки");this.setAttribute("disabled", "false");sdeb("OFF");
+								$("#auza").attr('checked', true);}
 
 		});
 
