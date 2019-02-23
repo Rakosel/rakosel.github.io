@@ -89,8 +89,6 @@
   			}
 			if(temp_json["temp"] )
 			{
-				console.log("maOBJ");
-				console.log(maOBJ);
 			for(i=3;i<=maOBJ.length;i++)
 			{
 				try
@@ -476,6 +474,8 @@
 			//$(".collapse").collapse('hide');
 			maOBJ = $("#tmpo").serializeArray(); 
 			seOBJ = $("#scntf").serializeArray(); 
+				console.log("maOBJ");
+				console.log(maOBJ);
 			$('.bt0st').attr("value", "off");
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
