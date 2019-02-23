@@ -1,4 +1,5 @@
-  		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
+ //upd0
+		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
   		var uart_json = {};
