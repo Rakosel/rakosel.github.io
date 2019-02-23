@@ -89,6 +89,7 @@
   			}
 			if(temp_json["temp"] )
 			{
+				console.log("maOBJ");
 				console.log(maOBJ);
 			for(i=3;i<=maOBJ.length;i++)
 			{
