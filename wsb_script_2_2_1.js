@@ -1,4 +1,4 @@
- //upd5
+ //upd6
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
@@ -326,10 +326,10 @@
 						//var el = document.getElementsByClassName('.bt0st');
 						if (this.checked == true)
 							{$('.swdebl').text("Выключить режим настройки");this.setAttribute("disabled", "true");sdeb("ON");			 		
-							 	$("#auza").attr('checked', false);}
+							 	$("#auza").removeAttr('checked');}
 							else
 							{$('.swdebl').text("Включить режим настройки");this.setAttribute("disabled", "false");sdeb("OFF");
-								$("#auza").attr('checked', true);}
+								$("#auza").prop('checked', true);}
 
 		});
 
