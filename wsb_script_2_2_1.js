@@ -162,11 +162,11 @@
 		
 		function sdmc_sh()
 		{
-			sds.removeClass('collapse hide');
-			sds.addClass('collapse show');
 			mds.removeClass('collapse show');
 			mds.addClass('collapse hide');
-			sets.addClass('collapse hide');
+			sds.removeClass('collapse hide');
+			sds.addClass('collapse show');
+			//sets.addClass('collapse hide');
 			//sets.removeClass('collapse show');
 			sets.load('https://rakosel.github.io/WSB_page_slave.html').html();
 		}
