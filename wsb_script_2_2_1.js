@@ -1,4 +1,5 @@
- //upd7 #336	https://rakosel.github.io/wsb_script_2_2_1.js
+  //upd8 #336	https://rakosel.github.io/wsb_script_2_2_1.js
+ //		add sens_sel_load
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
@@ -57,10 +58,7 @@
 		 function txjstmp(s, d) {
   			var as1=$('.pst1');
 			var as0=$('.pst0');
-			 //ENbt = 1;
-			// alert("dw45")
 
-			 
   			if (s != 200) {
 				as0.removeClass('badge-success');
 				as0.addClass('badge-danger');
@@ -171,6 +169,7 @@
 			sets.removeClass('collapse hide');
 			sets.addClass('collapse show');
 			sets.load('https://rakosel.github.io/WSB_page_slave.html').html();
+			sens_sel_load();
 		}
 		
 		function sdmc_rm()
@@ -195,13 +194,7 @@
       		return lines;
   		}
   
-  		//function to(cb, x) {
-  		//	return setTimeout(cb, 1000 * x);
-  		//}
   		function txjs_ua(s, d) {
-  			//console.log("function TransmitJS(s, d)");
-  			//console.log(s,d);
-  			//rs = to(refr, 8);
 			$("#btn1").prop("disabled", false);
   			if (s != 200) {
   				str_out1 += "Send command error"+'\n';
@@ -235,40 +228,14 @@
 
 		function smgh()
 		{
-			//clresf();
 			if(window.screen.availWidth>768 || window.screen.width>768 || window.innerWidth>768)
-			{
-					$('.bt0st').click();
-					
-			}	
-			
+			{ $('.bt0st').click(); }	
 		}
 		
 		// MENU - dublirovanmie
 		$('.bt0st1').click(function bjst1()			  
 		{	$('.bt0st').click();});
-		/*
-		function fixbar()
-		{
-			var b;
 
-			//alert(b);
-			
-			if(window.screen.availWidth<=768 || window.screen.width<=768 || window.innerWidth<=768)
-			{		
-			if($('.mc1').hasClass('noscroll') && a=='on')
-			{
-				$('.mc1').removeClass('noscroll').html();
-				$('.bsn0').removeClass('overlay').html();					
-			}
-			else if(!$('.mc1').hasClass('noscroll') && a!='on')
-			{
-				$('.mc1').addClass('noscroll').html();
-				$('.bsn0').addClass('overlay').html();
-			}
-			}
-			//$("#main1").SetAttribute();
-		}*/
 		
 		$('.bt0st').click(function bjst() 	
 		//function fixbar()
@@ -281,52 +248,24 @@
 						{$('.bt0st').attr("value", "on");}
 						else
 						{$('.bt0st').attr("value", "off");}
-						
-			   			//$.each(arr, function() {
-        					//$(this).setAttribute('value', 'on');
-							//$(this).setAttribute('value', 'on');
-							//a=$(this).getAttribute('value');
-							//$(this).setAttribute('value', 'on');
-							//a=$(this).getAttribute('value');
-							
-    					//});
-			
-							//if(window.screen.availWidth<=768 || window.screen.width<=768 || window.innerWidth<=768)
-							//{		
+
 							if( ast!="on")
-							{
-								sh_b();
-							}
+							{ sh_b(); }
 							else
-							{
-								rm_b();
-							}
+							{ rm_b(); }
 							if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
-							{	
-								
+							{		
 							if( ast!="on")
-							{
-								shs_b();
-								
-							}
+							{ shs_b(); }
 							else
-							{
-								rms_b();
-							}
-							}
-							
-								//alert(a);
-								//alert(('.mc1').hasClass('noscroll'));
-							//}
-						
-						});
+							{ rms_b(); } } });
 		// DEBUG btn
 		$('.swdeb').click(function swdebfn() 	
 		{
 						//var el = document.getElementsByClassName('.bt0st');
 						if (this.checked == true)
 							{$('.swdebl').text("Выключить режим настройки");this.setAttribute("disabled", "true");sdeb("ON");			 		
-							 	$("#auza").removeAttr('checked'); sens_sel_load();}
+							 	$("#auza").removeAttr('checked'); }
 							else
 							{$('.swdebl').text("Включить режим настройки");this.setAttribute("disabled", "false");sdeb("OFF");
 								$("#auza").prop('checked', true);}
@@ -340,22 +279,12 @@
 			$("#lm75_poil1").append( $('<option value="3">Thyst</option>'));
 			$("#lm75_poil1").append( $('<option value="4">Tos</option>'));
 		}
-
-		// timer->autozamer html
-		/*$("#auza").click(function autmr()
-		{
-			if ($("#auza").checked == true)
-
-		});*/
 		
 		// SUBMIT debug
 		function sdeb(bl)
 		{
-			
 			var url1 = '/debug_mode?input=' + encodeURIComponent(bl)+ '&';
 			fetch(url1, 'GET', txjstmp, 10);
-			
-			
 		}
 
 		// MENU - href + onclick()
@@ -395,24 +324,6 @@
 					if(ast!="on")
 					{rms_b();sh_b();}
 				}						
-   			/*if(window.screen.availWidth<=768 || window.screen.width<=768 || window.innerWidth<=768 )
-				{
-						{$(".collapse").collapse('hide');
-								$('.btn_sensor_toogle').attr("value", "off");
-								ast="on";
-								rm_b();
-						}
-						else
-						{$(".collapse").collapse('show');
-								ast="off";
-								$('.btn_sensor_toogle').attr("value", "on");
-						}
-				}
-			else
-				{
-					rm_b();
-					//console.log(window.innerWidth);	
-				}*/
 		}
 		
 		function rm_b()
@@ -448,15 +359,6 @@
 					$('.bsn0').addClass('col-12').html();
 		}
 
-		/*
-		addEvent(window, "resize", function(event) {
-			if(window.screen.availWidth>=576 || window.screen.width>=576 || window.innerWidth>=576)
-				{				
-					$('.mc1').removeClass('noscroll').html();
-					$('.bsn0').removeClass('overlay').html();	
-				}
-		});*/
-
   		function fetch(url, method, callback, time_out) {
   			console.log(url);
   			var xhr = new XMLHttpRequest();
@@ -474,14 +376,6 @@
   		}
 
 
-		/*
-		$('.tst0').click(function tst11() 	
-		{
-			console.log(maOBJ);
-			$("#lm75_t1_chk").prop('indeterminate', true)
-		});*/
-		
-
   		window.onload = function() {
 			//$(".collapse").collapse('hide');
 			$('.macnt').load('https://rakosel.github.io/WSB_page_main.html').html();
@@ -494,14 +388,6 @@
 			i=0;
 			//$(".bsn0").collapse('show');
 			smgh();
-			//clresf();
-			/*function smgh()
-			{
-			$('#lm75_t1').val(window.innerWidth);
-			if(window.screen.availWidth<=768 || window.screen.width<=768 || window.innerWidth<=768)
-			{$(".collapse").collapse('hide');}
-			else
-			{$(".collapse").collapse('show');}
-			}*/
+
   		}
  
