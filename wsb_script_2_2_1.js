@@ -88,6 +88,7 @@
   			}
 			if(temp_json["temp"] )
 			{
+				console.log(maOBJ);
 			for(i=3;i<=maOBJ.length;i++)
 			{
 				try
@@ -97,7 +98,7 @@
 				if((temp_json.temp[i-3] == "#ERR") || (temp_json.temp[i-3] == ''))
 					{
 						$("#"+maOBJ[i].name).addClass('is-invalid').html();
-						console.log("#"+maOBJ[i].name);
+						
 					}
 					else
 						{$("#"+maOBJ[i].name).addClass('is-valid').html()}
