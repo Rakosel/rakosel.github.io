@@ -1,4 +1,4 @@
-  //upd12 	https://rakosel.github.io/wsb_script_2_2_1.js
+  //upd13 	https://rakosel.github.io/wsb_script_2_2_1.js
   // #176		add btn_lm75_1s()
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
@@ -175,7 +175,7 @@
 
 		function btn_lm75_1s()
 		{
-			alert("1");
+			 alert("1");
 			$("#lm75_poil1").append( $('<option value="1">Temp</option>'));
 			$("#lm75_poil1").append( $('<option value="2">Conf</option>'));
 			$("#lm75_poil1").append( $('<option value="3">Thyst</option>'));
