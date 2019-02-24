@@ -1,4 +1,4 @@
- //upd28a without input, timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd29a without input, timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK'
   // #44 dorabotka uart_submit + checkbox with ua fetch	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -14,6 +14,10 @@
 		sds = $('.sideset');
 		mds = $('.macnt');
 		sets = $('.setcnt');
+		
+		$("#lm75sc_1").change(function(){
+			alert("The text has been changed.");
+		});
 
 		// rtc time auto from server
 		function refr_rtc()
