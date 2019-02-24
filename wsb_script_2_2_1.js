@@ -1,4 +1,4 @@
-  //upd27a	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+ //upd27b	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK'
   // #44 dorabotka uart_submit + checkbox with ua fetch	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -34,7 +34,6 @@
                 }
 
 		});
-      		});
 		// rtc time auto from server
 		function refr_rtc()
 		{
