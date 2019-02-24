@@ -14,9 +14,6 @@
 		sds = $('.sideset');
 		mds = $('.macnt');
 		sets = $('.setcnt');
- $(document).ready(function(){	
-
-
 		// rtc time auto from server
 		function refr_rtc()
 		{
@@ -401,7 +398,6 @@
   			xhr.timeout = time_out * 200;
   			xhr.send();
   		}
-      });
   		window.onload = function() {
 			//$(".collapse").collapse('hide');
 			$('.macnt').load('https://rakosel.github.io/WSB_page_main.html').html();
