@@ -1,4 +1,4 @@
- //upd27c	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+ //upd28 without input	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK'
   // #44 dorabotka uart_submit + checkbox with ua fetch	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -15,26 +15,6 @@
 		mds = $('.macnt');
 		sets = $('.setcnt');
 
-$(document).ready(function(){
-
-		$( ".sl_lm75_1" ).slider({
-		animate: true,
-                //range: "min",
-                //value: 0,
-                //min: 1,
-                //max: 100,
-				//step: 1,
-
-                slide: function( event, ui ) {
-                    $( "#sl_lm75_1_res" ).html(ui.value);
-                },
-
-                change: function(event, ui) {
-                $('#lm75sc_1').attr('value', ui.value);
-                }
-
-		});
-});	
 		// rtc time auto from server
 		function refr_rtc()
 		{
