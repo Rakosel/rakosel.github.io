@@ -52,6 +52,7 @@
 				{ua_mode=1;}
 				else
 				{ua_mode=0;}
+				alert("uart "+ua_mode);
 				
   			for (i = 0; i < lines_in.length; i++)
   			{
