@@ -22,6 +22,9 @@
 			{sub_grad();}
 			//console.log("refr_rtc");
 		}
+		$("#lm75sc_1").click( function(){
+				alert("12");
+		});
 
 		$("#lm75sc_1").mousemove( function(){
 				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
