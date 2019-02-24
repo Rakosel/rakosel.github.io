@@ -1,5 +1,5 @@
-  //upd25 	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
-  // #176		add btn_lm75_1s()
+  //upd26	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+  // #84 dorabotal 'ACK'
   // #44 dorabotka uart_submit + checkbox with ua fetch		
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
@@ -81,7 +81,10 @@
   				else
   				{uart_json.uart_out="null";uart_json.uart_in="null";}
 				console.log(uart_json);
-  				str_out1 += uart_json.uart_out +'\n';
+				if(uart_json.uart_out=='')
+				{str_out1 += 'ACK' +'\n';}
+				else
+				{str_out1 += uart_json.uart_out +'\n';}
 				//console.log(uart_json.uart_out);
   			}
 			var esp_uart_out_val  = $("#esp_urx")
