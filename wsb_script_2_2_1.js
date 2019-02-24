@@ -1,4 +1,4 @@
-  //upd26	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+  //upd26a	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK'
   // #44 dorabotka uart_submit + checkbox with ua fetch		
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -81,7 +81,7 @@
   				else
   				{uart_json.uart_out="null";uart_json.uart_in="null";}
 				console.log(uart_json);
-				if(uart_json.uart_out=='')
+				if(uart_json.uart_out=="")
 				{str_out1 += 'ACK' +'\n';}
 				else
 				{str_out1 += uart_json.uart_out +'\n';}
