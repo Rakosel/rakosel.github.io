@@ -1,4 +1,4 @@
-//upd34a  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd35  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK' otkl autoload
   // #44 dorabotka uart_submit + checkbox with ua fetch	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -402,11 +402,11 @@
 			mds.load('https://rakosel.github.io/WSB_page_main.html', function()
 			{
 				 alert("loaded mds");
-			}).html();
+			}).html().delay( 800 );
 			sets.load('https://rakosel.github.io/WSB_page_slave.html', function()
 			{
 				   alert("loaded sets");
-			}).html();
+			}).html().delay( 800 );
 			alert("ok");
 			//maOBJ = $('form').serializeArray(); 
 			seOBJ = $("#scntf").serializeArray();
