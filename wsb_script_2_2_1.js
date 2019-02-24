@@ -60,7 +60,7 @@
 					if(ua_mode==0)
 					{fetch('/uart.json?n=' + encodeURIComponent(JSON.stringify(uart_json))+'&', 'GET', txjs_ua, 30);}
 					else
-					{fetch('/uart_get?n=' + encodeURIComponent(JSON.stringify(uart_json))+'&', 'GET', txjs_ua, 30);}						
+					{fetch('/uart_get?n=' + encodeURIComponent(JSON.stringify(uart_json.uart_in))+'&', 'GET', txjs_ua, 30);}						
   			}
 			
   		}
