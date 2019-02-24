@@ -28,10 +28,10 @@
 		});
 		$("#lm75so_2").mousemove( function tos2(){
 				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
-		});*/
-			
-			
 		});
+			
+			
+		});*/
 
 		function refr_rtc()
 		{
