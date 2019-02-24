@@ -1,4 +1,4 @@
-  //upd17b 	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+  //upd17c 	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #176		add btn_lm75_1s()
   // #44 dorabotka uart_submit + checkbox with ua fetch		
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -80,8 +80,9 @@
   				}
   				else
   				{uart_json.uart_out="null";uart_json.uart_in="null";}
+				console.log(uart_json);
   				str_out1 += uart_json.uart_out + '\n';
-				console.log(uart_json.uart_out);
+				//console.log(uart_json.uart_out);
   			}
 			var esp_uart_out_val  = $("#esp_urx")
 			if(esp_uart_out_val.val()!="")
