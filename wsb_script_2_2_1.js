@@ -1,4 +1,4 @@
- //upd28 without input	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+ //upd28a without input, timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK'
   // #44 dorabotka uart_submit + checkbox with ua fetch	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -395,7 +395,7 @@
 			$('.bt0st').attr("value", "off");
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
-			rs = setInterval(refr_rtc, 2000);
+			//rs = setInterval(refr_rtc, 2000);
 			i=0;
 			//$(".bsn0").collapse('show');
 			smgh();
