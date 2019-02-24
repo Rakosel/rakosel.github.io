@@ -1,4 +1,4 @@
-//upd31  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd31a  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK'
   // #44 dorabotka uart_submit + checkbox with ua fetch	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -22,7 +22,7 @@
 			{sub_grad();}
 			//console.log("refr_rtc");
 		}
-
+		/*
 		$("#lm75sc_1").mousemove( function(){
 				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
 		});
@@ -35,7 +35,7 @@
 		$("#lm75so_2").mousemove( function(){
 				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
 		});
-		
+		*/
 		// zapros temperature
 		function sub_grad() 
   		{
