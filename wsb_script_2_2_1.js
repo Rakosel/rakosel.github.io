@@ -396,7 +396,7 @@
 			$('.bt0st').attr("value", "off");
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
-			//rs = setInterval(refr_rtc, 2000);
+			rs = setInterval(refr_rtc, 2000);
 			i=0;
 			//$(".bsn0").collapse('show');
 			smgh();
