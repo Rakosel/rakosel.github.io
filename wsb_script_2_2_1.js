@@ -1,4 +1,4 @@
-//upd36d  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd37  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK' otkl autoload
   // #44 dorabotka uart_submit + checkbox with ua fetch	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -28,9 +28,9 @@
 		// zapros temperature
 		function sub_grad() 
   		{
-				maOBJ = $("#tmpo").serializeArray(); 
-				console.log("maOBJ");
-				console.log(maOBJ);
+				//maOBJ = $("#tmpo").serializeArray(); 
+				//console.log("maOBJ");
+				//console.log(maOBJ);
 			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
 			fetch('/temp_out.json?n=' + Math.random(), 'GET', txjstmp, 30);
 			
@@ -410,8 +410,9 @@
 			{
 				   alert("loaded sets");
 			}).html();*/
-			alert("ok");
+			//alert("ok");
 			//maOBJ = $('form').serializeArray(); 
+			maOBJ = $("#tmpo").serializeArray(); 
 			seOBJ = $("#scntf").serializeArray();
 			$('.bt0st').attr("value", "off");
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
@@ -421,4 +422,3 @@
 			//$(".bsn0").collapse('show');
 			smgh();
   		}
-
