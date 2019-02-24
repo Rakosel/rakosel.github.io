@@ -1,4 +1,4 @@
-//upd29a without input, timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd30 without input, timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK'
   // #44 dorabotka uart_submit + checkbox with ua fetch	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -14,7 +14,7 @@
 		sds = $('.sideset');
 		mds = $('.macnt');
 		sets = $('.setcnt');
-		
+ $(document).ready(function(){	
 
 
 		// rtc time auto from server
@@ -25,6 +25,19 @@
 			{sub_grad();}
 			//console.log("refr_rtc");
 		}
+
+		$("#lm75sc_1").mousemove( function(){
+				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
+		});
+		$("#lm75sc_2").mousemove( function(){
+				$('.lm75thy_2').text($("#lm75sc_2").val()+" C°");
+		});
+		$("#lm75so_1").mousemove( function(){
+				$('.lm75tos_1').text($("#lm75so_1").val()+" C°");
+		});
+		$("#lm75so_2").mousemove( function(){
+				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
+		});
 		
 		// zapros temperature
 		function sub_grad() 
@@ -388,7 +401,7 @@
   			xhr.timeout = time_out * 200;
   			xhr.send();
   		}
-//      });
+      });
   		window.onload = function() {
 			//$(".collapse").collapse('hide');
 			$('.macnt').load('https://rakosel.github.io/WSB_page_main.html').html();
