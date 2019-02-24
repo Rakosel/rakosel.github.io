@@ -397,5 +397,4 @@
 			i=0;
 			//$(".bsn0").collapse('show');
 			smgh();
-
   		}
