@@ -15,9 +15,7 @@
 		mds = $('.macnt');
 		sets = $('.setcnt');
 		
-		$("#lm75sc_1").change(function(){
-			alert("The text has been changed.");
-		});
+
 
 		// rtc time auto from server
 		function refr_rtc()
