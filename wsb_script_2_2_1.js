@@ -227,11 +227,6 @@
 			sets.removeClass('collapse hide');
 			sets.addClass('collapse show');
 		}
-
-		function btn_lm75_1s()
-		{
-
-		}
 		
 		function sdmc_rm()
 		{	
