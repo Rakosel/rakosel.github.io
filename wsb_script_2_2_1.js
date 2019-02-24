@@ -1,4 +1,4 @@
-//upd30a  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd31  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK'
   // #44 dorabotka uart_submit + checkbox with ua fetch	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -220,7 +220,6 @@
 		
 		function sdmc_sh()
 		{
-			sets.load('https://rakosel.github.io/WSB_page_slave.html').html();
 			mds.removeClass('collapse show');
 			mds.addClass('collapse hide');
 			sds.removeClass('collapse hide');
@@ -400,7 +399,8 @@
   		}
   		window.onload = function() {
 			//$(".collapse").collapse('hide');
-			$('.macnt').load('https://rakosel.github.io/WSB_page_main.html').html();
+			mds.load('https://rakosel.github.io/WSB_page_main.html').html();
+			sets.load('https://rakosel.github.io/WSB_page_slave.html').html();
 			//maOBJ = $('form').serializeArray(); 
 			seOBJ = $("#scntf").serializeArray();
 			$('.bt0st').attr("value", "off");
