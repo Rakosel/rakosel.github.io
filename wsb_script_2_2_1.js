@@ -1,4 +1,4 @@
-  //upd21a 	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+  //upd22 	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #176		add btn_lm75_1s()
   // #44 dorabotka uart_submit + checkbox with ua fetch		
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -57,9 +57,9 @@
   			{
   				uart_json.uart_in = lines_in[i];
 					if(ua_mode==1)
-					{fetch('/uart.json?n=' + encodeURIComponent(lines_in[i])+'&', 'GET', txjs_ua, 30);alert("uart "+ua_mode);}
+					{fetch('/uart_get?input=' + encodeURIComponent(lines_in[i])+'&', 'GET', txjs_ua, 30);alert("uart "+ua_mode);}
 					else
-					{fetch('/uart_get?input=' + encodeURIComponent(JSON.stringify(uart_json.uart_in))+'&', 'GET', txjs_ua, 30);}						
+					{fetch('/uart.json?n=' + encodeURIComponent(JSON.stringify(uart_json.uart_in))+'&', 'GET', txjs_ua, 30);}						
   			}
 			
   		}
