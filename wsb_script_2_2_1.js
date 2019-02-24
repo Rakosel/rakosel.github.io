@@ -1,4 +1,4 @@
-//upd32b  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd33  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK' otkl autoload
   // #44 dorabotka uart_submit + checkbox with ua fetch	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -15,6 +15,24 @@
 		mds = $('.macnt');
 		sets = $('.setcnt');
 		// rtc time auto from server
+		sets.ready(function Slave() 
+		{
+		$("#lm75sc_1").mousemove( function(){
+				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
+		});
+		$("#lm75sc_2").mousemove(function thy2(){
+				$('.lm75thy_2').text($("#lm75sc_2").val()+" C°");
+		});
+		$("#lm75so_1").mousemove( function tos1(){
+				$('.lm75tos_1').text($("#lm75so_1").val()+" C°");
+		});
+		$("#lm75so_2").mousemove( function tos2(){
+				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
+		});
+			
+			
+		});
+
 		function refr_rtc()
 		{
 			fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 30);
@@ -22,20 +40,7 @@
 			{sub_grad();}
 			//console.log("refr_rtc");
 		}
-		/*
-		$("#lm75sc_1").mousemove( function(){
-				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
-		});
-		$("#lm75sc_2").mousemove( function(){
-				$('.lm75thy_2').text($("#lm75sc_2").val()+" C°");
-		});
-		$("#lm75so_1").mousemove( function(){
-				$('.lm75tos_1').text($("#lm75so_1").val()+" C°");
-		});
-		$("#lm75so_2").mousemove( function(){
-				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
-		});
-		*/
+
 		// zapros temperature
 		function sub_grad() 
   		{
