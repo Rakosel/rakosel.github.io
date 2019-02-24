@@ -383,7 +383,7 @@
   			}
   			xhr.open(method, url, true);
   			xhr.setRequestHeader('Accept', 'application/json');
-  			xhr.timeout = time_out * 100;
+  			xhr.timeout = time_out * 200;
   			xhr.send();
   		}
 
