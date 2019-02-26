@@ -1,4 +1,4 @@
-//upd37d1  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd37d2  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK' otkl autoload
   // #246 for mobile	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -7,7 +7,7 @@
   		var uart_json = {};
 		var temp_json = {};
 		var scrPos = 0, ovShBtn0 = false;
-		var ast,gl_deb=false;
+		var ast;
 		var ua_mode=0;
 		// reverse panelki dlya debug
 		var sds,mds,sets;
@@ -242,8 +242,7 @@
 
 		function smgh()
 		{
-			if(device.desktop())
-			{gl_deb = true;}
+
 			if(window.screen.availWidth>768 || window.screen.width>768 || window.innerWidth>768)
 			{ $('.bt0st').click(); }	
 		}
@@ -386,9 +385,12 @@
 
 		sets.ready(function Slave() 
 		{
-			
+			var gl_deb=false;
+		
+			//if(device.desktop())
+			//{gl_deb = true;}
 		$("#lm75sc_1").mousemove( function(){
-				console.log("gl_deb"+gl_deb);
+				console.log(device.desktop());
 				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
 		});
 		$("#lm75sc_2").mousemove(function thy2(){
