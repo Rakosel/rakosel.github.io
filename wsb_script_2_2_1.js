@@ -408,16 +408,16 @@
 		$(document).on('touchmove', function() {});
 		$(document).on('click touchend', function(event) { }});			
 					*/
-		$("#lm75sc_1").on('touchmove' function(){
+		$("#lm75sc_1").on('touchmove', function(){
 				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
 		});
-		$("#lm75sc_2").on('touchmove' function thy2(){
+		$("#lm75sc_2").on('touchmove', function thy2(){
 				$('.lm75thy_2').text($("#lm75sc_2").val()+" C°");
 		});
-		$("#lm75so_1").on('touchmove' function tos1(){
+		$("#lm75so_1").on('touchmove', function tos1(){
 				$('.lm75tos_1').text($("#lm75so_1").val()+" C°");
 		});
-		$("#lm75so_2").on('touchmove' function tos2(){
+		$("#lm75so_2").on('touchmove', function tos2(){
 				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
 		});				
 				console.log("mobile");
