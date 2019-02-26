@@ -1,13 +1,13 @@
-//upd37  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd37b  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK' otkl autoload
-  // #44 dorabotka uart_submit + checkbox with ua fetch	
+  // #246 for mobile	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
   		var uart_json = {};
 		var temp_json = {};
 		var scrPos = 0, ovShBtn0 = false;
-		var ast;
+		var ast,gl_deb=false;
 		var ua_mode=0;
 		// reverse panelki dlya debug
 		var sds,mds,sets;
@@ -242,6 +242,8 @@
 
 		function smgh()
 		{
+			if(device.desktop())
+			{gl_deb = true;}
 			if(window.screen.availWidth>768 || window.screen.width>768 || window.innerWidth>768)
 			{ $('.bt0st').click(); }	
 		}
