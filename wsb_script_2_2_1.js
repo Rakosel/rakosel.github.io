@@ -1,4 +1,4 @@
-//upd37d  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd37d1  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK' otkl autoload
   // #246 for mobile	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -386,8 +386,9 @@
 
 		sets.ready(function Slave() 
 		{
-			console.log("gl_deb"+gl_deb);
+			
 		$("#lm75sc_1").mousemove( function(){
+				console.log("gl_deb"+gl_deb);
 				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
 		});
 		$("#lm75sc_2").mousemove(function thy2(){
