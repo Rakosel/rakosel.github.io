@@ -1,4 +1,4 @@
-//upd38a  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd38b  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK' otkl autoload
   // #385 mobile touch
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -894,7 +894,7 @@
 			}).html();*/
 			//alert("ok");
 			//maOBJ = $('form').serializeArray(); 
-			ch_dev();
+			//ch_dev();
 			maOBJ = $("#tmpo").serializeArray(); 
 			seOBJ = $("#scntf").serializeArray();
 			$('.bt0st').attr("value", "off");
