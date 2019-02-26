@@ -1,6 +1,6 @@
-//upd37  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd38  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK' otkl autoload
-  // #44 dorabotka uart_submit + checkbox with ua fetch	
+  // #385 mobile touch
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
   		var str_out = "", str_out1="";
@@ -384,6 +384,8 @@
 
 		sets.ready(function Slave() 
 		{
+		if(device.desktop())
+		{
 		$("#lm75sc_1").mousemove( function(){
 				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
 		});
@@ -396,6 +398,30 @@
 		$("#lm75so_2").mousemove( function tos2(){
 				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
 		});
+			console.log("PC");
+		}
+			else
+			{
+			// http://stackoverflow.com/questions/4755505/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
+				/*
+		$(document).on('touchstart', function() {});
+		$(document).on('touchmove', function() {});
+		$(document).on('click touchend', function(event) { }});			
+					*/
+		$("#lm75sc_1").on('touchmove' function(){
+				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
+		});
+		$("#lm75sc_2").on('touchmove' function thy2(){
+				$('.lm75thy_2').text($("#lm75sc_2").val()+" C°");
+		});
+		$("#lm75so_1").on('touchmove' function tos1(){
+				$('.lm75tos_1').text($("#lm75so_1").val()+" C°");
+		});
+		$("#lm75so_2").on('touchmove' function tos2(){
+				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
+		});				
+				console.log("mobile");
+			}
 			
 			
 		});
