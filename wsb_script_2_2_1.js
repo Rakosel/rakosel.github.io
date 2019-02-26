@@ -1,4 +1,4 @@
-//upd37d2  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd37d3  timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK' otkl autoload
   // #246 for mobile	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -385,11 +385,11 @@
 
 		sets.ready(function Slave() 
 		{
-			var gl_deb=false;
+			//var gl_deb=false;
 		
 			//if(device.desktop())
 			//{gl_deb = true;}
-		$("#lm75sc_1").mousemove( function(){
+		/*$("#lm75sc_1").mousemove( function(){
 				console.log(device.desktop());
 				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
 		});
@@ -401,7 +401,19 @@
 		});
 		$("#lm75so_2").mousemove( function tos2(){
 				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
+		});*/
+		$("#lm75sc_1").on('touchmove', function(){
+				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
 		});
+		$("#lm75sc_2").on('touchmove', function thy2(){
+				$('.lm75thy_2').text($("#lm75sc_2").val()+" C°");
+		});
+		$("#lm75so_1").on('touchmove', function tos1(){
+				$('.lm75tos_1').text($("#lm75so_1").val()+" C°");
+		});
+		$("#lm75so_2").on('touchmove', function tos2(){
+				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
+		});	
 			
 			
 		});
