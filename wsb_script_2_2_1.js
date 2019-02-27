@@ -1,4 +1,4 @@
-//upd44b without clr scr timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd44b1 without timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
 // #84 dorabotal 'ACK' otkl autoload
 // #246 for mobile	
 // touchmove
@@ -320,7 +320,7 @@
   		//	  return rv;
   		//	}
 		// CALLBACK resizes	
-		/*
+		
 		$(window).resize(function() {
 				clresf();
 		});
@@ -372,7 +372,7 @@
 					$('.bsn0').addClass('overlay').html();
 					rm_b();
 					$('.bsn0').addClass('col-12').html();
-		}*/
+		}
 
   		function fetch(url, method, callback, time_out) {
   			console.log(url);
