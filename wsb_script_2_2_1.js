@@ -1,4 +1,4 @@
-//upd39b timer	https://rakosel.github.io/wsb_script_2_2_1.js  vkl timer
+//upd39 timer	https://rakosel.github.io/wsb_script_2_2_1.js  vkl timer
   // #84 dorabotal 'ACK' otkl autoload
   // #246 for mobile	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -32,7 +32,6 @@
 				//console.log("maOBJ");
 				//console.log(maOBJ);
 			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
-				//maOBJ = $("#tmpo").serializeArray(); 
 			fetch('/temp_out.json?n=' + Math.random(), 'GET', txjstmp, 30);
 			
 			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
@@ -67,7 +66,6 @@
   		}
 
   		function txjs_ua(s, d) {
-			//seOBJ = $("#scntf").serializeArray();
 			$("#btn1").prop("disabled", false);
   			if (s != 200) {
   				str_out1 += "Send command error"+'\n';
