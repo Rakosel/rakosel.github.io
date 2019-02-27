@@ -1,5 +1,5 @@
 /* upd3 	https://rakosel.github.io/WSB_side_loaded_css.css	*/	
-	.noscroll { position: fixed; }
+	.noscroll { position: fixed; display: none;}
 
 	.overlay { 
    		overflow-y: scroll;
