@@ -1,4 +1,4 @@
-//upd41d timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd41c timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK' otkl autoload
   // #246 for mobile	
 // touchmove
