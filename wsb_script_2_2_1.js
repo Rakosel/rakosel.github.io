@@ -415,8 +415,6 @@
 				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
 		//});	*/
 			
-			
-		});
   		window.onload = function() {
 			//$(".collapse").collapse('hide');
 			// Ubral onload.
