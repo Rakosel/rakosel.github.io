@@ -1,6 +1,6 @@
-//upd42c timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
-  // #84 dorabotal 'ACK' otkl autoload
-  // #246 for mobile	
+//upd44a timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+// #84 dorabotal 'ACK' otkl autoload
+// #246 for mobile	
 // touchmove
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -30,6 +30,7 @@
 		// zapros temperature
 		function sub_grad() 
   		{
+			maOBJ = $("#tmpo").serializeArray(); 
 				//maOBJ = $("#tmpo").serializeArray(); 
 				//console.log("maOBJ");
 				//console.log(maOBJ);
@@ -168,6 +169,7 @@
 			}
 			if(temp_json["debug"])
 			{
+				seOBJ = $("#scntf").serializeArray();
 				console.log(temp_json.debug);
 				if(temp_json.debug == "ON")
 				{
@@ -387,6 +389,31 @@
   			xhr.send();
   		}
 
+  		window.onload = function() {
+			//$(".collapse").collapse('hide');
+			// Ubral onload.
+			/*mds.load('https://rakosel.github.io/WSB_page_main.html', function()
+			{
+				 alert("loaded mds");
+			}).html();
+			sets.load('https://rakosel.github.io/WSB_page_slave.html', function()
+			{
+				   alert("loaded sets");
+			}).html();*/
+			//alert("ok");
+			//maOBJ = $('form').serializeArray(); 
+			//maOBJ = $("#tmpo").serializeArray(); 
+			//seOBJ = $("#scntf").serializeArray();
+			$('.bt0st').attr("value", "off");
+  		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
+  			$("#esp_urx").val('');
+			//rs = setInterval(refr_rtc, 2000);
+			i=0;
+			//$(".bsn0").collapse('show');
+			smgh();
+  		}
+
+
 		//sets.ready(function Slave() 
 		//{
 		/*
@@ -402,7 +429,7 @@
 		$("#lm75so_2").mousemove( function tos2(){
 				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
 		});
-		*/
+		
 		$("#lm75sc_1").on("touchmove mousemove", function thy1(){
 				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
 		});
@@ -415,31 +442,7 @@
 		$("#lm75so_2").on("touchmove mousemove", function tos2(){
 				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
 		});	
-			
-  		window.onload = function() {
-			//$(".collapse").collapse('hide');
-			// Ubral onload.
-			/*mds.load('https://rakosel.github.io/WSB_page_main.html', function()
-			{
-				 alert("loaded mds");
-			}).html();
-			sets.load('https://rakosel.github.io/WSB_page_slave.html', function()
-			{
-				   alert("loaded sets");
-			}).html();*/
-			//alert("ok");
-			//maOBJ = $('form').serializeArray(); 
-			maOBJ = $("#tmpo").serializeArray(); 
-			seOBJ = $("#scntf").serializeArray();
-			$('.bt0st').attr("value", "off");
-  		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
-  			$("#esp_urx").val('');
-			//rs = setInterval(refr_rtc, 2000);
-			i=0;
-			//$(".bsn0").collapse('show');
-			smgh();
-  		}
-
+		*/	
 
 		/*$("#lm75sc_1").mousemove( function(){
 				console.log(device.desktop());
