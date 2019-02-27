@@ -1,4 +1,4 @@
-//upd45e1 without timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd45c without timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
 // #84 dorabotal 'ACK' otkl autoload
 // #246 for mobile	
 // touchmove
@@ -426,7 +426,7 @@
 			//maOBJ = $('form').serializeArray(); 
 			//maOBJ = $("#tmpo").serializeArray(); 
 			//seOBJ = $("#scntf").serializeArray();
-			alert("1");
+			//alert("1");
 			$('.bt0st').attr("value", "off");
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
