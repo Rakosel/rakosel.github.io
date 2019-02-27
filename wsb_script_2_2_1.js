@@ -276,7 +276,7 @@
 						if( ast!="on")
 						{$('.bt0st').attr("value", "on"); rms_b(); shs_b(); }
 						else
-						{$('.bt0st').attr("value", "off"); rms_b(); } 
+						{$('.bt0st').attr("value", "off"); rms_b(); } }
 					else
 					{
 						//el.addAttr('value', 'on');
