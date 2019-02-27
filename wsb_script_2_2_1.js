@@ -390,7 +390,7 @@
 		sets.ready(function Slave() 
 		{
 
-		$("#lm75sc_1").on('touchmove', function(){
+		$("#lm75sc_1").on('touchmove', function thy2(){
 				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
 		});
 		$("#lm75sc_2").on('touchmove', function thy2(){
