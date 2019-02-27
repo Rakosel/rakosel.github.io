@@ -319,7 +319,7 @@
   		//	}
 		// CALLBACK resizes	
 		$(window).resize(function() {
-				//clresf();
+				clresf();
 		});
 		
 		function clresf()
