@@ -1,4 +1,4 @@
-//upd44d without timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd45b without timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
 // #84 dorabotal 'ACK' otkl autoload
 // #246 for mobile	
 // touchmove
@@ -255,31 +255,78 @@
 		
 		// MENU - dublirovanmie
 		$('.bt0st1').click(function bjst1()			  
-		{	$('.bt0st').click();});
+		{	//$('.bt0st').click();
+			// otkl osnov knopku
+			$('.bt0st').attr("value", "off");
+			ast = $('.bt0st').attr( "value" );
+			rms_b();rm_b();
+			// lg - ekran
+			shs_b();
+		});
 
-		
+		// main knopka
 		$('.bt0st').click(function bjst() 	
 		//function fixbar()
 		{
 						//var el = document.getElementsByClassName('.bt0st'); 
 						ast = $('.bt0st').attr( "value" );
-					
-						//el.addAttr('value', 'on');
-						if(ast!="on")
-						{$('.bt0st').attr("value", "on");}
-						else
-						{$('.bt0st').attr("value", "off");}
 
-							if( ast!="on")
-							{ sh_b(); }
-							else
-							{ rm_b(); }
-							if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
-							{		
-							if( ast!="on")
-							{ shs_b(); }
-							else
-							{ rms_b(); } } });
+					if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
+						{		
+						if( ast!="on")
+						{$('.bt0st').attr("value", "on"); rms_b(); shs_b(); }
+						else
+						{$('.bt0st').attr("value", "off"); rms_b(); } } 
+					else
+					{
+						//el.addAttr('value', 'on');
+						// ecli knopka vykl
+						if(ast!="on")
+						// knopka vkl 
+						{$('.bt0st').attr("value", "on"); rm_b();sh_b();}
+						// ecli knopka vkl
+						else	
+						// knopka vykl	
+						{$('.bt0st').attr("value", "off"); rm_b();}
+					}
+
+		});
+
+		
+		function rm_b()
+		{
+			// remove deviser HD
+
+					$('.mc1').removeClass('col-md-8 col-xl-8').html();
+					$('.bsn0').removeClass('col-md-4 col-xl-4').html();
+					$('.mc1').addClass('col-12').html();
+					//$('.mc1').removeClass('noscroll').html();
+					//$('.bsn0').removeClass('overlay').html();
+		}
+		function sh_b()
+		{
+			// deviser HD
+					$('.mc1').remove('col-12').html();
+					$('.mc1').addClass('col-md-8 col-xl-8').html();
+					$('.bsn0').addClass('col-md-4 col-xl-4').html();
+					//$('.mc1').addClass('noscroll').html();
+					//$('.bsn0').addClass('overlay').html();
+		}
+		function rms_b()
+		{
+					//$('.bsn0').removeClass('col-12').html();
+					$('.bsn0').removeClass('col-12 overlay').html();
+					$('.mc1').removeClass('noscroll collapse hide');
+					//sh_b();
+		}
+		function shs_b()
+		{
+					//rm_b();
+					//$('.bsn0').addClass('col-12').html();
+					$('.bsn0').addClass('col-12 overlay').html();
+					$('.mc1').addClass('noscroll collapse show').html();
+					//rm_b();
+		}
 		// DEBUG btn
 		$('.swdeb').click(function swdebfn() 	
 		{
@@ -304,6 +351,7 @@
 		// MENU - href + onclick()
 		function clbtn0()
 		{
+			ast = $('.bt0st').attr( "value" );
 			if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
 			{
 				if(ast!="on")
@@ -327,6 +375,7 @@
 		
 		function clresf()
 		{
+			ast = $('.bt0st').attr( "value" );
    			if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )
 				{
 					if(ast!="on")
@@ -340,39 +389,7 @@
 					{rms_b();sh_b();}
 				}						
 		}
-		
-		function rm_b()
-		{
 
-					$('.mc1').removeClass('col-md-8 col-xl-8').html();
-					$('.bsn0').removeClass('col-md-4 col-xl-4').html();
-					//$('.mc1').removeClass('noscroll').html();
-					//$('.bsn0').removeClass('overlay').html();
-		}
-		function sh_b()
-		{
-					$('.mc1').addClass('col-md-8 col-xl-8').html();
-					$('.bsn0').addClass('col-md-4 col-xl-4').html();
-					//$('.mc1').addClass('noscroll').html();
-					//$('.bsn0').addClass('overlay').html();
-		}
-		function rms_b()
-		{
-					//$('.bsn0').removeClass('col-12').html();
-					$('.bsn0').removeClass('col-12').html();
-					$('.mc1').removeClass('noscroll collapse hide');
-					$('.bsn0').removeClass('overlay').html();
-					sh_b();
-		}
-		function shs_b()
-		{
-					//rm_b();
-					//$('.bsn0').addClass('col-12').html();
-					$('.mc1').addClass('noscroll collapse hide').html();
-					$('.bsn0').addClass('overlay').html();
-					rm_b();
-					$('.bsn0').addClass('col-12').html();
-		}
 
   		function fetch(url, method, callback, time_out) {
   			console.log(url);
