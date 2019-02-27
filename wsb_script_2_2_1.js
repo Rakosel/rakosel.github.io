@@ -1,4 +1,4 @@
-//upd45b without timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd45c without timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
 // #84 dorabotal 'ACK' otkl autoload
 // #246 for mobile	
 // touchmove
@@ -255,13 +255,13 @@
 		
 		// MENU - dublirovanmie
 		$('.bt0st1').click(function bjst1()			  
-		{	//$('.bt0st').click();
+		{	$('.bt0st').click();
 			// otkl osnov knopku
-			$('.bt0st').attr("value", "off");
-			ast = $('.bt0st').attr( "value" );
-			rms_b();rm_b();
+			//$('.bt0st').attr("value", "off");
+			//ast = $('.bt0st').attr( "value" );
+			//rms_b();rm_b();
 			// lg - ekran
-			shs_b();
+			//shs_b();
 		});
 
 		// main knopka
@@ -379,7 +379,7 @@
    			if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )
 				{
 					// knopka vkl SM
-					if(ast!="on")
+					if(ast=="on")
 					{rms_b();shs_b();}	
 					else
 					{rms_b();}
@@ -387,7 +387,7 @@
 				else
 				{
 					// knopka vkl HD
-					if(ast!="on")
+					if(ast=="on")
 					{rm_b();sh_b();}	
 					else
 					{rm_b();}
