@@ -1,4 +1,4 @@
-//upd40a timer	https://rakosel.github.io/wsb_script_2_2_1.js  vkl timer
+//upd40c timer	https://rakosel.github.io/wsb_script_2_2_1.js  vkl timer
   // #84 dorabotal 'ACK' otkl autoload
   // #246 for mobile	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -385,22 +385,9 @@
   			xhr.send();
   		}
 
-		//sets.ready(function Slave() 
-		//{
+		sets.ready(function Slave() 
+		{
 
-		/*$("#lm75sc_1").mousemove( function(){
-				console.log(device.desktop());
-				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
-		});
-		$("#lm75sc_2").mousemove(function thy2(){
-				$('.lm75thy_2').text($("#lm75sc_2").val()+" C°");
-		});
-		$("#lm75so_1").mousemove( function tos1(){
-				$('.lm75tos_1').text($("#lm75so_1").val()+" C°");
-		});
-		$("#lm75so_2").mousemove( function tos2(){
-				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
-		});*/
 		$("#lm75sc_1").on('touchmove', function(){
 				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
 		});
@@ -412,7 +399,7 @@
 		});
 		$("#lm75so_2").on('touchmove', function tos2(){
 				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
-		//});	
+		});	
 			
 			
 		});
@@ -434,8 +421,23 @@
 			$('.bt0st').attr("value", "off");
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
-			rs = setInterval(refr_rtc, 2000);
+			//rs = setInterval(refr_rtc, 2000);
 			i=0;
 			//$(".bsn0").collapse('show');
 			smgh();
   		}
+
+
+		/*$("#lm75sc_1").mousemove( function(){
+				console.log(device.desktop());
+				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
+		});
+		$("#lm75sc_2").mousemove(function thy2(){
+				$('.lm75thy_2').text($("#lm75sc_2").val()+" C°");
+		});
+		$("#lm75so_1").mousemove( function tos1(){
+				$('.lm75tos_1').text($("#lm75so_1").val()+" C°");
+		});
+		$("#lm75so_2").mousemove( function tos2(){
+				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
+		});*/
