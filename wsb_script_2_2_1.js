@@ -1,4 +1,4 @@
-//upd42b timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd42c timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK' otkl autoload
   // #246 for mobile	
 // touchmove
@@ -389,7 +389,7 @@
 
 		//sets.ready(function Slave() 
 		//{
-		/*$("#lm75sc_1").mousemove( function thy1(){
+		$("#lm75sc_1").mousemove( function thy1(){
 				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
 		});
 		$("#lm75sc_2").mousemove(function thy2(){
@@ -400,8 +400,8 @@
 		});
 		$("#lm75so_2").mousemove( function tos2(){
 				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
-		});*/
-
+		});
+		/*
 		$("#lm75sc_1").on("touchmove mousemove", function thy1(){
 				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
 		});
@@ -413,7 +413,7 @@
 		});
 		$("#lm75so_2").on("touchmove mousemove", function tos2(){
 				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
-		//});	
+		//});	*/
 			
 			
 		});
