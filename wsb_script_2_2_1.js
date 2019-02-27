@@ -1,4 +1,4 @@
-//upd40c timer	https://rakosel.github.io/wsb_script_2_2_1.js  vkl timer
+//upd40c timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK' otkl autoload
   // #246 for mobile	
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
