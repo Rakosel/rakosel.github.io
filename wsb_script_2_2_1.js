@@ -1,4 +1,4 @@
-//upd42a timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd42b timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
   // #84 dorabotal 'ACK' otkl autoload
   // #246 for mobile	
 // touchmove
@@ -319,7 +319,7 @@
   		//	}
 		// CALLBACK resizes	
 		$(window).resize(function() {
-				clresf();
+				//clresf();
 		});
 		
 		function clresf()
