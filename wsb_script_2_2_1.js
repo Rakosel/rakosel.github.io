@@ -411,7 +411,7 @@
 			rs = setInterval(refr_rtc, 2000);
 			i=0;
 			//$(".bsn0").collapse('show');
-			smgh();
+			//smgh();
   		}
 
 
