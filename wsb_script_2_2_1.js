@@ -378,15 +378,19 @@
 			ast = $('.bt0st').attr( "value" );
    			if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )
 				{
+					// knopka vkl SM
 					if(ast!="on")
-					{shs_b();sh_b();}	
+					{rms_b();shs_b();}	
 					else
-					{rms_b();rm_b();}
+					{rms_b();}
 				}
 				else
 				{
+					// knopka vkl HD
 					if(ast!="on")
-					{rms_b();sh_b();}
+					{rm_b();sh_b();}	
+					else
+					{rm_b();}
 				}						
 		}
 
