@@ -1,4 +1,4 @@
-//upd45c without timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd45e1 without timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
 // #84 dorabotal 'ACK' otkl autoload
 // #246 for mobile	
 // touchmove
@@ -276,7 +276,7 @@
 						if( ast!="on")
 						{$('.bt0st').attr("value", "on"); rms_b(); shs_b(); }
 						else
-						{$('.bt0st').attr("value", "off"); rms_b(); } } 
+						{$('.bt0st').attr("value", "off"); rms_b(); } 
 					else
 					{
 						//el.addAttr('value', 'on');
@@ -426,10 +426,11 @@
 			//maOBJ = $('form').serializeArray(); 
 			//maOBJ = $("#tmpo").serializeArray(); 
 			//seOBJ = $("#scntf").serializeArray();
+			alert("1");
 			$('.bt0st').attr("value", "off");
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
-			rs = setInterval(refr_rtc, 2000);
+			//rs = setInterval(refr_rtc, 2000);
 			i=0;
 			//$(".bsn0").collapse('show');
 			//smgh();
