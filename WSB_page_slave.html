@@ -1,4 +1,4 @@
-		<!--upd13 option input range 			view-source:https://rakosel.github.io/WSB_page_slave.html -->				
+		<!--upd14t option input range 			view-source:https://rakosel.github.io/WSB_page_slave.html -->				
 					<form id = "scntf" class="needs-validation" novalidate>
 				<p class="h5 modal-title text-center">Настройка датчика LM75_1</p>				  
 				<div class="form-group row">
@@ -404,3 +404,18 @@
 				  </div>
 				</div>
 				</form>  
+ <script type="text/javascript">
+		$("#lm75sc_1").on("touchmove mousemove", function thy1(){
+				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
+		});
+		$("#lm75sc_2").on("touchmove mousemove", function thy2(){
+				$('.lm75thy_2').text($("#lm75sc_2").val()+" C°");
+		});
+		$("#lm75so_1").on("touchmove mousemove", function tos1(){
+				$('.lm75tos_1').text($("#lm75so_1").val()+" C°");
+		});
+		$("#lm75so_2").on("touchmove mousemove", function tos2(){
+				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
+		});	
+	 
+</script>
