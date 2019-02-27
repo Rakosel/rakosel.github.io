@@ -1,4 +1,4 @@
-//upd44b1 without timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd44d without timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
 // #84 dorabotal 'ACK' otkl autoload
 // #246 for mobile	
 // touchmove
@@ -360,7 +360,7 @@
 		{
 					//$('.bsn0').removeClass('col-12').html();
 					$('.bsn0').removeClass('col-12').html();
-					$('.mc1').removeClass('noscroll').html();
+					$('.mc1').removeClass('noscroll collapse hide');
 					$('.bsn0').removeClass('overlay').html();
 					sh_b();
 		}
@@ -368,7 +368,7 @@
 		{
 					//rm_b();
 					//$('.bsn0').addClass('col-12').html();
-					$('.mc1').addClass('noscroll').html();
+					$('.mc1').addClass('noscroll collapse hide').html();
 					$('.bsn0').addClass('overlay').html();
 					rm_b();
 					$('.bsn0').addClass('col-12').html();
