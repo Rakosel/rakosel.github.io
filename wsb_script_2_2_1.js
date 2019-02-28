@@ -1,4 +1,4 @@
-//upd45c without timer	https://rakosel.github.io/wsb_script_2_2_1.js  otkl timer
+//upd46tmp with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #246 for mobile	
 // touchmove
@@ -144,15 +144,16 @@
 			{
 				try
 				{
-				$("#"+maOBJ[i].name).removeClass('is-valid').html();
-				$("#"+maOBJ[i].name).removeClass('is-invalid').html();
 				if((temp_json.temp[i-3] == "#ERR") || (temp_json.temp[i-3] == ''))
 					{
-						$("#"+maOBJ[i].name).addClass('is-invalid').html();
-						
+						//$("#"+maOBJ[i].name).addClass('is-invalid').html();
+						tmpvlof(i);
 					}
 					else
-						{$("#"+maOBJ[i].name).addClass('is-valid').html()}
+					{
+						//$("#"+maOBJ[i].name).addClass('is-valid').html()
+						tmpvlon(i);
+					}
 				if((i-3)<=temp_json.temp.length)
 				{	
 					$("#"+maOBJ[i].name).val(temp_json.temp[i-3]);
@@ -164,7 +165,7 @@
 				}
 				}	
 				catch(e)
-				{console.log(e.message);}				
+				{tmpvlof(i);console.log(e.message);}				
 			}
 			}
 			if(temp_json["debug"])
@@ -212,6 +213,19 @@
   			//refr();
   		}
 		
+		function tmpvlon(var i)
+		{	
+			$("#"+maOBJ[i].name).removeClass('is-invalid').html();
+			$("#"+maOBJ[i].name).removeClass('is-valid').html();
+			$("#"+maOBJ[i].name).addClass('is-valid').html();
+		}
+
+		function tmpvlof(var i)
+		{
+			$("#"+maOBJ[i].name).removeClass('is-invalid').html();
+			$("#"+maOBJ[i].name).removeClass('is-valid').html();
+			$("#"+maOBJ[i].name).addClass('is-invalid').html();
+		}
 		
 		function sdmc_sh()
 		{
