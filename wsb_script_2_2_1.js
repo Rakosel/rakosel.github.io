@@ -1,6 +1,6 @@
-//upd46tmp1 with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd47a with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
-// #246 for mobile	
+// #303 vopros pro wide 	
 // touchmove
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
@@ -298,9 +298,9 @@
 					if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
 						{		
 						if( ast!="on")
-						{$('.bt0st').attr("value", "on"); rms_b(); shs_b(); }
+						{$('.bt0st').attr("value", "on"); rm_b(); rms_b(); shs_b(); }
 						else
-						{$('.bt0st').attr("value", "off"); rms_b(); } }
+						{$('.bt0st').attr("value", "off"); rm_b(); rms_b(); sh_b(); } }
 					else
 					{
 						//el.addAttr('value', 'on');
