@@ -250,7 +250,8 @@
 		function ftvall(cl)
 		{
 			for(i=0;i<maOBJ.length;i++)
-			{$("#"+maOBJ[i].name).val(cl);}
+			{$("#"+maOBJ[i].name).val(cl);$("#"+maOBJ[i].name).removeClass('is-invalid').html();
+			$("#"+maOBJ[i].name).removeClass('valid').html();}
 		}
 
   		function spt0()
