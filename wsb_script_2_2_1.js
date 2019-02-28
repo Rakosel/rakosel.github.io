@@ -1,4 +1,4 @@
-//upd46tmp with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd46tmp1 with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #246 for mobile	
 // touchmove
@@ -213,18 +213,18 @@
   			//refr();
   		}
 		
-		function tmpvlon(var i)
+		function tmpvlon(ii)
 		{	
-			$("#"+maOBJ[i].name).removeClass('is-invalid').html();
-			$("#"+maOBJ[i].name).removeClass('is-valid').html();
-			$("#"+maOBJ[i].name).addClass('is-valid').html();
+			$("#"+maOBJ[ii].name).removeClass('is-invalid').html();
+			$("#"+maOBJ[ii].name).removeClass('is-valid').html();
+			$("#"+maOBJ[ii].name).addClass('is-valid').html();
 		}
 
-		function tmpvlof(var i)
+		function tmpvlof(ii)
 		{
-			$("#"+maOBJ[i].name).removeClass('is-invalid').html();
-			$("#"+maOBJ[i].name).removeClass('is-valid').html();
-			$("#"+maOBJ[i].name).addClass('is-invalid').html();
+			$("#"+maOBJ[ii].name).removeClass('is-invalid').html();
+			$("#"+maOBJ[ii].name).removeClass('is-valid').html();
+			$("#"+maOBJ[ii].name).addClass('is-invalid').html();
 		}
 		
 		function sdmc_sh()
