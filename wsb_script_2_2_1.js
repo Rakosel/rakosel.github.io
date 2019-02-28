@@ -118,6 +118,7 @@
 				as1.addClass('badge-danger');
 				as1.text("ОШИБКА");
 				$('.swdeb').removeAttr('disabled'); 
+				ftmpd();
 				console.log("Connection proplem!");
 				return 0;					  
   				//clearTimeout(rs.handle);
@@ -250,7 +251,15 @@
 		function ftvall(cl)
 		{
 			for(i=0;i<maOBJ.length;i++)
-			{$("#"+maOBJ[i].name).val(cl);$("#"+maOBJ[i].name).removeClass('is-invalid').html();
+			{$("#"+maOBJ[i].name).val(cl);
+			$("#"+maOBJ[i].name).removeClass('is-invalid').html();
+			$("#"+maOBJ[i].name).removeClass('valid').html();}
+		}
+
+		function ftmpd()
+		{
+			for(i=0;i<maOBJ.length;i++)
+			{$("#"+maOBJ[i].name).removeClass('is-invalid').html();
 			$("#"+maOBJ[i].name).removeClass('valid').html();}
 		}
 
