@@ -1,7 +1,7 @@
-//upd47a with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd47b with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
-// touchmove
+// #415 wide window
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
@@ -412,7 +412,7 @@
 				{
 					// knopka vkl HD
 					if(ast=="on")
-					{rm_b();sh_b();}	
+					{rm_b();sh_b();$('.mc1').addClass('noscroll collapse show').html();}	
 					else
 					{rm_b();}
 				}						
