@@ -1,4 +1,4 @@
-//upd47b with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd47с with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #415 wide window
@@ -323,6 +323,7 @@
 
 					$('.mc1').removeClass('col-md-8 col-xl-8').html();
 					$('.bsn0').removeClass('col-md-4 col-xl-4').html();
+					$('.mc1').removeClass('noscroll collapse hide');
 					$('.mc1').addClass('col-12').html();
 					//$('.mc1').removeClass('noscroll').html();
 					//$('.bsn0').removeClass('overlay').html();
@@ -348,7 +349,7 @@
 					//rm_b();
 					//$('.bsn0').addClass('col-12').html();
 					$('.bsn0').addClass('col-12 overlay').html();
-					$('.mc1').addClass('noscroll collapse show').html();
+					$('.mc1').addClass('noscroll collapse hide').html();
 					//rm_b();
 		}
 		// DEBUG btn
@@ -412,7 +413,7 @@
 				{
 					// knopka vkl HD
 					if(ast=="on")
-					{rm_b();sh_b();$('.mc1').addClass('noscroll collapse show').html();}	
+					{rm_b();sh_b();}	
 					else
 					{rm_b();}
 				}						
