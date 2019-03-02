@@ -1,3 +1,2 @@
 # rakosel.github.io
-javascript place for WSB_Server
-sgfsfdg
+Тут мусор находться, не парься
