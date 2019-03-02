@@ -1,7 +1,7 @@
-//upd48b with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd48m with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
-// #415 wide window
+// #416 391
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 		var stopAll = false, ra, rs, submitted = false, lines_in, i, url;
 		var maOBJ,seOBJ;
@@ -387,13 +387,14 @@
 		function clbtn0()
 		{
 			ast = $('.bt0st').attr( "value" );
-			if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
+			//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
+			if(device.mobile() )
 			{
 				if(ast!="on")
 				{shs_b();sh_b();}	
 				else
 				{rms_b();rm_b();}
-				//$('.bt0st').click();
+				$('.bt0st').click();
 			}	
 		}
   		//function toObject(arr) {
@@ -411,7 +412,8 @@
 		function clresf()
 		{
 			ast = $('.bt0st').attr( "value" );
-   			if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )
+   			//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )
+			if(device.mobile() )
 				{
 					// knopka vkl SM
 					if(ast=="on")
