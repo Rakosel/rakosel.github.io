@@ -36,7 +36,7 @@
 				//console.log(maOBJ);
 			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
 				maOBJ = $("#tmpo").serializeArray(); 
-			fetch('/temp_out.json?n=' + Math.random(), 'GET', txjstmp, 30);
+			fetch('/temp_out.json?n=' + Math.random(), 'GET', txjstmp, 10);
 			
 			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
 			//temp_json = JSON.parse(c);
@@ -62,9 +62,9 @@
   			{
   				uart_json.uart_in = lines_in[i];
 					if(ua_mode==1)
-					{fetch('/uart_get?input=' + encodeURIComponent(lines_in[i])+'&', 'GET', txjs_ua, 30);}
+					{fetch('/uart_get?input=' + encodeURIComponent(lines_in[i])+'&', 'GET', txjs_ua, 10);}
 					else
-					{fetch('/uart.json?n=' + encodeURIComponent(JSON.stringify(uart_json))+'&', 'GET', txjs_ua, 30);}						
+					{fetch('/uart.json?n=' + encodeURIComponent(JSON.stringify(uart_json))+'&', 'GET', txjs_ua, 10);}						
   			}
 			
   		}
