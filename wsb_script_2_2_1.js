@@ -1,4 +1,4 @@
-//upd48ah with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd49 with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #415 wide window
@@ -253,14 +253,14 @@
 			for(i=0;i<maOBJ.length;i++)
 			{$("#"+maOBJ[i].name).val(cl);
 			$("#"+maOBJ[i].name).removeClass('is-invalid').html();
-			$("#"+maOBJ[i].name).removeClass('is-valid').html();}
+			$("#"+maOBJ[i].name).removeClass('valid').html();}
 		}
 
 		function ftmpd()
 		{
 			for(i=0;i<maOBJ.length;i++)
 			{$("#"+maOBJ[i].name).removeClass('is-invalid').html();
-			$("#"+maOBJ[i].name).removeClass('is-valid').html();}
+			$("#"+maOBJ[i].name).removeClass('valid').html();}
 		}
 
   		function spt0()
