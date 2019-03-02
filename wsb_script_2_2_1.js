@@ -21,7 +21,7 @@
 
 		function refr_rtc()
 		{
-			fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 30);
+			fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 10);
 			if ($("#auza").prop("checked"))
 			{sub_grad();}
 			//console.log("refr_rtc");
