@@ -1,4 +1,4 @@
-//upd48m with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd49m with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -273,8 +273,8 @@
 		function smgh()
 		{
 
-			if(window.screen.availWidth>768 || window.screen.width>768 || window.innerWidth>768)
-			//if(device.tablet() || device.mobile())
+			//if(window.screen.availWidth>768 || window.screen.width>768 || window.innerWidth>768)
+			if(!device.mobile() || !device.iphone())
 			{ $('.bt0st').click(); }	
 		}
 		
@@ -305,7 +305,8 @@
 						//var el = document.getElementsByClassName('.bt0st'); 
 						ast = $('.bt0st').attr( "value" );
 
-					if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
+					//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
+					if(device.mobile() || device.iphone())
 						{		
 						if( ast!="on")
 						{$('.bt0st').attr("value", "on"); rm_b(); rms_b(); shs_b(); }
