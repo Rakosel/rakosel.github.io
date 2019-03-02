@@ -1,4 +1,4 @@
-//upd47с with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd48 with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #415 wide window
@@ -453,6 +453,7 @@
 			//seOBJ = $("#scntf").serializeArray();
 			//alert("1");
 			$('.bt0st').attr("value", "off");
+			$('.navia').addClass('list-group-item list-group-item-action bg-light border');
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
 			rs = setInterval(refr_rtc, 2000);
