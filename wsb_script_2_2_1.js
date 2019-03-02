@@ -388,7 +388,7 @@
 		{
 			ast = $('.bt0st').attr( "value" );
 			//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
-			if(device.mobile() )
+			if(device.mobile() || device.iphone())
 			{
 				if(ast!="on")
 				{shs_b();sh_b();}	
@@ -413,7 +413,7 @@
 		{
 			ast = $('.bt0st').attr( "value" );
    			//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )
-			if(device.mobile() )
+			if(device.mobile() || device.iphone())
 				{
 					// knopka vkl SM
 					if(ast=="on")
