@@ -288,11 +288,12 @@
 			//shs_b();
 		});
 
-		fucntion erxclr_uart()			  
+		function erxclr_uart()			  
 		{	
 			$("#esp_tx").val("");
 		};
-		fucntion etxclr_uart()			  
+
+		function etxclr_uart()			  
 		{	
 			$("#esp_urx").val("");
 		};
