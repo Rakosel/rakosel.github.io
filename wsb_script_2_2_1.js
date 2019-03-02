@@ -1,4 +1,4 @@
-//upd48 with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd48a with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #415 wide window
@@ -288,6 +288,14 @@
 			//shs_b();
 		});
 
+		fucntion erxclr_uart()			  
+		{	
+			$("#esp_tx").val("");
+		};
+		fucntion etxclr_uart()			  
+		{	
+			$("#esp_urx").val("");
+		};
 		// main knopka
 		$('.bt0st').click(function bjst() 	
 		//function fixbar()
