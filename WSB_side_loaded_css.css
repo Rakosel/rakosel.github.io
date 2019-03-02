@@ -1,7 +1,8 @@
-/* upd3b 	https://rakosel.github.io/WSB_side_loaded_css.css	*/	
+/* upd3c 	https://rakosel.github.io/WSB_side_loaded_css.css	*/	
 
-	.noscroll { position: fixed; display: none;}
+	.noscroll { position: fixed;overflow:hidden; display: none;}
 
 	.overlay { 
    		overflow-y: scroll;
-/*top: 0; right: 0; bottom: 0; left: 0;overflow-y: scroll;overflow:hidden;display: none; */
+		}
+/*top: 0; right: 0; bottom: 0; left: 0;overflow-y: scroll;display: none; */
