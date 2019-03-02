@@ -1,4 +1,4 @@
-//upd48a with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd48ah with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #415 wide window
@@ -147,17 +147,17 @@
 				{
 				if((temp_json.temp[i-3] == "#ERR") || (temp_json.temp[i-3] == ''))
 					{
-						//$("#"+maOBJ[i]).addClass('is-invalid').html();
+						//$("#"+maOBJ[i].name).addClass('is-invalid').html();
 						tmpvlof(i);
 					}
 					else
 					{
-						//$("#"+maOBJ[i]).addClass('is-valid').html()
+						//$("#"+maOBJ[i].name).addClass('is-valid').html()
 						tmpvlon(i);
 					}
 				if((i-3)<=temp_json.temp.length)
 				{	
-					$("#"+maOBJ[i]).val(temp_json.temp[i-3]);
+					$("#"+maOBJ[i].name).val(temp_json.temp[i-3]);
 					console.log(temp_json.temp[i-3]);
 				}
 					
@@ -251,16 +251,16 @@
 		function ftvall(cl)
 		{
 			for(i=0;i<maOBJ.length;i++)
-			{$("#"+maOBJ[i]).val(cl);
-			$("#"+maOBJ[i]).removeClass('is-invalid').html();
-			$("#"+maOBJ[i]).removeClass('valid').html();}
+			{$("#"+maOBJ[i].name).val(cl);
+			$("#"+maOBJ[i].name).removeClass('is-invalid').html();
+			$("#"+maOBJ[i].name).removeClass('valid').html();}
 		}
 
 		function ftmpd()
 		{
 			for(i=0;i<maOBJ.length;i++)
-			{$("#"+maOBJ[i]).removeClass('is-invalid').html();
-			$("#"+maOBJ[i]).removeClass('valid').html();}
+			{$("#"+maOBJ[i].name).removeClass('is-invalid').html();
+			$("#"+maOBJ[i].name).removeClass('valid').html();}
 		}
 
   		function spt0()
