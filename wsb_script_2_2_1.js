@@ -275,7 +275,7 @@
 
 //if(window.screen.availWidth>768 || window.screen.width>768 || window.innerWidth>768)
 //| (device.desktop() && (window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 ))		
-			if(!device.mobile() || !device.iphone())
+			if(!device.mobile() )
 			{ $('.bt0st').click(); }	
 		}
 		
