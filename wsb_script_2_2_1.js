@@ -1,4 +1,4 @@
-//upd50m with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd50mb with timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -273,8 +273,9 @@
 		function smgh()
 		{
 
-			//if(window.screen.availWidth>768 || window.screen.width>768 || window.innerWidth>768)
-			if(!device.mobile() || !device.iphone() || (device.desktop() && (window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )))
+//if(window.screen.availWidth>768 || window.screen.width>768 || window.innerWidth>768)
+//| (device.desktop() && (window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 ))		
+			if(!device.mobile() || !device.iphone())
 			{ $('.bt0st').click(); }	
 		}
 		
@@ -304,9 +305,10 @@
 		{
 						//var el = document.getElementsByClassName('.bt0st'); 
 						ast = $('.bt0st').attr( "value" );
-
-					//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
-					if(device.mobile() || device.iphone() || (device.desktop() && (window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )))
+			
+//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
+//|| device.iphone() || (device.desktop() && (window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 ))
+					if(device.mobile() )
 						{		
 						if( ast!="on")
 						{$('.bt0st').attr("value", "on"); rm_b(); rms_b(); shs_b(); }
@@ -388,8 +390,8 @@
 		function clbtn0()
 		{
 			ast = $('.bt0st').attr( "value" );
-			//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
-			if(device.mobile() || device.iphone() || (device.desktop() && (window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )))
+//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)|| device.iphone() || (device.desktop() && (window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 ))
+			if(device.mobile() )
 			{
 				if(ast!="on")
 				{shs_b();sh_b();}	
@@ -413,8 +415,9 @@
 		function clresf()
 		{
 			ast = $('.bt0st').attr( "value" );
-   			//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )
-			if(device.mobile() || device.iphone() || (device.desktop() && (window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )) )
+//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )
+//|| (device.desktop() && (window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )) || device.iphone()
+			if(device.mobile() )
 				{
 					// knopka vkl SM
 					if(ast=="on")
