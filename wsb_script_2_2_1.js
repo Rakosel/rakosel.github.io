@@ -1,4 +1,4 @@
-//upd51 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd51a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -22,7 +22,7 @@
 		function refr_rtc()
 		{
 			fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 10);
-			if ($("#auza").prop('checked', true))
+			if ($('.swdebl').prop('checked'))
 			{sub_grad();}
 			//console.log("refr_rtc");
 		}
@@ -371,10 +371,10 @@
 						//var el = document.getElementsByClassName('.bt0st');
 						if (this.checked == true)
 							{$('.swdebl').text("Выключить режим настройки");this.setAttribute("disabled", "true");sdeb("ON");			 		
-							 	$("#auza").removeAttr('checked'); }
+							 	//$("#auza").removeAttr('checked'); }
 							else
 							{$('.swdebl').text("Включить режим настройки");this.setAttribute("disabled", "false");sdeb("OFF");
-								$("#auza").prop('checked', true);}
+								//$("#auza").prop('checked', true);}
 
 		});
 
