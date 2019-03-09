@@ -1,4 +1,4 @@
-//upd53d1 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd53d2 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -40,7 +40,7 @@
 			
 			while($("#gLM75ch" + i).val()!=undefined)
 			{
-				if($("#gLM75ch" + i).val()=="on")
+				if($("#gLM75ch" + i).prop("checked"))
 				{tarch|=(1 << i);}
 				console.log(tarch);
 				i++;
