@@ -1,4 +1,4 @@
-//upd53c with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd53c1 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -42,6 +42,8 @@
 			{$("#"+cnfOBJ[0].name).val(tos1);$("#"+cnfOBJ[1].name).val(thyst1);
 				cnfOBJ[1].value = thyst1;
 				cnfOBJ[0].value = tos1;
+				$('.lm75thy_1').text($("#"+cnfOBJ[0].name).val()+" C°");
+			  $('.lm75tos_1').text($("#"+cnfOBJ[1].name).val()+" C°");
 			}
 			
 			console.log(cnfOBJ[0].value+" "+ cnfOBJ[1].value);
