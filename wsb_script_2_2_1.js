@@ -1,4 +1,4 @@
-//upd53b4 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd53b5 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -36,9 +36,9 @@
 			
 			for(i=0;i<10;i++)
 			{
-				if($("#gLM75ch" + i).name)
+				if($("#gLM75ch" + i))
 				{console.log("true "+i); }
-				console.log($("#gLM75ch" + i).name);
+				console.log($("#gLM75ch" + i));
 			}
 		}
 
