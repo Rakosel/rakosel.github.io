@@ -38,11 +38,13 @@
 			console.log(cnfOBJ);
 			tos1 = cnfOBJ[1].value;
 			thyst1 = cnfOBJ[0].value;
-			if(cnfOBJ[0].value>=cnfOBJ[1].value)
+			if(cnfOBJ[0].value==cnfOBJ[1].value)
+			{cnfOBJ[0].value++;cnfOBJ[1].value--;}
+			if(cnfOBJ[0].value>cnfOBJ[1].value)
 			{$("#"+cnfOBJ[0].name).val(tos1);$("#"+cnfOBJ[1].name).val(thyst1);
 				cnfOBJ[1].value = thyst1;
 				cnfOBJ[0].value = tos1;
-				$('.lm75thy_1').text($("#"+cnfOBJ[0].name).val()+" C°");
+			  $('.lm75thy_1').text($("#"+cnfOBJ[0].name).val()+" C°");
 			  $('.lm75tos_1').text($("#"+cnfOBJ[1].name).val()+" C°");
 			}
 			
