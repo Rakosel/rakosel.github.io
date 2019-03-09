@@ -1,4 +1,4 @@
-//upd53d3 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd53d4 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -31,9 +31,17 @@
 		function btn_lm75_1()
 		{
 			i=0;
-			var tarch = 0;
+			var tarch = 0;	// conf
+			var tos1 = 0;	// tos1
+			var thyst1 = 0;	// thyst
 			cnfOBJ = $("#scntf").serializeArray(); 
 			console.log(cnfOBJ);
+			tos1 = cnfOBJ[1].val();
+			thyst1 = cnfOBJ[0].val();
+			if(cnfOBJ[0].val()>cnfOBJ[1].val())
+			{cnfOBJ[0].val() = tos1;cnfOBJ[1].val() = thyst1;}
+			
+			console.log(cnfOBJ[0].val()+" "+ cnfOBJ[1].val());
 			//$('input:checkbox:checked').each(function(){
     			//		alert($(this).val());
 			//});
@@ -54,7 +62,7 @@
 				//console.log("maOBJ");
 				//console.log(maOBJ);
 			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
-				maOBJ = $("#tmpo").serializeArray(); 
+			maOBJ = $("#tmpo").serializeArray(); 
 			fetch('/temp_out.json?n=' + Math.random(), 'GET', txjstmp, 10);
 			
 			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
