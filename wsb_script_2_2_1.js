@@ -1,4 +1,4 @@
-//upd53b3 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd53b4 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -33,8 +33,13 @@
 			i=0;
 			cnfOBJ = $("#scntf").serializeArray(); 
 			//console.log(cnfOBJ);
-			for(i=0;i<3;i++)
-			{console.log($("#gLM75ch" + i));}
+			
+			for(i=0;i<10;i++)
+			{
+				if($("#gLM75ch" + i).name)
+				{console.log("true "+i); }
+				console.log($("#gLM75ch" + i).name);
+			}
 		}
 
 		// zapros temperature
