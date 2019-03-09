@@ -1,4 +1,4 @@
-//upd53c4 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd54a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -8,6 +8,7 @@
   		var str_out = "", str_out1="";
   		var uart_json = {};
 		var temp_json = {};
+		var input_lm75 = {};
 		var scrPos = 0, ovShBtn0 = false;
 		var ast;
 		var ua_mode=0;
@@ -31,6 +32,7 @@
 		function btn_lm75_1()
 		{
 			i=0;
+			input_lm75 = {};
 			var tarch = 0;	// conf
 			var tos1 = 0;	// tos1
 			var thyst1 = 0;	// thyst
@@ -50,15 +52,17 @@
 			
 			console.log(cnfOBJ[0].value+" "+ cnfOBJ[1].value);
 			//$('input:checkbox:checked').each(function(){
-    			//		alert($(this).val());
 			//});
-			
+			input_lm75.input_lm75_1[0] = 1;
+			input_lm75.input_lm75_1[1] = cnfOBJ[0].value; // Thyst
+			input_lm75.input_lm75_1[2] = cnfOBJ[1].value; // Tos
 			while(($("#gLM75ch" + i).val()!=undefined) && (i < 100))
 			{
 				if($("#gLM75ch" + i).prop("checked"))
 				{tarch|=(1 << i);}
 				i++;
 			}
+			fetch('/input_lm75_1.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10)
 		}
 
 		// zapros temperature
