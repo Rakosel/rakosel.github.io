@@ -38,8 +38,8 @@
 			console.log(cnfOBJ);
 			tos1 = cnfOBJ[1].value;
 			thyst1 = cnfOBJ[0].value;
-			if(cnfOBJ[0].value>cnfOBJ[1].value)
-			{cnfOBJ[0].value = tos1;cnfOBJ[1].value = thyst1;}
+			if(cnfOBJ[0].value>=cnfOBJ[1].value)
+			{cnfOBJ[0].value = 100;cnfOBJ[1].value = 100;alert("!");}
 			
 			console.log(cnfOBJ[0].value+" "+ cnfOBJ[1].value);
 			//$('input:checkbox:checked').each(function(){
