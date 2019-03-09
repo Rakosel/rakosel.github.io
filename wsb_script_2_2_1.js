@@ -1,10 +1,10 @@
-//upd53a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd53b with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 		var stopAll = false, ra, rs, subwdeb = false, lines_in, i, url;
-		var maOBJ,seOBJ;
+		var maOBJ,seOBJ,cnfOBJ;
   		var str_out = "", str_out1="";
   		var uart_json = {};
 		var temp_json = {};
@@ -16,6 +16,7 @@
 		sds = $('.sideset');
 		mds = $('.macnt');
 		sets = $('.setcnt');
+		cnftmp = $('.scntf');
 		// rtc time auto from server
 
 
@@ -25,6 +26,12 @@
 			if ((subwdeb == false) && $("#autmp").prop("checked"))
 			{sub_grad();}
 			//console.log("refr_rtc");
+		}
+
+		function btn_lm75_1()
+		{
+			cnfOBJ = $('.scntf').serializeArray(); 
+			console.log(cnfOBJ);
 		}
 
 		// zapros temperature
