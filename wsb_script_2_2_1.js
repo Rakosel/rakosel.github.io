@@ -53,15 +53,20 @@
 			console.log(cnfOBJ[0].value+" "+ cnfOBJ[1].value);
 			//$('input:checkbox:checked').each(function(){
 			//});
-			input_lm75.input_lm75_1[0] = 1;
-			input_lm75.input_lm75_1[1] = cnfOBJ[0].value; // Thyst
-			input_lm75.input_lm75_1[2] = cnfOBJ[1].value; // Tos
+			//input_lm75.input_lm75_1[0] = 1;
+			
 			while(($("#gLM75ch" + i).val()!=undefined) && (i < 100))
 			{
 				if($("#gLM75ch" + i).prop("checked"))
 				{tarch|=(1 << i);}
 				i++;
 			}
+			
+			input_lm75 = {
+				  input_lm75_1: {
+					  tarch,cnfOBJ[0].value,cnfOBJ[1].value
+				  }
+				};
 			fetch('/input_lm75_1.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10)
 		}
 
