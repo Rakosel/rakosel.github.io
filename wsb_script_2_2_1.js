@@ -1,4 +1,4 @@
-//upd53 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd53a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -22,7 +22,7 @@
 		function refr_rtc()
 		{
 			fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 10);
-			if (subwdeb == false)
+			if ((subwdeb == false) && $("#autmp").prop("checked"))
 			{sub_grad();}
 			//console.log("refr_rtc");
 		}
