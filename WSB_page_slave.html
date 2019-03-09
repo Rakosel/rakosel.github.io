@@ -1,11 +1,8 @@
-<!--upd15a option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
-					<form id = "scntf" class="needs-validation" novalidate>
-				<p class="h5 modal-title text-center">Настройка датчика LM75_1</p>	
-				<hr>		
+<!--upd15b1 option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
 				<!--
 					<div class="form-group row">
 				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 col-sm-3 offset-sm-1 col-3 offset-1">Pointer</div>
-<div class="col-xs-3 col-md-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-sm-4 col-5"><select id="lm75_poil1" class="form-control">
+<div class="col-xs-3 col-md-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-sm-4 col-5"><select id="lm75_poil1" name="lm75_poil1" class="form-control">
 				<option value="0" selected>Выбор...</option>
 				<option value="1">Conf</option>
 				<option value="2">Thyst</option>
@@ -14,41 +11,36 @@
 				  </div>
 				</div>
 				-->
+
+				<form id = "scntf" class="needs-validation" novalidate>
+				<p class="h5 modal-title text-center">Настройка датчика LM75_1</p>	
+				<hr>		
 				<div class="form-group row">
 				  <div class="offset-xl-1 offset-lg-1 col-lg-2 col-md-2 offset-md-1 offset-sm-1 col-sm-3 col-3 offset-1">Config</div>
 <div class=" offset-lg-0 offset-md-0 offset-sm-0 col-sm-5 col-6 col-xl-4 col-lg-5 col-md-5">
 				<!-- М.б. задават ь через js -->
 						<span>D4 </span> 
-						<input type="checkbox" name="gLM75ch4" id="gLM75ch4">
+						<input type="checkbox" class="form-control-range" name="gLM75ch4" id="gLM75ch4">
 						<span>D3 </span> 
-						<input type="checkbox" name="gLM75ch3" id="gLM75ch3">
+						<input type="checkbox" class="form-control-range" name="gLM75ch3" id="gLM75ch3">
 						<span>D2 </span> 
-						<input type="checkbox" name="gLM75ch2" id="gLM75ch2">
+						<input type="checkbox" class="form-control-range" name="gLM75ch2" id="gLM75ch2">
 						<span>D1</span> 
-						<input type="checkbox" name="gLM75ch1" id="gLM75ch1">
+						<input type="checkbox" class="form-control-range" name="gLM75ch1" id="gLM75ch1">
 						<span>D0 </span> 
-						<input type="checkbox" name="gLM75ch0" id="gLM75ch0">
+						<input type="checkbox" class="form-control-range" name="gLM75ch0" id="gLM75ch0">
 						<!-- Disabled - Attr('Checked') -->
 					</div>
 				  </div>
 				<div class="form-group row">
 				  <div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-2 col-2 offset-1">Thyst</div>
 <div class="col col-xs-3 offset-xl-0 offset-lg-0 offset-md-0 offset-sm-0 col-sm-7 col-7 col-lg-7 col-md-7 col-xl-7">
-				<!--<input type="range" class="form-control-range" id="lm75sc_1">
-				<datalist id="rLM75_1">
-				 </datalist>
-				<div class="sl_lm75_1">
-				<a class="ui_lm75_1" href="#">
-				<div id="sl_lm75_1_res">0</div>
-				</a>
-				<input type="range" min="-55" max="125" step="1" class="form-control-range" id="lm75sc_1" >
-				</div>-->
 				<label for="lm75sc_1" class="lm75thy_1 text-center">0 C&deg</label>
 				<input type="range" name="lm75sc_1" class="form-control-range" id="lm75sc_1" min="-55" max="125" step="1" value="0">
 				</div>
 				</div>
 				<div class="form-group row">
-				  <div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-2 offset-1 col-2">Tos</div>
+				<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-2 offset-1 col-2">Tos</div>
 				<div class="col col-xs-3 offset-xl-0 offset-lg-0 offset-md-0 offset-sm-0 col-sm-7 col-lg-7 col-md-7 col-xl-7">
 				<label for="lm75so_1" class="lm75tos_1 text-center">1 C&deg</label>
 				<input type="range" name="lm75so_1" class="form-control-range" id="lm75so_1" min="-55" max="125" step="1" value="1">
@@ -63,32 +55,20 @@
 				</div>
 				<p class="h5 modal-title text-center">Настройка датчика LM75_2</p>
 				<hr>	
-				<!--
-				<div class="form-group row">
-				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3 offset-1 col-3">Pointer2</div>
-<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-6 offset-md-0 col-md-4 col-sm-4 offset-sm-0 offset-0"><select id="lm75_poil2" class="form-control">
-       				<option selected>Выбор...</option>
-				<option value="1">Conf</option>
-				<option value="2">Thyst</option>
-				<option value="3">Tos</option>
-					</select>
-				  </div>
-				</div>
-				-->
 				<div class="form-group row">
 				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 col-sm-3 offset-sm-1 offset-1 col-3">Config2</div>
 <div class=" offset-lg-0 col-md-5 col-sm-5 col-6 offset-0 col-xl-4 col-lg-5">
 				<!-- М.б. задават ь через js -->
 						<span>D4 </span> 
-			  		  <input type="checkbox" name="gLM752ch4" id="gLM752ch4"> 
+			  		  <input type="checkbox" class="form-control-range" name="gLM752ch4" id="gLM752ch4"> 
 						<span>D3 </span> 
-					  <input type="checkbox" name="gLM752ch3" id="gLM752ch3">
+					  <input type="checkbox" class="form-control-range" name="gLM752ch3" id="gLM752ch3">
 						<span>D2 </span> 
-					  <input type="checkbox" name="gLM752ch2" id="gLM752ch2">
+					  <input type="checkbox" class="form-control-range" name="gLM752ch2" id="gLM752ch2">
 						<span>D1 <span>
-					  <input type="checkbox" name="gLM752ch1" id="gLM752ch1">
+					  <input type="checkbox" class="form-control-range" name="gLM752ch1" id="gLM752ch1">
 						<span>D0 </span> 
-					  <input type="checkbox" name="gLM752ch0" id="gLM752ch0">
+					  <input type="checkbox" class="form-control-range" name="gLM752ch0" id="gLM752ch0">
 						<!-- Disabled - Attr('Checked') -->
 					</div>
 				  </div>
