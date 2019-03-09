@@ -36,10 +36,10 @@
 			var thyst1 = 0;	// thyst
 			cnfOBJ = $("#scntf").serializeArray(); 
 			console.log(cnfOBJ);
-			if(cnfOBJ[0].value==cnfOBJ[1].value)
-			{cnfOBJ[0].value--;cnfOBJ[1].value++;}
 			tos1 = cnfOBJ[1].value;
 			thyst1 = cnfOBJ[0].value;
+			if(tos1==thyst1)
+			{thyst1++;tos1--;}
 			if(thyst1>tos1)
 			{$("#"+cnfOBJ[0].name).val(tos1);$("#"+cnfOBJ[1].name).val(thyst1);
 				cnfOBJ[1].value = thyst1;
