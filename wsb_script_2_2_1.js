@@ -1,4 +1,4 @@
-//upd54c8 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd54c9 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	
 // 
@@ -78,9 +78,12 @@
 			//$('input:checkbox:checked').each(function(){
 			//});&& ($("#gLM75ch" + i).val()!=undefined)
 			//input_lm75.input_lm75_1[0] = 1;
-
 			thyst1 = parseInt(sc_1l.val());
 			tos1 = parseInt(so_1l.val());
+			
+			thyst1=thyst1*8;
+			tos1=tos1*8;
+
 			input_lm75 = {
 				  "lm75_conf": [
 					  tarch,thyst1,tos1
