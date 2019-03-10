@@ -1,4 +1,4 @@
-//upd54c9 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd54d with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	
 // 
@@ -81,8 +81,8 @@
 			thyst1 = parseInt(sc_1l.val());
 			tos1 = parseInt(so_1l.val());
 			
-			thyst1=thyst1*8;
-			tos1=tos1*8;
+			thyst1=thyst1*2;
+			tos1=tos1*2;
 
 			input_lm75 = {
 				  "lm75_conf": [
