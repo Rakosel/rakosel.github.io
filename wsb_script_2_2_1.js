@@ -39,11 +39,11 @@
 			var sc_1l = $("#lm75sc_1");
 			var so_1l = $("#lm75so_1");
 			//cnfOBJ = $("#scntf").serializeArray();			
-			//for(i=0;(i < 5);++i )
-			//{
-			//	if($("#gLM75ch" + i).prop("checked"))
-			//	{tarch|=(1 << i);}
-			//}
+			for(i=0;(i < 5) && ($("#gLM75ch" + i).val()!=undefined);++i )
+			{
+				if($("#gLM75ch" + i).prop("checked"))
+				{tarch|=(1 << i);}
+			}
 			//&& ($("#gLM75ch" + i).val()!=undefined
 			 
 			//console.log(cnfOBJ);
