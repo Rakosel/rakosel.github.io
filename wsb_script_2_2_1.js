@@ -1,4 +1,4 @@
-//upd54c3 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd54c4 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -36,6 +36,13 @@
 			var tarch = 0;	// conf
 			var tos1 = 0;	// tos1
 			var thyst1 = 0;	// thyst
+						
+			//for(i=0;(i < 5);++i )
+			//{
+			//	if($("#gLM75ch" + i).prop("checked"))
+			//	{tarch|=(1 << i);}
+			//}
+			//&& ($("#gLM75ch" + i).val()!=undefined
 			cnfOBJ = $("#scntf").serializeArray(); 
 			console.log(cnfOBJ);
 			tos1 = $("#"+cnfOBJ[1].name).val();
@@ -69,12 +76,7 @@
 			//$('input:checkbox:checked').each(function(){
 			//});&& ($("#gLM75ch" + i).val()!=undefined)
 			//input_lm75.input_lm75_1[0] = 1;
-			
-			for(i=0;(i < 5);++i )
-			{
-				if($("#gLM75ch" + i).prop("checked"))
-				{tarch|=(1 << i);}
-			}
+
 			thyst1 = parseInt(cnfOBJ[0].value);
 			tos1 = parseInt(cnfOBJ[1].value);
 			input_lm75 = {
