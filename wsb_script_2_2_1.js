@@ -48,6 +48,8 @@
 				$("#"+cnfOBJ[0].name).val(thyst1);$("#"+cnfOBJ[1].name).val(tos1);
 				cnfOBJ[0].value = thyst1;
 				cnfOBJ[1].value = tos1;
+			  	$('.lm75thy_1').text($("#"+cnfOBJ[0].name).val()+" C°");
+			  	$('.lm75tos_1').text($("#"+cnfOBJ[1].name).val()+" C°");
 				return;
 			}
 			if(thyst1>tos1)
