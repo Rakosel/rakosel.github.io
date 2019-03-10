@@ -82,7 +82,7 @@
 					  tarch,thyst1,tos1
 				  ]
 				};
-			fetch('/input_lm75_1.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10);
+			//fetch('/input_lm75_1.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10);
 			console.log(JSON.stringify(input_lm75));
 		}
 
