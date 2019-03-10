@@ -63,9 +63,9 @@
 			}
 			
 			input_lm75 = {
-				  input_lm75_1: {
+				  "input_lm75_1": [
 					  tarch,cnfOBJ[0].value,cnfOBJ[1].value
-				  }
+				  ]
 				};
 			fetch('/input_lm75_1.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10)
 		}
