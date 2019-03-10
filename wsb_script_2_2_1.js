@@ -1,4 +1,4 @@
-//upd54c1 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd54c2 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -70,7 +70,7 @@
 			//});
 			//input_lm75.input_lm75_1[0] = 1;
 			
-			for(i=0;(i < 4) && ($("#gLM75ch" + i).val()!=undefined);++i )
+			for(i=0;(i < 5) && ($("#gLM75ch" + i).val()!=undefined);++i )
 			{
 				if($("#gLM75ch" + i).prop("checked"))
 				{tarch|=(1 << i);}
@@ -82,8 +82,9 @@
 					  tarch,thyst1,tos1
 				  ]
 				};
-			fetch('/input_lm75_1.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10);
+			//fetch('/input_lm75_1.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10);
 			console.log(JSON.stringify(input_lm75));
+			cnfOBJ = { };
 		}
 
 		// zapros temperature
