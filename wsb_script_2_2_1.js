@@ -1,4 +1,4 @@
-//upd54c4 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd54c5 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet
 //	
 // 
@@ -43,7 +43,7 @@
 			//	{tarch|=(1 << i);}
 			//}
 			//&& ($("#gLM75ch" + i).val()!=undefined
-			cnfOBJ = $("#scntf").serializeArray(); 
+			 
 			console.log(cnfOBJ);
 			tos1 = $("#"+cnfOBJ[1].name).val();
 			thyst1 = $("#"+cnfOBJ[0].name).val();
@@ -97,9 +97,9 @@
 				//console.log("maOBJ");
 				//console.log(maOBJ);
 			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
-			maOBJ = $("#tmpo").serializeArray(); 
+			//maOBJ = $("#tmpo").serializeArray(); 
 			fetch('/temp_out.json?n=' + Math.random(), 'GET', txjstmp, 10);
-			
+			console.log(maOBJ);
 			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
 			//temp_json = JSON.parse(c);
 			// var data = JSON.stringify( $("tmpo").serializeArray() ); <-----------			  
@@ -532,6 +532,7 @@
 			//maOBJ = $("#tmpo").serializeArray(); 
 			//seOBJ = $("#scntf").serializeArray();
 			//alert("1");
+			cnfOBJ = $("#scntf").serializeArray();
 			$('.bt0st').attr("value", "off");
 			$('.navia').addClass('list-group-item list-group-item-action bg-light border');
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
