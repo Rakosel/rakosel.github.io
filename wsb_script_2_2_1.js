@@ -1,4 +1,4 @@
-//upd54d with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd54d1 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -40,6 +40,7 @@
 			console.log(cnfOBJ);
 			tos1 = cnfOBJ[1].value;
 			thyst1 = cnfOBJ[0].value;
+			console.log(tos1 + " " + thyst1);
 			if(tos1==thyst1)
 			{	
 				if(thyst1<0 && tos1<0){thyst1++;tos1--;}
