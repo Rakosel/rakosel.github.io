@@ -1,5 +1,5 @@
 //upd54c6 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
-// #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet
+// #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	
 // 
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
@@ -36,7 +36,7 @@
 			var tarch = 0;	// conf
 			var tos1 = 0;	// tos1
 			var thyst1 = 0;	// thyst
-						
+			cnfOBJ = $("#scntf").serializeArray();			
 			//for(i=0;(i < 5);++i )
 			//{
 			//	if($("#gLM75ch" + i).prop("checked"))
@@ -532,7 +532,7 @@
 			//maOBJ = $("#tmpo").serializeArray(); 
 			//seOBJ = $("#scntf").serializeArray();
 			//alert("1");
-			cnfOBJ = $("#scntf").serializeArray();
+			
 			$('.bt0st').attr("value", "off");
 			$('.navia').addClass('list-group-item list-group-item-action bg-light border');
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
