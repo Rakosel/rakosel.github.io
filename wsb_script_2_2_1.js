@@ -77,11 +77,11 @@
 				{tarch|=(1 << i);}
 				i++;
 			}
-			//thyst1 = parseInt(cnfOBJ[0].value);
-			//tos1 = parseInt(cnfOBJ[1].value);
+			thyst1 = parseInt(cnfOBJ[0].value);
+			tos1 = parseInt(cnfOBJ[1].value);
 			input_lm75 = {
 				  "lm75_conf": [
-					  tarch,parseInt(cnfOBJ[0].value),parseInt(cnfOBJ[1].value)
+					  tarch,thyst1,tos1
 				  ]
 				};
 			fetch('/input_lm75_1.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10);
