@@ -1,7 +1,7 @@
 //upd54c4 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
-// #84 dorabotal 'ACK' otkl autoload
-// #303 vopros pro wide 	
-// #416 391
+// #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet
+//	
+// 
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 		var stopAll = false, ra, rs, subwdeb = false, lines_in, i, url;
 		var maOBJ,seOBJ,cnfOBJ;
