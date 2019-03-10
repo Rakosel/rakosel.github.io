@@ -1,4 +1,4 @@
-//upd54c7 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd54c8 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	
 // 
@@ -86,7 +86,7 @@
 					  tarch,thyst1,tos1
 				  ]
 				};
-			//fetch('/input_lm75_1.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10);
+			fetch('/input_lm75_1.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10);
 			console.log(JSON.stringify(input_lm75));
 			//cnfOBJ = { };
 		}
