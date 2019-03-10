@@ -70,11 +70,10 @@
 			//});
 			//input_lm75.input_lm75_1[0] = 1;
 			
-			while(($("#gLM75ch" + i).val()!=undefined) && (i < 5))
+			for(i=0;(i < 5) && ($("#gLM75ch" + i).val()!=undefined);++i )
 			{
 				if($("#gLM75ch" + i).prop("checked"))
 				{tarch|=(1 << i);}
-				i++;
 			}
 			thyst1 = parseInt(cnfOBJ[0].value);
 			tos1 = parseInt(cnfOBJ[1].value);
