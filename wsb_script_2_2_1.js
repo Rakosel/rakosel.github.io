@@ -1,4 +1,4 @@
-//upd54b6 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd54d with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #84 dorabotal 'ACK' otkl autoload
 // #303 vopros pro wide 	
 // #416 391
@@ -80,7 +80,7 @@
 			//thyst1 = parseInt(cnfOBJ[0].value);
 			//tos1 = parseInt(cnfOBJ[1].value);
 			input_lm75 = {
-				  "input_lm75_1": [
+				  "lm75_conf": [
 					  tarch,parseInt(cnfOBJ[0].value),parseInt(cnfOBJ[1].value)
 				  ]
 				};
