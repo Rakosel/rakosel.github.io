@@ -49,8 +49,7 @@
 			  $('.lm75thy_1').text($("#"+cnfOBJ[0].name).val()+" C°");
 			  $('.lm75tos_1').text($("#"+cnfOBJ[1].name).val()+" C°");
 			}
-			
-			console.log(cnfOBJ[0].value+" "+ cnfOBJ[1].value);
+			//console.log(cnfOBJ[0].value+" "+ cnfOBJ[1].value);
 			//$('input:checkbox:checked').each(function(){
 			//});
 			//input_lm75.input_lm75_1[0] = 1;
@@ -67,7 +66,8 @@
 					  tarch,cnfOBJ[0].value,cnfOBJ[1].value
 				  ]
 				};
-			fetch('/input_lm75_1.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10)
+			fetch('/input_lm75_1.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10);
+			console.log(JSON.stringify(input_lm75));
 		}
 
 		// zapros temperature
