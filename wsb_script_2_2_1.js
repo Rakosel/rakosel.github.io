@@ -1,4 +1,4 @@
-//upd55 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd55a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	
 // 
@@ -47,7 +47,7 @@
 			//&& ($("#gLM75ch" + i).val()!=undefined
 			 
 			//console.log(cnfOBJ);
-			tos1; = sc_1l.val();
+			tos1 = sc_1l.val();
 			thyst1 = so_1l.val();
 			console.log(tos1 + " " + thyst1);
 			if(thyst1>tos1 && (thyst1<0) && (tos1<0))
