@@ -37,7 +37,7 @@
 		{
 			bmeOBJ = $("#scntf").serializeArray(); 
 			console.log(bmeOBJ);
-			fetch('/bme280_1_cb.json?n=' + Math.random(), 'GET', txjstmp, 10);
+			fetch('/output_bme280_1.json?n=' + Math.random(), 'GET', txjstmp, 10);
 		}
 
 		// cont: TEMP, RTC, DEBUG + Settings
