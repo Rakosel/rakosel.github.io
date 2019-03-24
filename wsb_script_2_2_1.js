@@ -1,7 +1,7 @@
-//upd56 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd56a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
-// 
+// #77 out
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 
 //		onclick="btn_bm280_1_Wr()">Задать</button></div>
@@ -69,11 +69,20 @@
 					{temp_json = JSON.parse(d);console.log(s,temp_json);}
 					// ftvall - form clear
 					catch(e)
-					{ftvall("");console.log(s,e.message);}
+					{ftvall("");console.log(s,e.message);return 0;}
   				}
   				else
-  				{console.log(e.message);ftvall("");}
+  				{console.log("d not string");ftvall("");return 0;}
   			}
+			if(temp_json["bme280_1_ou"])
+			{
+				i=0;
+				//temp_json.bme280_1_ou[i]
+			 	//for(i in temp_json.rtc_get)
+			 	//{str_out += temp_json.rtc_get[i] + '-'	}
+				//$(".ptime").text(str_out.substring(0, str_out.length - 1));
+				
+			}	
 			if(temp_json["temp"] )
 			{
 			for(i=3;i<=maOBJ.length;i++)
