@@ -1,10 +1,14 @@
-//upd55b with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+//upd56 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
-//	
+//	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
+
+//		onclick="btn_bm280_1_Wr()">Задать</button></div>
+//		 onclick="btn_bm280_1_Rd()">Считать</button></div>
+//	
 		var stopAll = false, ra, rs, subwdeb = false, lines_in, i, url;
-		var maOBJ,seOBJ,cnfOBJ;
+		var maOBJ,seOBJ,bmeOBJ;
   		var str_out = "", str_out1="";
   		var uart_json = {};
 		var temp_json = {};
@@ -28,156 +32,14 @@
 			{sub_grad();}
 			//console.log("refr_rtc");
 		}
-
-		function btn_lm75_1()
+		
+		function btn_bm280_1_Rd()
 		{
-			var i=0;
-			var input_lm75 = {};
-			var tarch = 0;	// conf
-			var tos1 = 0;	// tos1
-			var thyst1 = 0;	// thyst
-			var sc_1l = $("#lm75sc_1");
-			var so_1l = $("#lm75so_1");
-			//cnfOBJ = $("#scntf").serializeArray();			
-			for(i=0;(i < 5) && ($("#gLM75ch" + i).val()!=undefined);++i )
-			{
-				if($("#gLM75ch" + i).prop("checked"))
-				{tarch|=(1 << i);}
-			}
-			//&& ($("#gLM75ch" + i).val()!=undefined
-			 
-			//console.log(cnfOBJ);
-			tos1 = sc_1l.val();
-			thyst1 = so_1l.val();
-			console.log(tos1 + " " + thyst1);
-			if(thyst1>tos1 && (thyst1<0) && (tos1<0))
-			{
-				i=tos1;
-				thyst1 = tos1;
-				tos1 = thyst1;
-			console.log("thyst1>tos1 && (thyst1<0) && (tos1<0)" + tos1 + " " + thyst1);
-				//cnfOBJ[1].value = thyst1;
-				//cnfOBJ[0].value = tos1;
-			}
-			else if(thyst1>tos1)
-			{
-				i=thyst1;
-				thyst1 = tos1;
-				tos1 = i;
-			console.log("thyst1>tos1" + tos1 + " " + thyst1);
-				//cnfOBJ[1].value = tos1;
-				//cnfOBJ[0].value = thyst1;
-			}
-			if(tos1==thyst1)
-			{	
-				if(thyst1<0 && tos1<0)
-				{thyst1--;}
-				else
-				{tos1++;}
-				//cnfOBJ[0].value = thyst1;
-				//cnfOBJ[1].value = tos1;
-			}
-			sc_1l.val(thyst1);so_1l.val(tos1);
-			  $('.lm75thy_1').text(sc_1l.val() +" C°");
-			  $('.lm75tos_1').text(so_1l.val() +" C°");
-			//console.log(cnfOBJ[0].value+" "+ cnfOBJ[1].value);
-			//$('input:checkbox:checked').each(function(){
-			//});&& ($("#gLM75ch" + i).val()!=undefined)
-			//input_lm75.input_lm75_1[0] = 1;
-			thyst1 = parseInt(sc_1l.val());
-			tos1 = parseInt(so_1l.val());
-			
-			thyst1=thyst1*2;
-			tos1=tos1*2;
-
-			input_lm75 = {
-				  "lm75_conf": [
-					  tarch,thyst1,tos1
-				  ]
-				};
-			fetch('/input_lm75_2.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10);
-			console.log(JSON.stringify(input_lm75));
-			//cnfOBJ = { };
+			bmeOBJ = $("#scntf").serializeArray(); 
+			console.log(bmeOBJ);
+			fetch('/bme280_1_cb.json?n=' + Math.random(), 'GET', txjstmp, 10);
 		}
 
-		// zapros temperature
-		function sub_grad() 
-  		{
-			maOBJ = $("#tmpo").serializeArray(); 
-				//maOBJ = $("#tmpo").serializeArray(); 
-				//console.log("maOBJ");
-				//console.log(maOBJ);
-			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
-			//maOBJ = $("#tmpo").serializeArray(); 
-			fetch('/temp_out.json?n=' + Math.random(), 'GET', txjstmp, 10);
-			console.log(maOBJ);
-			//var c = '{"tm_adc":["_adc"],"bme280":[7,8,9,10,11],"temp_th":[0,1,2,3,4,5]}';
-			//temp_json = JSON.parse(c);
-			// var data = JSON.stringify( $("tmpo").serializeArray() ); <-----------			  
-			//$.each(data, function(index,value)
-			//{ } );
-  		}	
-		
-  		function submit_uart() 
-  		{
-  			$("#btn1").prop("disabled", true);
-			// spt0 - preobrazovanie ot mysora na UART
-  			lines_in = spt0();
-  			url = "";
-  			uart_json.uart_out = "null";
-				
-				if ($("#uart_get_ch").prop("checked"))
-				{ua_mode=1;}
-				else
-				{ua_mode=0;}
-				
-  			for (i = 0; i < lines_in.length; i++)
-  			{
-  				uart_json.uart_in = lines_in[i];
-					if(ua_mode==1)
-					{fetch('/uart_get?input=' + encodeURIComponent(lines_in[i])+'&', 'GET', txjs_ua, 10);}
-					else
-					{fetch('/uart.json?n=' + encodeURIComponent(JSON.stringify(uart_json))+'&', 'GET', txjs_ua, 10);}						
-  			}
-			
-  		}
-
-  		function txjs_ua(s, d) {
-			seOBJ = $("#scntf").serializeArray();
-			$("#btn1").prop("disabled", false);
-  			if (s != 200) {
-  				str_out1 += "Send command error"+'\n';
-  				//clearTimeout(rs.handle);
-  				console.log("Connection proplem!");
-  			} else {
-  				if (typeof d === 'string') {
-  					console.log("priem ok!");
-					try
-					{uart_json = JSON.parse(d);}
-					catch(e)
-					{console.log(e);return 0;}
-  				}
-  				else
-  				{uart_json.uart_out="null";uart_json.uart_in="null";}
-				console.log(uart_json);
-				if(uart_json.uart_out=="")
-				{str_out1 += 'ACK' +'\n';}
-				else
-				{str_out1 += uart_json.uart_out +'\n';}
-				//console.log(uart_json.uart_out);
-  			}
-			var esp_uart_out_val  = $("#esp_urx")
-			if(esp_uart_out_val.val()!="")
-  			{esp_uart_out_val.val(esp_uart_out_val.val()+str_out1);}
-			else
-			{esp_uart_out_val.val(str_out1);}
-			console.log(str_out1);
-			str_out1="";
-  			//clearTimeout(rs.handle);
-  			//rs = to(refr, 3);
-  			//refr();
-  		}
-			
 		// cont: TEMP, RTC, DEBUG + Settings
 		 function txjstmp(s, d) {
   			var as1=$('.pst1');
@@ -282,9 +144,6 @@
 			}			 
 			 
 			 str_out = "";
-  			//clearTimeout(rs.handle);
-  			//rs = to(refr, 3);
-  			//refr();
   		}
 		
 		function tmpvlon(ii)
@@ -344,10 +203,7 @@
 
 
 		function smgh()
-		{
-
-//if(window.screen.availWidth>768 || window.screen.width>768 || window.innerWidth>768)
-//| (device.desktop() && (window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 ))		
+		{		
 			if(!device.mobile() )
 			{ $('.bt0st').click(); }	
 		}
@@ -355,12 +211,6 @@
 		// MENU - dublirovanmie
 		$('.bt0st1').click(function bjst1()			  
 		{	$('.bt0st').click();
-			// otkl osnov knopku
-			//$('.bt0st').attr("value", "off");
-			//ast = $('.bt0st').attr( "value" );
-			//rms_b();rm_b();
-			// lg - ekran
-			//shs_b();
 		});
 
 		function erxclr_uart()			  
@@ -374,13 +224,8 @@
 		};
 		// main knopka
 		$('.bt0st').click(function bjst() 	
-		//function fixbar()
 		{
-						//var el = document.getElementsByClassName('.bt0st'); 
-						ast = $('.bt0st').attr( "value" );
-			
-//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)
-//|| device.iphone() || (device.desktop() && (window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 ))
+					ast = $('.bt0st').attr( "value" );
 					if(device.mobile() )
 						{		
 						if( ast!="on")
@@ -402,17 +247,13 @@
 
 		});
 
-		
 		function rm_b()
 		{
 			// remove deviser HD
-
 					$('.mc1').removeClass('col-md-8 col-xl-8').html();
 					$('.bsn0').removeClass('col-md-4 col-xl-4').html();
 					$('.mc1').removeClass('noscroll collapse hide');
 					$('.mc1').addClass('col-12').html();
-					//$('.mc1').removeClass('noscroll').html();
-					//$('.bsn0').removeClass('overlay').html();
 		}
 		function sh_b()
 		{
@@ -420,40 +261,28 @@
 					$('.mc1').remove('col-12').html();
 					$('.mc1').addClass('col-md-8 col-xl-8').html();
 					$('.bsn0').addClass('col-md-4 col-xl-4').html();
-					//$('.mc1').addClass('noscroll').html();
-					//$('.bsn0').addClass('overlay').html();
 		}
 		function rms_b()
 		{
 					//$('.bsn0').removeClass('col-12').html();
 					$('.bsn0').removeClass('col-12 overlay').html();
 					$('.mc1').removeClass('noscroll collapse hide');
-					//sh_b();
 		}
 		function shs_b()
 		{
-					//rm_b();
-					//$('.bsn0').addClass('col-12').html();
 					$('.bsn0').addClass('col-12 overlay').html();
 					$('.mc1').addClass('noscroll collapse hide').html();
-					//rm_b();
 		}
 		// DEBUG btn
 		$('.swdeb').click(function swdebfn() 	
 		{
-						//var el = document.getElementsByClassName('.bt0st');
 						if (this.checked == true)
 							{$('.swdebl').text("Выключить режим настройки");this.setAttribute("disabled", "true");sdeb("ON");
 							subwdeb=true;}		 		
-							 	//$("#auza").setAttribute("checked", "true"); }
 							else
 							{$('.swdebl').text("Включить режим настройки");this.setAttribute("disabled", "false");sdeb("OFF");
 							subwdeb=false;}
-								//$("#auza").setAttribute("checked", "false");}
-
 		});
-
-		
 		// SUBMIT debug
 		function sdeb(bl)
 		{
@@ -465,7 +294,6 @@
 		function clbtn0()
 		{
 			ast = $('.bt0st').attr( "value" );
-//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768)|| device.iphone() || (device.desktop() && (window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 ))
 			if(device.mobile() )
 			{
 				if(ast!="on")
@@ -475,14 +303,6 @@
 				$('.bt0st').click();
 			}	
 		}
-  		//function toObject(arr) {
-  		//	  var rv = {};
-  		//	  for (var i = 0; i < arr.length; ++i)
-  		//		if (arr[i] !== undefined) rv[i] = arr[i];
-  		//	  return rv;
-  		//	}
-		// CALLBACK resizes	
-		
 		$(window).resize(function() {
 				clresf();
 		});
@@ -490,8 +310,6 @@
 		function clresf()
 		{
 			ast = $('.bt0st').attr( "value" );
-//if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )
-//|| (device.desktop() && (window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )) || device.iphone()
 			if(device.mobile() )
 				{
 					// knopka vkl SM
@@ -526,24 +344,133 @@
   			xhr.timeout = time_out * 200;
   			xhr.send();
   		}
+		
+		
+		
+		function btn_lm75_1()
+		{
+			var i=0;
+			var input_lm75 = {};
+			var tarch = 0;	// conf
+			var tos1 = 0;	// tos1
+			var thyst1 = 0;	// thyst
+			var sc_1l = $("#lm75sc_1");
+			var so_1l = $("#lm75so_1");
+			//cnfOBJ = $("#scntf").serializeArray();			
+			for(i=0;(i < 5) && ($("#gLM75ch" + i).val()!=undefined);++i )
+			{
+				if($("#gLM75ch" + i).prop("checked"))
+				{tarch|=(1 << i);}
+			}
+			tos1 = sc_1l.val();
+			thyst1 = so_1l.val();
+			console.log(tos1 + " " + thyst1);
+			if(thyst1>tos1 && (thyst1<0) && (tos1<0))
+			{
+				i=tos1;
+				thyst1 = tos1;
+				tos1 = thyst1;
+			console.log("thyst1>tos1 && (thyst1<0) && (tos1<0)" + tos1 + " " + thyst1);
+			}
+			else if(thyst1>tos1)
+			{
+				i=thyst1;
+				thyst1 = tos1;
+				tos1 = i;
+			console.log("thyst1>tos1" + tos1 + " " + thyst1);
+			}
+			if(tos1==thyst1)
+			{	
+				if(thyst1<0 && tos1<0)
+				{thyst1--;}
+				else
+				{tos1++;}
+			}
+			sc_1l.val(thyst1);so_1l.val(tos1);
+			  $('.lm75thy_1').text(sc_1l.val() +" C°");
+			  $('.lm75tos_1').text(so_1l.val() +" C°");
+			thyst1 = parseInt(sc_1l.val());
+			tos1 = parseInt(so_1l.val());
+			
+			thyst1=thyst1*2;
+			tos1=tos1*2;
+
+			input_lm75 = { "lm75_conf": [tarch,thyst1,tos1] };
+			fetch('/input_lm75_2.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10);
+			console.log(JSON.stringify(input_lm75));
+			//cnfOBJ = { };
+		}
+
+		// zapros temperature
+		function sub_grad() 
+  		{
+			maOBJ = $("#tmpo").serializeArray(); 
+			fetch('/temp_out.json?n=' + Math.random(), 'GET', txjstmp, 10);
+			//console.log(maOBJ);
+  		}	
+		
+  		function submit_uart() 
+  		{
+  			$("#btn1").prop("disabled", true);
+			// spt0 - preobrazovanie ot mysora na UART
+  			lines_in = spt0();
+  			url = "";
+  			uart_json.uart_out = "null";
+				
+				if ($("#uart_get_ch").prop("checked"))
+				{ua_mode=1;}
+				else
+				{ua_mode=0;}
+				
+  			for (i = 0; i < lines_in.length; i++)
+  			{
+  				uart_json.uart_in = lines_in[i];
+					if(ua_mode==1)
+					{fetch('/uart_get?input=' + encodeURIComponent(lines_in[i])+'&', 'GET', txjs_ua, 10);}
+					else
+					{fetch('/uart.json?n=' + encodeURIComponent(JSON.stringify(uart_json))+'&', 'GET', txjs_ua, 10);}						
+  			}
+			
+  		}
+
+  		function txjs_ua(s, d) {
+			seOBJ = $("#scntf").serializeArray();
+			$("#btn1").prop("disabled", false);
+  			if (s != 200) {
+  				str_out1 += "Send command error"+'\n';
+  				//clearTimeout(rs.handle);
+  				console.log("Connection proplem!");
+  			} else {
+  				if (typeof d === 'string') {
+  					console.log("priem ok!");
+					try
+					{uart_json = JSON.parse(d);}
+					catch(e)
+					{console.log(e);return 0;}
+  				}
+  				else
+  				{uart_json.uart_out="null";uart_json.uart_in="null";}
+				console.log(uart_json);
+				if(uart_json.uart_out=="")
+				{str_out1 += 'ACK' +'\n';}
+				else
+				{str_out1 += uart_json.uart_out +'\n';}
+				//console.log(uart_json.uart_out);
+  			}
+			var esp_uart_out_val  = $("#esp_urx")
+			if(esp_uart_out_val.val()!="")
+  			{esp_uart_out_val.val(esp_uart_out_val.val()+str_out1);}
+			else
+			{esp_uart_out_val.val(str_out1);}
+			console.log(str_out1);
+			str_out1="";
+  			//clearTimeout(rs.handle);
+  			//rs = to(refr, 3);
+  			//refr();
+  		}
+	
 
   		window.onload = function() {
-			//$(".collapse").collapse('hide');
-			// Ubral onload.
-			/*mds.load('https://rakosel.github.io/WSB_page_main.html', function()
-			{
-				 alert("loaded mds");
-			}).html();
-			sets.load('https://rakosel.github.io/WSB_page_slave.html', function()
-			{
-				   alert("loaded sets");
-			}).html();*/
-			//alert("ok");
-			//maOBJ = $('form').serializeArray(); 
-			//maOBJ = $("#tmpo").serializeArray(); 
-			//seOBJ = $("#scntf").serializeArray();
-			//alert("1");
-			
 			$('.bt0st').attr("value", "off");
 			$('.navia').addClass('list-group-item list-group-item-action bg-light border');
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
@@ -553,48 +480,3 @@
 			//$(".bsn0").collapse('show');
 			smgh();
   		}
-
-
-		//sets.ready(function Slave() 
-		//{
-		/*
-		$("#lm75sc_1").mousemove( function thy1(){
-				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
-		});
-		$("#lm75sc_2").mousemove(function thy2(){
-				$('.lm75thy_2').text($("#lm75sc_2").val()+" C°");
-		});
-		$("#lm75so_1").mousemove( function tos1(){
-				$('.lm75tos_1').text($("#lm75so_1").val()+" C°");
-		});
-		$("#lm75so_2").mousemove( function tos2(){
-				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
-		});
-		
-		$("#lm75sc_1").on("touchmove mousemove", function thy1(){
-				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
-		});
-		$("#lm75sc_2").on("touchmove mousemove", function thy2(){
-				$('.lm75thy_2').text($("#lm75sc_2").val()+" C°");
-		});
-		$("#lm75so_1").on("touchmove mousemove", function tos1(){
-				$('.lm75tos_1').text($("#lm75so_1").val()+" C°");
-		});
-		$("#lm75so_2").on("touchmove mousemove", function tos2(){
-				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
-		});	
-		*/	
-
-		/*$("#lm75sc_1").mousemove( function(){
-				console.log(device.desktop());
-				$('.lm75thy_1').text($("#lm75sc_1").val()+" C°");
-		});
-		$("#lm75sc_2").mousemove(function thy2(){
-				$('.lm75thy_2').text($("#lm75sc_2").val()+" C°");
-		});
-		$("#lm75so_1").mousemove( function tos1(){
-				$('.lm75tos_1').text($("#lm75so_1").val()+" C°");
-		});
-		$("#lm75so_2").mousemove( function tos2(){
-				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
-		});*/
