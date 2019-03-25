@@ -1,7 +1,7 @@
-//upd56ac with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd57a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
-// #77 out
+// 	#83 bme280_conf
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 
 //		onclick="btn_bm280_1_Wr()">Задать</button></div>
@@ -35,9 +35,15 @@
 		
 		function btn_bm280_1_Rd()
 		{
-			bmeOBJ = $("#scntf").serializeArray(); 
-			console.log(bmeOBJ);
+			//bmeOBJ = $("#scntf").serializeArray(); 
+			//console.log(bmeOBJ);
 			fetch('/output_bme280_1.json?n=' + Math.random(), 'GET', txjstmp, 10);
+		}
+		
+		function btn_bm280_1_Wr()
+		{
+
+			fetch('/input_bme280_1.json?n=' + Math.random(), 'GET', txjstmp, 10);
 		}
 
 		// cont: TEMP, RTC, DEBUG + Settings
@@ -76,11 +82,22 @@
   			}
 			if(temp_json["bme280_1_ou"])
 			{
-				i=0;
-				//temp_json.bme280_1_ou[i]
-			 	//for(i in temp_json.rtc_get)
-			 	//{str_out += temp_json.rtc_get[i] + '-'	}
-				//$(".ptime").text(str_out.substring(0, str_out.length - 1));
+				bch =  $("bm1_ch");
+				//i=0;
+				$("#bm1_ch").val(temp_json.bme280_1_ou[0]);
+				var bmst1 = $("#bm1_st").val(temp_json.bme280_1_ou[1]);
+				if(bmst1.isNumeric)
+				{
+					if(bmst1 && 0x01)
+					{$("#gBM2801ch0").prop('checked', true);}
+					else
+					{$("#gBM2801ch0").prop('checked', false);}
+					if(bmst1 && 0x03)
+					$("#gBM2801ch3").prop('checked', true);
+					else
+					{$("#gBM2801ch3").prop('checked', false);}
+				}
+				//bm1s_m
 				
 			}	
 			if(temp_json["temp"] )
@@ -110,12 +127,12 @@
 				}
 				}	
 				catch(e)
-				{tmpvlof(i);console.log(e.message);}				
+				{tmpvlof(i);console.log(e.message); return 0;}				
 			}
 			}
 			if(temp_json["debug"])
 			{
-				seOBJ = $("#scntf").serializeArray();
+				//seOBJ = $("#scntf").serializeArray();
 				console.log(temp_json.debug);
 				if(temp_json.debug == "ON")
 				{
@@ -484,7 +501,7 @@
 			$('.navia').addClass('list-group-item list-group-item-action bg-light border');
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
-			//rs = setInterval(refr_rtc, 2000);
+			rs = setInterval(refr_rtc, 2000);
 			i=0;
 			//$(".bsn0").collapse('show');
 			smgh();
