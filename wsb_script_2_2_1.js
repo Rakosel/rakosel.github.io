@@ -95,11 +95,11 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 				$("#bm1_st").val("0x"+Number(temp_json.bme280_1_ou[1]).toString(16).toUpperCase());
 				if($.isNumeric(bmst1))
 				{
-					if(bmst1 && 1)
+					if(bmst1 && 0x01)
 					{$("#gBM2801ch0").prop('checked', true);}
 					else
 					{$("#gBM2801ch0").prop('checked', false);}
-					if(bmst1 && 8)//console.log("#gBM2801ch3 ch true");
+					if(bmst1 && 0x08)//console.log("#gBM2801ch3 ch true");
 					{$("#gBM2801ch3").prop('checked', true);}
 					else//console.log("#gBM2801ch3 ch false");
 					{$("#gBM2801ch3").prop('checked', false);}
