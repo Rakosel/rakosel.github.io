@@ -1,4 +1,4 @@
-// upd57b5 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd57b6 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -87,12 +87,12 @@
 				//parseInt(hSt, 16)
 if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_ou[0], 10) != 999)
 				{
-				$("#bm1_ch").val(parseInt(temp_json.bme280_1_ou[0], 16).toUpperCase());
+				$("#bm1_ch").val(parseInt(temp_json.bme280_1_ou[0], 16));
 				//hSt = temp_json.bme280_1_ou[1].toString(16).toUpperCase();
 				
 				var bmst1 = parseInt(temp_json.bme280_1_ou[1], 10);
 				
-				$("#bm1_st").val(parseInt(temp_json.bme280_1_ou[1], 16).toUpperCase());
+				$("#bm1_st").val(parseInt(temp_json.bme280_1_ou[1], 16));
 				if($.isNumeric(bmst1))
 				{
 					if(bmst1 && 0x01)
