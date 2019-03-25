@@ -1,4 +1,4 @@
-// upd57b3 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd57b4 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -85,27 +85,23 @@
 				//i=0;
 				//var hSt = temp_json.bme280_1_ou[0].toString(16).toUpperCase();
 				//parseInt(hSt, 16)
-				$("#bm1_ch").val(temp_json.bme280_1_ou[0].toString(16).toUpperCase());
+				$("#bm1_ch").val(parseInt(temp_json.bme280_1_ou[0], 16).toUpperCase());
 				//hSt = temp_json.bme280_1_ou[1].toString(16).toUpperCase();
 				
 				var bmst1 = parseInt(temp_json.bme280_1_ou[1], 10);
-				console.log("bmst1val"+bmst1+"temp_json.bme280_1_ou[1]"+temp_json.bme280_1_ou[1]);
 				
-				$("#bm1_st").val(temp_json.bme280_1_ou[1].toString(16).toUpperCase());
+				$("#bm1_st").val(parseInt(temp_json.bme280_1_ou[1], 16).toUpperCase());
 				if($.isNumeric(bmst1))
 				{
 					if(bmst1 && 0x01)
-					{$("#gBM2801ch0").prop('checked', true);console.log("#gBM2801ch0 ch true");}
+					{$("#gBM2801ch0").prop('checked', true);}
 					else
-					{$("#gBM2801ch0").prop('checked', false);console.log("#gBM2801ch0 ch false");}
-					if(bmst1 && 0x03)
-					{$("#gBM2801ch3").prop('checked', true);console.log("#gBM2801ch3 ch true");}
-					else
-					{$("#gBM2801ch3").prop('checked', false);console.log("#gBM2801ch3 ch false");}
+					{$("#gBM2801ch0").prop('checked', false);}
+					if(bmst1 && 0x03)//console.log("#gBM2801ch3 ch true");
+					{$("#gBM2801ch3").prop('checked', true);}
+					else//console.log("#gBM2801ch3 ch false");
+					{$("#gBM2801ch3").prop('checked', false);}
 				}
-				else
-				{console.log("bmst1.isNumeric false");}
-				
 				//bm1s_m
 				
 			}	
