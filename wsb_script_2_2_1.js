@@ -106,10 +106,10 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 					{$("#gBM2801ch3").prop('checked', false);console.log("#gBM2801ch3 false "+bmst1);}
 					
 					//$("#my_select option:selected").val(temp_json.bme280_1_ou[2]);
-					$("#bm1s_m").removeAttr('selected');
-					$("#bm1s_osrs").removeAttr('selected');
-					$("#bm1s_f").removeAttr('selected');
-					$("#bm1_t_st").removeAttr('selected');
+					$("#bm1s_m [value="+temp_json.bme280_1_ou[2]+"]").removeAttr("selected");
+					$("#bm1s_osrs [value="+temp_json.bme280_1_ou[3]+"]").removeAttr("selected");
+					$("#bm1s_f [value="+temp_json.bme280_1_ou[4]+"]").removeAttr("selected");
+					$("#bm1_t_st [value="+temp_json.bme280_1_ou[5]+"]").removeAttr("selected");
 					
 					$("#bm1s_m [value="+temp_json.bme280_1_ou[2]+"]").attr("selected", "selected");
 					$("#bm1s_osrs [value="+temp_json.bme280_1_ou[3]+"]").attr("selected", "selected");
