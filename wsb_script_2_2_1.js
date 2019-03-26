@@ -145,7 +145,7 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 					$('#bm1s_m option').removeAttr("selected");
 					$('#bm1s_osrs option').removeAttr("selected");
 					$('#bm1s_f option').removeAttr("selected");
-					$('#bm1s_t_st option').removeAttr("selected");
+					$('#bm1_t_st option').removeAttr("selected");
 					//$('#bm1s_m option').each(function(){
 					//		this.removeAttr("selected");
 					//});
