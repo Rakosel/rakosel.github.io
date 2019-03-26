@@ -1,4 +1,4 @@
-// upd58b2 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd59a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -37,7 +37,16 @@
 		{
 			//bmeOBJ = $("#scntf").serializeArray(); 
 			//console.log(bmeOBJ);
-			fetch('/output_bme280_1.json?n=' + Math.random(), 'GET', txjstmp, 10);
+			// Rd mode
+		var mode = $("#bm1s_m option:selected").val();
+		var osrs = $("#bm1s_osrs option:selected").val();
+		var bm1s_f = $("#bm1s_f option:selected").val();
+		var bm1_t_st = $("#bm1_t_st option:selected").val();
+
+		input_bme280 = { "bme280_conf": [mode,osrs,bm1s_f,bm1_t_st] };
+		fetch('/output_bme280_1.json?n=' + encodeURIComponent(JSON.stringify(input_bme280))+'&', 'GET', txjstmp, 10);
+		console.log(JSON.stringify(input_bme280));
+
 		}
 		
 		function btn_bm280_1_Wr()
@@ -80,6 +89,17 @@
   				else
   				{console.log("d not string");ftvall("");return 0;}
   			}
+			if(temp_json["bme280_1_cb"])
+			{
+				if(temp_json.bme280_1_cb == "OK")
+				{
+					$(".btns_bme280_1").addClass('badge-success').text("ОК ");
+				}
+				else
+				{
+					$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ");
+				}
+			}			
 			if(temp_json["bme280_1_ou"])
 			{
 				//i=0;
@@ -125,7 +145,6 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 				$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ");
 				}
 				//bm1s_m
-				
 			}	
 			if(temp_json["temp"] )
 			{
