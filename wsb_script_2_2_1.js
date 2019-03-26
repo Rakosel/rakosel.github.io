@@ -1,4 +1,4 @@
-// upd62a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd62b with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -142,18 +142,22 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 					//$("#bm1s_osrs option:selected").removeAttr("selected");
 					//$("#bm1s_f option:selected").removeAttr("selected");
 					//$("#bm1_t_st option:selected").removeAttr("selected");
-					$('#bm1s_m option').each(function(){
-							this.removeAttr("selected");
-					});
-					$('#bm1s_osrs option').each(function(){
-							this.removeAttr("selected");
-					});
-					$('#bm1s_f option').each(function(){
-							this.removeAttr("selected");
-					});
-					$('#bm1_t_st option').each(function(){
-							this.removeAttr("selected");
-					});
+					$('#bm1s_m option').removeAttr("selected");
+					$('#bm1s_osrs option').removeAttr("selected");
+					$('#bm1s_f option').removeAttr("selected");
+					$('#bm1s_t_st option').removeAttr("selected");
+					//$('#bm1s_m option').each(function(){
+					//		this.removeAttr("selected");
+					//});
+					//$('#bm1s_osrs option').each(function(){
+					//		this.removeAttr("selected");
+					//});
+					//$('#bm1s_f option').each(function(){
+					//		this.removeAttr("selected");
+					//});
+					//$('#bm1_t_st option').each(function(){
+					//		this.removeAttr("selected");
+					//});
 
 					
 					$("#bm1s_m [value="+temp_json.bme280_1_ou[2]+"]").attr("selected", "selected");
