@@ -1,4 +1,4 @@
-// upd58b1 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd58b2 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -54,10 +54,10 @@
   			if (s != 200) {
 				as0.removeClass('badge-success');
 				as0.addClass('badge-danger');
-				as0.text("Ошибка");
+				as0.text("Нет связи");
 				as1.removeClass('badge-success');
 				as1.addClass('badge-danger');
-				as1.text("ОШИБКА");
+				as1.text("Нет связи");
 				$('.swdeb').removeAttr('disabled'); 
 				ftmpd();
 				console.log("Connection proplem!");
@@ -93,6 +93,8 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 				var bmst1 = parseInt(temp_json.bme280_1_ou[1], 10);
 				
 				$("#bm1_st").val("0x"+Number(temp_json.bme280_1_ou[1]).toString(16).toUpperCase());
+				$(".btns_bme280_1").removeClass('badge-danger');
+				$(".btns_bme280_1").removeClass('badge-success');
 				if($.isNumeric(bmst1))
 				{
 					console.log("4uclo "+bmst1);
@@ -115,10 +117,13 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 					$("#bm1s_osrs [value="+temp_json.bme280_1_ou[3]+"]").attr("selected", "selected");
 					$("#bm1s_f [value="+temp_json.bme280_1_ou[4]+"]").attr("selected", "selected");
 					$("#bm1_t_st [value="+temp_json.bme280_1_ou[5]+"]").attr("selected", "selected");
+					$(".btns_bme280_1").text("ОК").addClass('badge-success')
 				}
 				}
 				else
-				{$("#bm1_ch").val("#ERR");$("#bm1_st").val("#ERR");}
+				{$("#bm1_ch").val("Ошибка");$("#bm1_st").val("Ошибка");
+				$(".btns_bme280_1").text("Ошибка").addClass('badge-danger');
+				}
 				//bm1s_m
 				
 			}	
@@ -176,7 +181,7 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 					{
 					as1.removeClass('badge-success');
 					as1.addClass('badge-danger');
-					as1.text("ОШИБКА");
+					as1.text("НЕТ СВЯЗИ");
 					}
 				//$(".swdeb").attr("disabled", "false");
 				$('.swdeb').removeAttr('disabled'); 
