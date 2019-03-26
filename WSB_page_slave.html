@@ -1,4 +1,4 @@
-<!--upd16c option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
+<!--upd17a option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
 				<!--
 				<div class="form-group row">
 				 <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 col-sm-3 offset-sm-1 col-3 offset-1">Pointer</div>
@@ -123,10 +123,9 @@
 				<div class="form-group row">
 					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Режим:</div>
 					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="bm1s_m" name = "bm1s_m" class="form-control">
-       				<option value="null" selected>Выбор...</option>
 					<option value="0">Сон</option>
 					<option value="1">Форсиронный</option>
-					<option value="3">Нормальный</option>
+					<option value="3" selected>Нормальный</option>
         			<!--<option>...</option>
 					http://www.tigir.com/javascript_select.htm
 					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
@@ -138,9 +137,8 @@
 				</div>
 				<div class="form-group row">
 					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Количество замеров:</div>
-					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="bm1s_osrs" name = "bm1s_osrs" class="form-control">
-       				<option value="null" selected>Выбор...</option>
-					<option value="0">Выкл</option>
+					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="bm1s_osrs" name = "bm1s_osrs" class="form-control">>
+					<option value="0" selected>Выкл</option>
 					<option value="1">1x</option>
 					<option value="2">2x</option>	
 					<option value="3">4x</option>
@@ -158,8 +156,7 @@
 				<div class="form-group row">
 					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Фильтр:</div>
 					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="bm1s_f" name = "bm1s_f" class="form-control">
-       				<option value="null" selected>Выбор...</option>
-					<option value="0">Выкл</option>
+					<option value="0" selected>Выкл</option>
 					<option value="1">2</option>	
 					<option value="2">4</option>
 					<option value="3">8</option>
@@ -176,8 +173,7 @@
 				<div class="form-group row">
 					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Время паузы [мс]:</div>
 					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="bm1_t_st" name="bm1_t_st" class="form-control">
-       				<option selected>Выбор...</option>
-					<option value="0">0.5</option>
+					<option value="0" selected>0.5</option>
 					<option value="1">62.5</option>
 					<option value="2">125</option>
 					<option value="3">250</option>
@@ -224,10 +220,9 @@
 				<div class="form-group row">
 					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Режим:</div>
 					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="bm2s_m" name = "bm2s_m" class="form-control">
-       				<option value="null" selected>Выбор...</option>
 					<option value="0">Сон</option>
 					<option value="1">Форсиронный</option>
-					<option value="3">Нормальный</option>
+					<option value="3" selected>Нормальный</option>
         			<!--<option>...</option>
 					http://www.tigir.com/javascript_select.htm
 					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
@@ -240,8 +235,7 @@
 				<div class="form-group row">
 					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Количество замеров:</div>
 					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="bm2s_osrs" name = "bm2s_osrs" class="form-control">
-       				<option value="null" selected>Выбор...</option>
-					<option value="0">Выкл</option>
+					<option value="0" selected>Выкл</option>
 					<option value="1">1x</option>
 					<option value="2">2x</option>	
 					<option value="3">4x</option>
@@ -258,9 +252,8 @@
 				</div>
 				<div class="form-group row">
 					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Фильтр:</div>
-					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="bm2s_f" name = "bm2s_f" class="form-control">
-       				<option value="null" selected>Выбор...</option>
-					<option value="0">Выкл</option>
+					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="bm2s_f" name = "bm2s_f" class="form-control">>
+					<option value="0" selected>Выкл</option>
 					<option value="1">2</option>	
 					<option value="2">4</option>
 					<option value="3">8</option>
@@ -277,8 +270,7 @@
 				<div class="form-group row">
 					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Время паузы [мс]:</div>
 					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="bm2_t_st" name="bm2_t_st" class="form-control">
-       				<option selected>Выбор...</option>
-					<option value="0">0.5</option>
+					<option value="0" selected>0.5</option>
 					<option value="1">62.5</option>
 					<option value="2">125</option>
 					<option value="3">250</option>
