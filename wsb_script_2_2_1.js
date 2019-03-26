@@ -1,4 +1,4 @@
-// upd59a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd60a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -33,7 +33,7 @@
 			//console.log("refr_rtc");
 		}
 		
-		function btn_bm280_1_Rd()
+		function btn_bm280_1_Wr()
 		{
 			//bmeOBJ = $("#scntf").serializeArray(); 
 			//console.log(bmeOBJ);
@@ -42,17 +42,17 @@
 		var osrs = $("#bm1s_osrs option:selected").val();
 		var bm1s_f = $("#bm1s_f option:selected").val();
 		var bm1_t_st = $("#bm1_t_st option:selected").val();
-
+		
 		input_bme280 = { "bme280_conf": [mode,osrs,bm1s_f,bm1_t_st] };
-		fetch('/output_bme280_1.json?n=' + encodeURIComponent(JSON.stringify(input_bme280))+'&', 'GET', txjstmp, 10);
+		fetch('/input_bme280_1.json?n=' + encodeURIComponent(JSON.stringify(input_bme280))+'&', 'GET', txjstmp, 10);
 		console.log(JSON.stringify(input_bme280));
 
 		}
 		
-		function btn_bm280_1_Wr()
+		function btn_bm280_1_Rd()
 		{
-
-			fetch('/input_bme280_1.json?n=' + Math.random(), 'GET', txjstmp, 10);
+			fetch('/output_bme280_1.json?n=' + Math.random(), 'GET', txjstmp, 10);
+			
 		}
 
 		// cont: TEMP, RTC, DEBUG + Settings
@@ -89,6 +89,8 @@
   				else
   				{console.log("d not string");ftvall("");return 0;}
   			}
+			
+			// posle input BME280: WEB -> ESP
 			if(temp_json["bme280_1_cb"])
 			{
 				if(temp_json.bme280_1_cb == "OK")
@@ -99,7 +101,9 @@
 				{
 					$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ");
 				}
-			}			
+			}		
+			
+			// posle output BME280: WEB <- ESP		
 			if(temp_json["bme280_1_ou"])
 			{
 				//i=0;
