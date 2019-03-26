@@ -1,4 +1,4 @@
-// upd58b with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd58b1 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
