@@ -33,6 +33,7 @@
 			//console.log("refr_rtc");
 		}
 		
+		//3apis
 		function btn_bm280_1_Wr()
 		{
 			//bmeOBJ = $("#scntf").serializeArray(); 
@@ -49,6 +50,7 @@
 
 		}
 		
+		// C4itat
 		function btn_bm280_1_Rd()
 		{
 			fetch('/output_bme280_1.json?n=' + Math.random(), 'GET', txjstmp, 10);
