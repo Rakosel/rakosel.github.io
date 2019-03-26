@@ -117,12 +117,12 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 					$("#bm1s_osrs [value="+temp_json.bme280_1_ou[3]+"]").attr("selected", "selected");
 					$("#bm1s_f [value="+temp_json.bme280_1_ou[4]+"]").attr("selected", "selected");
 					$("#bm1_t_st [value="+temp_json.bme280_1_ou[5]+"]").attr("selected", "selected");
-					$(".btns_bme280_1").text("ОК").addClass('badge-success')
+					$(".btns_bme280_1").addClass('badge-success').text("ОК")
 				}
 				}
 				else
 				{$("#bm1_ch").val("Ошибка");$("#bm1_st").val("Ошибка");
-				$(".btns_bme280_1").text("Ошибка").addClass('badge-danger');
+				$(".btns_bme280_1").addClass('badge-danger').text("Ошибка");
 				}
 				//bm1s_m
 				
