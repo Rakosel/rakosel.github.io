@@ -24,6 +24,7 @@
 		cnftmp = $('.scntf');
 		// rtc time auto from server
 		$( "#bm_alt" ).on("click", function() {
+			alert("fd");
 			if($.isNumeric($("#bm_alt").val())==false)
 			{
 				$("#bm_alt").addClass('is-invalid').html();
