@@ -1,4 +1,4 @@
-// upd62b with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd62c with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -44,6 +44,16 @@
 		var bm1s_f = $("#bm1s_f option:selected").val();
 		var bm1_t_st = $("#bm1_t_st option:selected").val();
 		var bm_alt = $("#bm_alt").val();
+		$(".btns_bme280_1").removeClass('is-invalid').html();
+		$(".altvld").css( "display", "none" );
+		if($.isNumeric(bm_alt)==false)
+		{
+			$(".btns_bme280_1").addClass('badge-danger').text("Ошибка (смотри выше)");
+			$(".btns_bme280_1").addClass('is-invalid').html();
+			$(".altvld").css( "display", "block" );
+			return;
+		}
+		
 		
 		input_bme280 = { "bme280_conf": [mode,osrs,bm1s_f,bm1_t_st,bm_alt] };
 		fetch('/input_bme280_1.json?n=' + encodeURIComponent(JSON.stringify(input_bme280))+'&', 'GET', txjstmp, 10);
@@ -133,15 +143,7 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 					{$("#gBM2801ch3").prop('checked', true);console.log("#gBM2801ch3 true "+bmst1);}
 					else//console.log("#gBM2801ch3 ch false");
 					{$("#gBM2801ch3").prop('checked', false);console.log("#gBM2801ch3 false "+bmst1);}
-					
-					//$("#bm1s_m [value="+temp_json.bme280_1_ou[2]+"]").removeAttr("selected");
-					//$("#bm1s_osrs [value="+temp_json.bme280_1_ou[3]+"]").removeAttr("selected");
-					//$("#bm1s_f [value="+temp_json.bme280_1_ou[4]+"]").removeAttr("selected");
-					//$("#bm1_t_st [value="+temp_json.bme280_1_ou[5]+"]").removeAttr("selected");
-					//$("#bm1s_m option:selected").removeAttr("selected");
-					//$("#bm1s_osrs option:selected").removeAttr("selected");
-					//$("#bm1s_f option:selected").removeAttr("selected");
-					//$("#bm1_t_st option:selected").removeAttr("selected");
+
 					$('#bm1s_m option').removeAttr("selected");
 					$('#bm1s_osrs option').removeAttr("selected");
 					$('#bm1s_f option').removeAttr("selected");
@@ -149,17 +151,7 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 					//$('#bm1s_m option').each(function(){
 					//		this.removeAttr("selected");
 					//});
-					//$('#bm1s_osrs option').each(function(){
-					//		this.removeAttr("selected");
-					//});
-					//$('#bm1s_f option').each(function(){
-					//		this.removeAttr("selected");
-					//});
-					//$('#bm1_t_st option').each(function(){
-					//		this.removeAttr("selected");
-					//});
 
-					
 					$("#bm1s_m [value="+temp_json.bme280_1_ou[2]+"]").attr("selected", "selected");
 					$("#bm1s_osrs [value="+temp_json.bme280_1_ou[3]+"]").attr("selected", "selected");
 					$("#bm1s_f [value="+temp_json.bme280_1_ou[4]+"]").attr("selected", "selected");
@@ -196,8 +188,7 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 				}
 					
 				if(temp_json["temt_adc"] )
-				{	$("#tm_adc").val(temp_json.temt_adc);
-				}
+				{	$("#tm_adc").val(temp_json.temt_adc);}
 				}	
 				catch(e)
 				{tmpvlof(i);console.log(e.message); return 0;}				
