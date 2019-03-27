@@ -1,4 +1,4 @@
-// upd62c with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd62c1 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -23,6 +23,18 @@
 		sets = $('.setcnt');
 		cnftmp = $('.scntf');
 		// rtc time auto from server
+		$( ".altvld" ).on("click", function() {
+			if($.isNumeric($("#bm_alt").val())==false)
+			{
+				$("#bm_alt").addClass('is-invalid').html();
+				$(".altvld").css( "display", "block" );
+			}
+			else
+			{
+				$("#bm_alt").removeClass('is-invalid').html();
+				$(".altvld").css( "display", "none" );
+			}
+		});
 
 
 		function refr_rtc()
@@ -44,13 +56,14 @@
 		var bm1s_f = $("#bm1s_f option:selected").val();
 		var bm1_t_st = $("#bm1_t_st option:selected").val();
 		var bm_alt = $("#bm_alt").val();
-		$(".btns_bme280_1").removeClass('is-invalid').html();
-		$(".altvld").css( "display", "none" );
+		//$("#bm_alt").removeClass('is-invalid').html();
+		//$(".altvld").css( "display", "none" );
+		$(".btns_bme280_1").removeClass('badge-danger');
 		if($.isNumeric(bm_alt)==false)
 		{
 			$(".btns_bme280_1").addClass('badge-danger').text("Ошибка (смотри выше)");
-			$(".btns_bme280_1").addClass('is-invalid').html();
-			$(".altvld").css( "display", "block" );
+			//$("#bm_alt").addClass('is-invalid').html();
+			//$(".altvld").css( "display", "block" );
 			return;
 		}
 		
