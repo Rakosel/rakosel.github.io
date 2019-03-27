@@ -16,6 +16,7 @@
 		var scrPos = 0, ovShBtn0 = false;
 		var ast;
 		var ua_mode=0;
+		var tmranim = 3500; // animate [s]
 		// reverse panelki dlya debug
 		var sds,mds,sets;
 		sds = $('.sideset');
@@ -49,7 +50,7 @@
 		$(".btns_bme280_1").removeClass('badge-danger');
 		if($.isNumeric(bm_alt)==false)
 		{
-			$(".btns_bme280_1").addClass('badge-danger').text("Ошибка (смотри выше)").fadeOut( 2000 );
+			$(".btns_bme280_1").addClass('badge-danger').text("Ошибка (смотри выше)").fadeOut( tmranim );
 			//$("#bm_alt").addClass('is-invalid').html();
 			//$(".altvld").css( "display", "block" );
 			return;
@@ -110,11 +111,11 @@
 				$(".btns_bme280_1").fadeIn();
 				if(temp_json.bme280_1_cb == "OK")
 				{
-					$(".btns_bme280_1").addClass('badge-success').text("ОК ").fadeOut( 2000 );
+					$(".btns_bme280_1").addClass('badge-success').text("ОК ").fadeOut( tmranim );
 				}
 				else
 				{
-					$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ").fadeOut( 2000 );
+					$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ").fadeOut( tmranim );
 				}
 			}		
 			
@@ -160,12 +161,12 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 					$("#bm1s_f [value="+temp_json.bme280_1_ou[4]+"]").attr("selected", "selected");
 					$("#bm1_t_st [value="+temp_json.bme280_1_ou[5]+"]").attr("selected", "selected");
 					
-					$(".btns_bme280_1").addClass('badge-success').text("ОК ").fadeOut( 2000 );
+					$(".btns_bme280_1").addClass('badge-success').text("ОК ").fadeOut( tmranim );
 				}
 				}
 				else
 				{$("#bm1_ch").val("Ошибка");$("#bm1_st").val("Ошибка");
-				$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ").fadeOut( 2000 );
+				$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ").fadeOut( tmranim );
 				}
 				//bm1s_m
 			}	
