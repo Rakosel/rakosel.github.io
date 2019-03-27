@@ -1,4 +1,4 @@
-// upd62c1 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd62c2 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -23,20 +23,6 @@
 		sets = $('.setcnt');
 		cnftmp = $('.scntf');
 		// rtc time auto from server
-		/*$( "#bm_alt" ).on("click", function() {
-			alert("fd");
-			if($.isNumeric($("#bm_alt").val())==false)
-			{
-				$("#bm_alt").addClass('is-invalid').html();
-				$(".altvld").css( "display", "block" );
-			}
-			else
-			{
-				$("#bm_alt").removeClass('is-invalid').html();
-				$(".altvld").css( "display", "none" );
-			}
-		});*/
-
 
 		function refr_rtc()
 		{
@@ -59,6 +45,7 @@
 		var bm_alt = $("#bm_alt").val();
 		//$("#bm_alt").removeClass('is-invalid').html();
 		//$(".altvld").css( "display", "none" );
+		$(".btns_bme280_1").fadeIn();
 		$(".btns_bme280_1").removeClass('badge-danger');
 		if($.isNumeric(bm_alt)==false)
 		{
@@ -115,7 +102,7 @@
   				else
   				{console.log("d not string");ftvall("");return 0;}
   			}
-			
+			$(".btns_bme280_1").fadeIn();
 			// posle input BME280: WEB -> ESP
 			if(temp_json["bme280_1_cb"])
 			{
@@ -169,6 +156,7 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 					$("#bm1s_osrs [value="+temp_json.bme280_1_ou[3]+"]").attr("selected", "selected");
 					$("#bm1s_f [value="+temp_json.bme280_1_ou[4]+"]").attr("selected", "selected");
 					$("#bm1_t_st [value="+temp_json.bme280_1_ou[5]+"]").attr("selected", "selected");
+					$(".btns_bme280_1").fadeIn();
 					$(".btns_bme280_1").addClass('badge-success').text("ОК ").fadeOut( 2000 );
 				}
 				}
