@@ -469,7 +469,7 @@
 		});	
 	 
 	 		$( "#bm_alt" ).keyup(function() {
-			if($.isNumeric($("#bm_alt").val())==false && $.isNumeric($("#bm_alt").val())<=0)
+			if($.isNumeric($("#bm_alt").val())==false && $("#bm_alt").val()<=0)
 			{
 				$("#bm_alt").addClass('is-invalid').html();
 				$(".altvld").css( "display", "block" );
