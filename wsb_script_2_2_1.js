@@ -23,7 +23,7 @@
 		sets = $('.setcnt');
 		cnftmp = $('.scntf');
 		// rtc time auto from server
-		$( "#bm_alt" ).on("click", function() {
+		/*$( "#bm_alt" ).on("click", function() {
 			alert("fd");
 			if($.isNumeric($("#bm_alt").val())==false)
 			{
@@ -35,7 +35,7 @@
 				$("#bm_alt").removeClass('is-invalid').html();
 				$(".altvld").css( "display", "none" );
 			}
-		});
+		});*/
 
 
 		function refr_rtc()
