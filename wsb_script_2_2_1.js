@@ -48,7 +48,7 @@
 		//$(".altvld").css( "display", "none" );
 		$(".btns_bme280_1").fadeIn();
 		$(".btns_bme280_1").removeClass('badge-danger');
-		if($.isNumeric($("#bm_alt").val())==false && $.isNumeric($("#bm_alt").val())<=0)
+		if($.isNumeric($("#bm_alt").val())==false && $("#bm_alt").val()<=0)
 		{
 			$(".btns_bme280_1").addClass('badge-danger').text("Ошибка (смотри выше)").fadeOut( tmranim );
 			//$("#bm_alt").addClass('is-invalid').html();
