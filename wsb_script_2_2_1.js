@@ -1,4 +1,4 @@
-// upd62c3 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd62d with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -48,7 +48,7 @@
 		//$(".altvld").css( "display", "none" );
 		$(".btns_bme280_1").fadeIn();
 		$(".btns_bme280_1").removeClass('badge-danger');
-		if($.isNumeric(bm_alt)==false)
+		if($.isNumeric($("#bm_alt").val())==false && $.isNumeric($("#bm_alt").val())<=0)
 		{
 			$(".btns_bme280_1").addClass('badge-danger').text("Ошибка (смотри выше)").fadeOut( tmranim );
 			//$("#bm_alt").addClass('is-invalid').html();
