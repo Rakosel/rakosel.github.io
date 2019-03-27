@@ -468,8 +468,7 @@
 				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
 		});	
 	 
-	 		$( "#bm_alt" ).keypress(function() {
-			alert("fd");
+	 		$( "#bm_alt" ).keyup(function() {
 			if($.isNumeric($("#bm_alt").val())==false)
 			{
 				$("#bm_alt").addClass('is-invalid').html();
