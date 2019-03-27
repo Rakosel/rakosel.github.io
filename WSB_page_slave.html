@@ -468,58 +468,17 @@
 				$('.lm75tos_2').text($("#lm75so_2").val()+" C°");
 		});	
 	 
-	 	// CALLBACK resizes	
-		/*
-		$(window).resize(function() {
-				clresf();
+	 		$( "#bm_alt" ).on("click", function() {
+			alert("fd");
+			if($.isNumeric($("#bm_alt").val())==false)
+			{
+				$("#bm_alt").addClass('is-invalid').html();
+				$(".altvld").css( "display", "block" );
+			}
+			else
+			{
+				$("#bm_alt").removeClass('is-invalid').html();
+				$(".altvld").css( "display", "none" );
+			}
 		});
-		
-		function clresf()
-		{
-   			if(window.screen.availWidth<768 || window.screen.width<768 || window.innerWidth<768 )
-				{
-					if(ast!="on")
-					{shs_b();sh_b();}	
-					else
-					{rms_b();rm_b();}
-				}
-				else
-				{
-					if(ast!="on")
-					{rms_b();sh_b();}
-				}						
-		}
-		
-		function rm_b()
-		{
-					$('.mc1').removeClass('col-md-8 col-xl-8').html();
-					$('.bsn0').removeClass('col-md-4 col-xl-4').html();
-					//$('.mc1').removeClass('noscroll').html();
-					//$('.bsn0').removeClass('overlay').html();
-		}
-		function sh_b()
-		{
-					$('.mc1').addClass('col-md-8 col-xl-8').html();
-					$('.bsn0').addClass('col-md-4 col-xl-4').html();
-					//$('.mc1').addClass('noscroll').html();
-					//$('.bsn0').addClass('overlay').html();
-		}
-		function rms_b()
-		{
-					//$('.bsn0').removeClass('col-12').html();
-					$('.bsn0').removeClass('col-12').html();
-					$('.mc1').removeClass('noscroll').html();
-					$('.bsn0').removeClass('overlay').html();
-					sh_b();
-		}
-		function shs_b()
-		{
-					//rm_b();
-					//$('.bsn0').addClass('col-12').html();
-					$('.mc1').addClass('noscroll').html();
-					$('.bsn0').addClass('overlay').html();
-					rm_b();
-					$('.bsn0').addClass('col-12').html();
-		}*/
-	 
 </script>
