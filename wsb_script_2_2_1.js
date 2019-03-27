@@ -23,7 +23,7 @@
 		sets = $('.setcnt');
 		cnftmp = $('.scntf');
 		// rtc time auto from server
-		$( ".altvld" ).on("click", function() {
+		$( "#bm_alt" ).on("click", function() {
 			if($.isNumeric($("#bm_alt").val())==false)
 			{
 				$("#bm_alt").addClass('is-invalid').html();
@@ -61,13 +61,12 @@
 		$(".btns_bme280_1").removeClass('badge-danger');
 		if($.isNumeric(bm_alt)==false)
 		{
-			$(".btns_bme280_1").addClass('badge-danger').text("Ошибка (смотри выше)");
+			$(".btns_bme280_1").addClass('badge-danger').text("Ошибка (смотри выше)").fadeOut( 2000 );
 			//$("#bm_alt").addClass('is-invalid').html();
 			//$(".altvld").css( "display", "block" );
 			return;
 		}
-		
-		
+
 		input_bme280 = { "bme280_conf": [mode,osrs,bm1s_f,bm1_t_st,bm_alt] };
 		fetch('/input_bme280_1.json?n=' + encodeURIComponent(JSON.stringify(input_bme280))+'&', 'GET', txjstmp, 10);
 		console.log(JSON.stringify(input_bme280));
@@ -121,11 +120,11 @@
 			{
 				if(temp_json.bme280_1_cb == "OK")
 				{
-					$(".btns_bme280_1").addClass('badge-success').text("ОК ");
+					$(".btns_bme280_1").addClass('badge-success').text("ОК ").fadeOut( 2000 );
 				}
 				else
 				{
-					$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ");
+					$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ").fadeOut( 2000 );
 				}
 			}		
 			
