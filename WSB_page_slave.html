@@ -474,14 +474,15 @@
 				// &
 				$("#bm_alt").addClass('is-invalid').html();
 				$(".altvld").css( "display", "block" );
+			}
+			else
+			{
 				if(parseInt($("#bm_alt").val(),10)<=0)
 				{
 				$("#bm_alt").removeClass('is-invalid').html();
 				$(".altvld").css( "display", "none" );
+				return;
 				}
-			}
-			else
-			{
 				$("#bm_alt").removeClass('is-invalid').html();
 				$(".altvld").css( "display", "none" );
 			}
