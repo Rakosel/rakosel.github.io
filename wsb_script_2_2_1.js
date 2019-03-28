@@ -1,4 +1,4 @@
-// upd62d with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd62c4 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -16,7 +16,7 @@
 		var scrPos = 0, ovShBtn0 = false;
 		var ast;
 		var ua_mode=0;
-		var tmranim = 3500; // animate [s]
+		var tmranim = 3000; // animate [s]
 		// reverse panelki dlya debug
 		var sds,mds,sets;
 		sds = $('.sideset');
@@ -46,11 +46,12 @@
 		var bm_alt = $("#bm_alt").val();
 		//$("#bm_alt").removeClass('is-invalid').html();
 		//$(".altvld").css( "display", "none" );
-		$(".btns_bme280_1").fadeIn();
+		//$(".btns_bme280_1").fadeIn();
+		$(".btns_bme280_1").removeClass('badge-success');
 		$(".btns_bme280_1").removeClass('badge-danger');
-		if($.isNumeric($("#bm_alt").val())==false && $("#bm_alt").val()<=0)
+		if($.isNumeric(bm_alt)==false)
 		{
-			$(".btns_bme280_1").addClass('badge-danger').text("Ошибка (смотри выше)").fadeOut( tmranim );
+			$(".btns_bme280_1").addClass('badge-danger').text("Ошибка (смотри выше)");
 			//$("#bm_alt").addClass('is-invalid').html();
 			//$(".altvld").css( "display", "block" );
 			return;
@@ -65,7 +66,8 @@
 		// C4itat
 		function btn_bm280_1_Rd()
 		{
-			$(".btns_bme280_1").fadeIn();
+		$(".btns_bme280_1").removeClass('badge-success');
+		$(".btns_bme280_1").removeClass('badge-danger');
 			fetch('/output_bme280_1.json?n=' + Math.random(), 'GET', txjstmp, 10);
 			
 		}
@@ -104,18 +106,19 @@
   				else
   				{console.log("d not string");ftvall("");return 0;}
   			}
-			$(".btns_bme280_1").fadeIn();
+			//$(".btns_bme280_1").fadeIn();
 			// posle input BME280: WEB -> ESP
 			if(temp_json["bme280_1_cb"])
 			{
-				$(".btns_bme280_1").fadeIn();
+				//$(".btns_bme280_1").removeClass('badge-success');
+				//$(".btns_bme280_1").removeClass('badge-danger');
 				if(temp_json.bme280_1_cb == "OK")
 				{
-					$(".btns_bme280_1").addClass('badge-success').text("ОК ").fadeOut( tmranim );
+					$(".btns_bme280_1").addClass('badge-success').text("ОК ");
 				}
 				else
 				{
-					$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ").fadeOut( tmranim );
+					$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ");
 				}
 			}		
 			
@@ -134,8 +137,8 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 				var bmst1 = parseInt(temp_json.bme280_1_ou[1], 10);
 				
 				$("#bm1_st").val("0x"+Number(temp_json.bme280_1_ou[1]).toString(16).toUpperCase());
-				$(".btns_bme280_1").removeClass('badge-danger');
-				$(".btns_bme280_1").removeClass('badge-success');
+				//$(".btns_bme280_1").removeClass('badge-danger');
+				//$(".btns_bme280_1").removeClass('badge-success');
 				if($.isNumeric(bmst1))
 				{
 					console.log("4uclo "+bmst1);
