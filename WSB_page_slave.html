@@ -1,4 +1,4 @@
-<!--upd17с2 option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
+<!--upd17с3 option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
 				<br>
 				<form id = "scntf" class="needs-validation" novalidate>
 				<div class="form-group row">
@@ -469,8 +469,9 @@
 		});	
 	 
 	 		$( "#bm_alt" ).keyup(function() {
-			if($.isNumeric($("#bm_alt").val())==false && parseInt(($("#bm_alt").val()),10)<=0)
+			if($.isNumeric($("#bm_alt").val())==false)
 			{
+				// && parseInt(($("#bm_alt").val()),10)<=0
 				$("#bm_alt").addClass('is-invalid').html();
 				$(".altvld").css( "display", "block" );
 			}
