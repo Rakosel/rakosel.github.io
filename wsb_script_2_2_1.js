@@ -125,7 +125,7 @@
 			// posle output BME280: WEB <- ESP		
 			if(temp_json["bme280_1_ou"])
 			{
-				$(".btns_bme280_1").fadeIn();
+				//$(".btns_bme280_1").fadeIn();
 				//i=0;
 				//var hSt = temp_json.bme280_1_ou[0].toString(16).toUpperCase();
 				//parseInt(hSt, 16)
@@ -164,12 +164,12 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 					$("#bm1s_f [value="+temp_json.bme280_1_ou[4]+"]").attr("selected", "selected");
 					$("#bm1_t_st [value="+temp_json.bme280_1_ou[5]+"]").attr("selected", "selected");
 					
-					$(".btns_bme280_1").addClass('badge-success').text("ОК ").fadeOut( tmranim );
+					$(".btns_bme280_1").addClass('badge-success').text("ОК ");
 				}
 				}
 				else
 				{$("#bm1_ch").val("Ошибка");$("#bm1_st").val("Ошибка");
-				$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ").fadeOut( tmranim );
+				$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ");
 				}
 				//bm1s_m
 			}	
