@@ -27,7 +27,7 @@
 
 		function refr_rtc()
 		{
-			fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 10);
+			//fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 10);
 			if ((subwdeb == false) && $("#autmp").prop("checked"))
 			{sub_grad();}
 			//console.log("refr_rtc");
@@ -573,7 +573,7 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 			$('.navia').addClass('list-group-item list-group-item-action bg-light border');
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
-			//rs = setInterval(refr_rtc, 2000);
+			rs = setInterval(refr_rtc, 2000);
 			i=0;
 			//$(".bsn0").collapse('show');
 			smgh();
