@@ -1,4 +1,4 @@
-<!--upd18c option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
+<!--upd19a option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
 				<br>
 				<form id = "scntf" class="needs-validation" novalidate>
 				<div class="form-group row">
@@ -115,12 +115,6 @@
 					<option value="0">Сон</option>
 					<option value="1">Форсиронный</option>
 					<option value="3" selected="selected">Нормальный</option>
-        			<!--<option>...</option>
-					http://www.tigir.com/javascript_select.htm
-					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
-					https://toster.ru/q/397223
-					CreatElement
-					-->
 					</select>
 				  </div>
 				</div>
@@ -133,12 +127,6 @@
 					<option value="3">4x</option>
 					<option value="4">8x</option>
 					<option value="5">16x</option>
-        			<!--<option>...</option>
-					http://www.tigir.com/javascript_select.htm
-					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
-					https://toster.ru/q/397223
-					CreatElement
-					-->
 					</select>
 				  </div>
 				</div>
@@ -150,12 +138,6 @@
 					<option value="2">4</option>
 					<option value="3">8</option>
 					<option value="4">16</option>
-        			<!--<option>...</option>
-					http://www.tigir.com/javascript_select.htm
-					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
-					https://toster.ru/q/397223
-					CreatElement
-					-->
 					</select>
 				  </div>
 				</div>
@@ -170,12 +152,6 @@
 					<option value="5">1000</option>
 					<option value="6">10</option>
 					<option value="7">20</option>
-        			<!--<option>...</option>
-					http://www.tigir.com/javascript_select.htm
-					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
-					https://toster.ru/q/397223
-					CreatElement
-					-->
 					</select>
 				  </div>
 				</div>
@@ -212,12 +188,6 @@
 					<option value="0">Сон</option>
 					<option value="1">Форсиронный</option>
 					<option value="3" selected="selected">Нормальный</option>
-        			<!--<option>...</option>
-					http://www.tigir.com/javascript_select.htm
-					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
-					https://toster.ru/q/397223
-					CreatElement
-					-->
 					</select>
 				  </div>
 				</div>
@@ -230,12 +200,6 @@
 					<option value="3">4x</option>
 					<option value="4">8x</option>
 					<option value="5">16x</option>
-        			<!--<option>...</option>
-					http://www.tigir.com/javascript_select.htm
-					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
-					https://toster.ru/q/397223
-					CreatElement
-					-->
 					</select>
 				  </div>
 				</div>
@@ -247,12 +211,6 @@
 					<option value="2">4</option>
 					<option value="3">8</option>
 					<option value="4">16</option>
-        			<!--<option>...</option>
-					http://www.tigir.com/javascript_select.htm
-					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
-					https://toster.ru/q/397223
-					CreatElement
-					-->
 					</select>
 				  </div>
 				</div>
@@ -285,61 +243,48 @@
 				<p class="h5 modal-title text-center">Настройка датчика SHT30</p>
 				<hr>
 				<div class="form-group row">
-				<div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Status</div>
+				<div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Статус:</div>
 				<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0"><input type="text" class="form-control" id = "sht30_st" name="sht30_st" value="" required></div>
 				<div class="col-lg-2 offset-xl-0 col-xl-2 offset-md-0 col-md-3 offset-lg-0"><button type="button" id="btn_sht30_info" class="btn btn-primary" onclick="btn_sht30_info()">Подробнее</button></div>
 				</div>
-					<div class="form-group row">
-					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">mode</div>
-					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="sht30_m" name = "sht30_m" class="form-control">
-       				<option selected>Выбор...</option>
-        			<!--<option>...</option>
-					http://www.tigir.com/javascript_select.htm
-					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
-					https://toster.ru/q/397223
-					CreatElement
-					-->
+				<div class="form-group row">
+					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Внетреннее нагревание:</div>
+					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="sht30_ht" name = "sht30_ht" class="form-control">
+       				<option value="0" selected>Выкл</option>
+					<option value="1">Вкл</option>
 					</select>
 				  </div>
 				</div>
 				<div class="form-group row">
-				  <div class="offset-xl-1 offset-lg-1 offset-md-1 col-md-2 col-xl-2 col-lg-2">Measure speed</div>
+					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Режим замера:</div>
+					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="sht30_m" name = "sht30_m" class="form-control">
+       				<option value="0">Одиночный[Single]</option>
+					<option value="1" selected>Периодический[Periodic]</option>
+					<option value="2">Ускоренный[ART]</option>
+					</select>
+				  </div>
+				</div>
+				<div class="sht30_row form-group row collapse hide">
+					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Дополнительная задержка[SINGLE]:</div>
+					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="sht30_scr" name="sht30_scr" class="form-control">
+       				<option value="1" selected>Вкл</option>
+					<option value="2">Выкл</option>
+					</select>
+				  </div>
+				</div>
+				<div class="form-group row">
+				  <div class="offset-xl-1 offset-lg-1 offset-md-1 col-md-2 col-xl-2 col-lg-2">Скорость измерения:</div>
 					<div class="col-xs-3 col-md-3 offset-lg-0 mb-2 offset-xl-0 col-lg-3">
 					<select id="sht30_rep" name="sht30_rep" class="form-control">
-       				<option selected>Приоритет...</option>
-        			<!--<option>...</option>
-					http://www.tigir.com/javascript_select.htm
-					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
-					https://toster.ru/q/397223
-					CreatElement
-					-->
+       				<option value="0" selected>Высокий</option>
+					<option value="1">Средний</option>
+					<option value="2">Низкий</option>
 					</select>
 					</div>
 					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0">
-					<select id="sht30_mps" name="sht30_mps" class="form-control">
-       				<option selected>mps...</option>
-        			<!--<option>...</option>
-					http://www.tigir.com/javascript_select.htm
-					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
-					https://toster.ru/q/397223
-					CreatElement
-					-->
-					</select>
+					<p class="badge lead text-white sht30_mps"></p>
 					</div>
 				  </div>
-				<div class="form-group row">
-					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Heater</div>
-					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="sht30_h" name="sht30_h" class="form-control">
-       				<option selected>Выбор...</option>
-        			<!--<option>...</option>
-					http://www.tigir.com/javascript_select.htm
-					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
-					https://toster.ru/q/397223
-					CreatElement
-					-->
-					</select>
-				  </div>
-				</div>
 				<div class="form-group row">
 					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnsht30" class="btn btn-primary" onclick="btn_sht30()">Задать</button></div>
 					<div class="col-2 col-xl-1 offset-xl-0">
