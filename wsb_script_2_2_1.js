@@ -1,4 +1,4 @@
-// upd62d with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd62d1 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -151,10 +151,10 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 					else//console.log("#gBM2801ch3 ch false");
 					{$("#gBM2801ch3").prop('checked', false);console.log("#gBM2801ch3 false "+bmst1);}
 
-					$('#bm1s_m option').removeAttr("selected");
-					$('#bm1s_osrs option').removeAttr("selected");
-					$('#bm1s_f option').removeAttr("selected");
-					$('#bm1_t_st option').removeAttr("selected");
+					$('#bm1s_m option').removeProp("selected");
+					$('#bm1s_osrs option').removeProp("selected");
+					$('#bm1s_f option').removeProp("selected");
+					$('#bm1_t_st option').removeProp("selected");
 					//$('#bm1s_m option').each(function(){
 					//		this.removeAttr("selected");
 					//});
