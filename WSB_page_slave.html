@@ -281,9 +281,9 @@
 					<option value="2">Низкий</option>
 					</select>
 					</div>
-					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0 sht30_mps_ss collapse show">
+					<!--<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0 sht30_mps_ss collapse show">
 					<p class="badge lead text-white sht30_mps"></p>
-					</div>
+					</div>-->
 					<div class="col-xs-3 col-md-3 offset-lg-0 mb-2 offset-xl-0 col-lg-3 sht30_mps_per collapse hide">
 					<select id="sht30_mps_sel" name="sht30_mps_sel" class="form-control">
        				<option value="0" selected>0.5[сек]</option>
@@ -426,8 +426,8 @@
 		$("#sht30_m").click(function() {
 					$(".sht30_row").removeClass('collapse show');
 					$(".sht30_row").removeClass('collapse hide');
-					$(".sht30_mps_ss").removeClass('collapse hide');
-					$(".sht30_mps_ss").removeClass('collapse show');
+					//$(".sht30_mps_ss").removeClass('collapse hide');
+					//$(".sht30_mps_ss").removeClass('collapse show');
 					$(".sht30_mps_per").removeClass('collapse hide');
 					$(".sht30_mps_per").removeClass('collapse show');
 			
@@ -436,7 +436,7 @@
 				if($("#sht30_m").val()==0)
 				{
 					$(".sht30_row").addClass('collapse show');
-					$(".sht30_mps_ss").addClass('collapse show');
+					//$(".sht30_mps_ss").addClass('collapse show');
 					$(".sht30_mps_per").addClass('collapse hide');
 					return;
 				}
@@ -445,7 +445,7 @@
 				//{
 					$(".sht30_row").addClass('collapse hide');
 					$(".sht30_mps_per").addClass('collapse show');
-					$(".sht30_mps_ss").addClass('collapse hide');
+					//$(".sht30_mps_ss").addClass('collapse hide');
 				//}
 		});
 	 
