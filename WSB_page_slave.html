@@ -1,4 +1,4 @@
-<!--upd19c option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
+<!--upd19c1 option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
 				<br>
 				<form id = "scntf" class="needs-validation" novalidate>
 				<div class="form-group row">
@@ -424,25 +424,27 @@
 		});	
 		
 		$("#sht30_m").click(function() {
-					$("sht30_row").removeClass('collapse show');
-					$("sht30_row").removeClass('collapse hide');
-					$("sht30_mps_ss").removeClass('collapse hide');
-					$("sht30_mps_ss").removeClass('collapse show');
-					$("sht30_mps_per").removeClass('collapse hide');
-					$("sht30_mps_per").removeClass('collapse show');
+					$("#sht30_row").removeClass('collapse show');
+					$("#sht30_row").removeClass('collapse hide');
+					$("#sht30_mps_ss").removeClass('collapse hide');
+					$("#sht30_mps_ss").removeClass('collapse show');
+					$("#sht30_mps_per").removeClass('collapse hide');
+					$("#sht30_mps_per").removeClass('collapse show');
+			
+					$("#sht30_st").val($("#sht30_m").val());
 				// if SINGLE
-				if($("sht30_m").val()==0)
+				if($("#sht30_m").val()==0)
 				{
-					$("sht30_row").addClass('collapse show');
-					$("sht30_mps_ss").addClass('collapse show');
-					$("sht30_mps_per").addClass('collapse hide');
+					$("#sht30_row").addClass('collapse show');
+					$("#sht30_mps_ss").addClass('collapse show');
+					$("#sht30_mps_per").addClass('collapse hide');
 					return;
 				}
 				// if PERIODIC
 				//if($("sht30_m").val()==1)
 				//{
-					$("sht30_row").addClass('collapse hide');
-					$("sht30_mps_per").addClass('collapse show');
+					$("#sht30_row").addClass('collapse hide');
+					$("#sht30_mps_per").addClass('collapse show');
 				//}
 		});
 	 
