@@ -1,4 +1,4 @@
-<!--upd19d option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
+<!--upd19d1 option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
 				<br>
 				<form id = "scntf" class="needs-validation" novalidate>
 				<div class="form-group row">
@@ -272,7 +272,7 @@
 					</select>
 				  </div>
 				</div>
-				<div class="form-group row">
+				<div class="form-group row sht30_artz">
 				  <div class="offset-xl-1 offset-lg-1 offset-md-1 col-md-2 col-xl-2 col-lg-2">Скорость измерения:</div>
 					<div class="col-xs-3 col-md-3 offset-lg-0 mb-2 offset-xl-0 col-lg-3">
 					<select id="sht30_rep" name="sht30_rep" class="form-control">
@@ -284,7 +284,7 @@
 					<!--<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0 sht30_mps_ss collapse show">
 					<p class="badge lead text-white sht30_mps"></p>
 					</div>-->
-					<div class="col-xs-3 col-md-3 offset-lg-0 mb-2 offset-xl-0 col-lg-3 sht30_mps_per collapse hide">
+					<div class="col-xs-3 col-md-3 offset-lg-0 mb-2 offset-xl-0 col-lg-3 sht30_mps_per collapse show">
 					<select id="sht30_mps_sel" name="sht30_mps_sel" class="form-control">
        				<option value="0" selected>0.5[сек]</option>
 					<option value="1">1.0[сек]</option>
@@ -430,19 +430,23 @@
 					//$(".sht30_mps_ss").removeClass('collapse show');
 					$(".sht30_mps_per").removeClass('collapse hide');
 					$(".sht30_mps_per").removeClass('collapse show');
+					$(".sht30_artz").removeClass('collapse hide');
+					$(".sht30_artz").removeClass('collapse show');
 					//$("#sht30_st").val($("#sht30_m").val());
 				// if SINGLE
 				if($("#sht30_m").val()==0)
 				{
 					$(".sht30_row").addClass('collapse show');
+					$(".sht30_artz").addClass('collapse show');
 					//$(".sht30_mps_ss").addClass('collapse show');
 					$(".sht30_mps_per").addClass('collapse hide');
 					return;
 				}
 				if($("#sht30_m").val()==2)
 				{
-					$(".sht30_mps_per").addClass('collapse hide');
+					$(".sht30_artz").addClass('collapse hide');
 					$(".sht30_row").addClass('collapse hide');
+					$(".sht30_mps_per").addClass('collapse hide');
 					//$(".sht30_row").addClass('collapse show');
 					//$(".sht30_mps_ss").addClass('collapse show');
 					//$(".sht30_mps_per").addClass('collapse hide');
@@ -451,6 +455,7 @@
 				// if PERIODIC
 				//if($("sht30_m").val()==1)
 				//{
+					$(".sht30_artz").addClass('collapse show');
 					$(".sht30_row").addClass('collapse hide');
 					$(".sht30_mps_per").addClass('collapse show');
 					//$(".sht30_mps_ss").addClass('collapse hide');
