@@ -1,12 +1,9 @@
-// upd62d1 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd62d2 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 
-//		onclick="btn_bm280_1_Wr()">Задать</button></div>
-//		 onclick="btn_bm280_1_Rd()">Считать</button></div>
-//	
 		var stopAll = false, ra, rs, subwdeb = false, lines_in, i, url;
 		var maOBJ,seOBJ,bmeOBJ;
   		var str_out = "", str_out1="";
@@ -33,7 +30,28 @@
 			//console.log("refr_rtc");
 		}
 		
-		//3apis
+		//sht30_1
+		function btn_sht30_1_Wr()
+		{
+			//bmeOBJ = $("#scntf").serializeArray(); 
+			//console.log(bmeOBJ);
+			// Rd mode
+		var heater = $("#sht30_ht option:selected").val();
+		var mode = $("#sht30_m option:selected").val();
+		var scr = $("#sht30_scr option:selected").val();
+		var rep = $("#sht30_rep option:selected").val();
+		var mps_sel = $("#sht30_mps_sel option:selected").val();
+
+		$(".btns_sht30").removeClass('badge-success');
+		$(".btns_sht30").removeClass('badge-danger');
+
+		input_sht30 = { "sht3x_conf": [heater,mode,scr,rep,mps_sel] };
+		fetch('/input_sht30_1.json?n=' + encodeURIComponent(JSON.stringify(input_sht30))+'&', 'GET', txjstmp, 10);
+		console.log(JSON.stringify(input_sht30));
+
+		}
+		
+		//bm280_1
 		function btn_bm280_1_Wr()
 		{
 			//bmeOBJ = $("#scntf").serializeArray(); 
@@ -121,6 +139,19 @@
 					$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ");
 				}
 			}		
+			if(temp_json["sht30_1_cb"])
+			{
+				//$(".btns_bme280_1").removeClass('badge-success');
+				//$(".btns_bme280_1").removeClass('badge-danger');
+				if(temp_json.sht30_1_cb == "OK")
+				{
+					$(".btns_sht30").addClass('badge-success').text("ОК ");
+				}
+				else
+				{
+					$(".btns_sht30").addClass('badge-danger').text("Ошибка ");
+				}
+			}	
 			
 			// posle output BME280: WEB <- ESP		
 			if(temp_json["bme280_1_ou"])
