@@ -184,7 +184,7 @@
 				$("#sht30_rep [value="+temp_json.sht30_1_ou[3]+"]").prop("selected", "selected");
 				$("#sht30_mps_sel [value="+temp_json.sht30_1_ou[4]+"]").prop("selected", "selected");
 				$("#sht30_scr [value="+temp_json.sht30_1_ou[5]+"]").prop("selected", "selected");
-$("#sht30_m").click();
+				$("#sht30_m").click();
 				/*if($.isNumeric(bmst1))
 				{
 					console.log("4uclo "+bmst1);
