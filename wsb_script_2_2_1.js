@@ -1,4 +1,4 @@
-// upd62d2 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd63a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -49,7 +49,17 @@
 		fetch('/input_sht30_1.json?n=' + encodeURIComponent(JSON.stringify(input_sht30))+'&', 'GET', txjstmp, 10);
 		console.log("[heater,mode,scr,rep,mps_sel]");
 		console.log(JSON.stringify(input_sht30));
-
+		}
+		
+		//sht30_1
+		function btn_sht30_1_Rd()
+		{
+			//bmeOBJ = $("#scntf").serializeArray(); 
+			//console.log(bmeOBJ);
+			// Rd mode
+		$(".btns_sht30_1").removeClass('badge-success');
+		$(".btns_sht30_1").removeClass('badge-danger');
+			fetch('/output_sht30_1.json?n=' + Math.random(), 'GET', txjstmp, 10);
 		}
 		
 		//bm280_1
@@ -152,6 +162,61 @@
 				{
 					$(".btns_sht30").addClass('badge-danger').text("Ошибка ");
 				}
+			}	
+			
+			// posle output BME280: WEB <- ESP		
+			if(temp_json["sht30_1_ou"])
+			{
+
+			if(parseInt(temp_json.sht30_1_ou[0], 10) != 999)
+				{
+				$("#sht30_ht").val("0x"+Number(temp_json.bme280_1_ou[0]).toString(16).toUpperCase());
+				var stsht30 = parseInt(temp_json.bme280_1_ou[0], 10);
+				$("#bm1_st").val("0x"+Number(temp_json.bme280_1_ou[1]).toString(16).toUpperCase());
+				
+				$('#sht30_ht option').removeProp("selected");
+				$('#sht30_m option').removeProp("selected");
+				$('#sht30_scr option').removeProp("selected");
+				$('#sht30_rep option').removeProp("selected");
+				$('#sht30_mps_sel option').removeProp("selected");
+				
+				$("#sht30_m [value="+temp_json.bme280_1_ou[2]+"]").prop("selected", "selected");
+				$("#sht30_rep [value="+temp_json.bme280_1_ou[3]+"]").prop("selected", "selected");
+				$("#sht30_rep_mps [value="+temp_json.bme280_1_ou[4]+"]").prop("selected", "selected");
+				$("#sht30_scr [value="+temp_json.bme280_1_ou[5]+"]").prop("selected", "selected");
+				/*if($.isNumeric(bmst1))
+				{
+					console.log("4uclo "+bmst1);
+					if(bmst1 & 0x01)
+					{$("#gBM2801ch0").prop('checked', true);console.log("#gBM2801ch0 true "+bmst1);}
+					else
+					{$("#gBM2801ch0").prop('checked', false);console.log("#gBM2801ch0 false "+bmst1);}
+					if(bmst1 & 0x08)//console.log("#gBM2801ch3 ch true");
+					{$("#gBM2801ch3").prop('checked', true);console.log("#gBM2801ch3 true "+bmst1);}
+					else//console.log("#gBM2801ch3 ch false");
+					{$("#gBM2801ch3").prop('checked', false);console.log("#gBM2801ch3 false "+bmst1);}
+
+					$('#bm1s_m option').removeProp("selected");
+					$('#bm1s_osrs option').removeProp("selected");
+					$('#bm1s_f option').removeProp("selected");
+					$('#bm1_t_st option').removeProp("selected");
+					//$('#bm1s_m option').each(function(){
+					//		this.removeAttr("selected");
+					//});
+					$("#bm1s_m [value="+temp_json.bme280_1_ou[2]+"]").prop("selected", "selected");
+					$("#bm1s_osrs [value="+temp_json.bme280_1_ou[3]+"]").prop("selected", "selected");
+					$("#bm1s_f [value="+temp_json.bme280_1_ou[4]+"]").prop("selected", "selected");
+					$("#bm1_t_st [value="+temp_json.bme280_1_ou[5]+"]").prop("selected", "selected");
+					
+					$(".btns_bme280_1").addClass('badge-success').text("ОК ");
+				}*/
+				$(".btns_sht30_1").addClass('badge-success').text("ОК ");
+				}
+				else
+				{
+				$(".btns_sht30_1").addClass('badge-danger').text("Ошибка ");
+				}
+				//bm1s_m
 			}	
 			
 			// posle output BME280: WEB <- ESP		
