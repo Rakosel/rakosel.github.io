@@ -47,6 +47,7 @@
 
 		input_sht30 = { "sht3x_conf": [heater,mode,scr,rep,mps_sel] };
 		fetch('/input_sht30_1.json?n=' + encodeURIComponent(JSON.stringify(input_sht30))+'&', 'GET', txjstmp, 10);
+		console.log("[heater,mode,scr,rep,mps_sel]");
 		console.log(JSON.stringify(input_sht30));
 
 		}
