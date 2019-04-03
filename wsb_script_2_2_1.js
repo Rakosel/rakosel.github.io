@@ -170,9 +170,8 @@
 
 			if(parseInt(temp_json.sht30_1_ou[0], 10) != 999)
 				{
-				$("#sht30_ht").val("0x"+Number(temp_json.sht30_1_ou[0]).toString(16).toUpperCase());
+				$("#sht30_st").val("0x"+Number(temp_json.sht30_1_ou[0]).toString(16).toUpperCase());
 				var stsht30 = parseInt(temp_json.sht30_1_ou[0], 10);
-				$("#bm1_st").val("0x"+Number(temp_json.sht30_1_ou[1]).toString(16).toUpperCase());
 				
 				$('#sht30_ht option').removeProp("selected");
 				$('#sht30_m option').removeProp("selected");
@@ -180,9 +179,10 @@
 				$('#sht30_rep option').removeProp("selected");
 				$('#sht30_mps_sel option').removeProp("selected");
 				
+				$("#sht30_ht [value="+temp_json.sht30_1_ou[1]+"]").prop("selected", "selected");
 				$("#sht30_m [value="+temp_json.sht30_1_ou[2]+"]").prop("selected", "selected");
 				$("#sht30_rep [value="+temp_json.sht30_1_ou[3]+"]").prop("selected", "selected");
-				$("#sht30_rep_mps [value="+temp_json.sht30_1_ou[4]+"]").prop("selected", "selected");
+				$("#sht30_mps_sel [value="+temp_json.sht30_1_ou[4]+"]").prop("selected", "selected");
 				$("#sht30_scr [value="+temp_json.sht30_1_ou[5]+"]").prop("selected", "selected");
 				/*if($.isNumeric(bmst1))
 				{
