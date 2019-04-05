@@ -1,4 +1,4 @@
-<!--upd19d2 option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
+<!--upd20 option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
 				<br>
 				<form id = "scntf" class="needs-validation" novalidate>
 				<div class="form-group row">
@@ -376,33 +376,26 @@
 				<div class="col-lg-2 offset-xl-0 col-xl-2 offset-md-0 col-md-3 offset-lg-0 col-sm-3 offset-sm-0"><button type="button" id="btn_htu21d_info" class="btn btn-primary" onclick="btn_htu21d_info()">Подробнее</button></div>
 				</div>
 					<div class="form-group row">
-					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3">mode</div>
+					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3">Точность АЦП:</div>
 					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-sm-4 offset-sm-0 col-md-4"><select id="htu21d_m" name = "htu21d_m" class="form-control">
-       				<option selected>Выбор...</option>
-        			<!--<option>...</option>
-					http://www.tigir.com/javascript_select.htm
-					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
-					https://toster.ru/q/397223
-					CreatElement
-					-->
+					<option value="0" selected>14[бит]</option>
+					<option value="1">12[бит]</option>
+					<option value="2">13[бит]</option>
+					<option value="3">11[бит]</option>
 					</select>
 				  </div>
 				</div>
 				<div class="form-group row">
-					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3">Heater</div>
-					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 offset-md-0 offset-sm-0 col-sm-4 col-md-4"><select id="sht30_h" name="sht30_h" class="form-control">
-       				<option selected>Выбор...</option>
-        			<!--<option>...</option>
-					http://www.tigir.com/javascript_select.htm
-					http://qaru.site/questions/136001/javascript-populate-drop-down-list-with-array
-					https://toster.ru/q/397223
-					CreatElement
-					-->
+					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3">Внетреннее нагревание:</div>
+					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 offset-md-0 offset-sm-0 col-sm-4 col-md-4"><select id="sht30_ht" name="sht30_ht" class="form-control">
+       				<option value="0">Вкл</option>
+					<option value="1" selected>Выкл</option>
 					</select>
 				  </div>
 				</div>
 				<div class="form-group row">
-					<div class="col-xs-3 offset-lg-1 col-lg-3 offset-md-1 offset-sm-1 col-xl-2 col-md-3 col-sm-2"><button type="button" id="btnsht30" class="btn btn-primary" onclick="btn_sht30()">Задать</button></div>
+					<div class="col-xs-3 offset-lg-1 col-lg-3 offset-md-1 offset-sm-1 col-xl-2 col-md-3 col-sm-2"><button type="button" id="btnsht30" class="btn btn-primary" onclick="btn_htu21d_Wr()">Задать</button></div>
+					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnsht30rd" class="btn btn-primary" onclick="btn_htu21d_Rd()">Считать</button></div>
 					<div class="col col-sm-2 col-lg-2 col-md-2 col-xl-1 offset-xl-0 offset-sm-0">
 					<p class="text-white btns_htu21d">ОК</p>
 				  </div>
