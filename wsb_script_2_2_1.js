@@ -1,4 +1,4 @@
-// upd63a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd64a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -28,6 +28,33 @@
 			if ((subwdeb == false) && $("#autmp").prop("checked"))
 			{sub_grad();}
 			//console.log("refr_rtc");
+		}
+		
+		//sht30_1
+		function btn_htu21d_Wr()
+		{
+			//bmeOBJ = $("#scntf").serializeArray(); 
+			//console.log(bmeOBJ);
+			// Rd mode
+		var heater = $("#sht30_ht option:selected").val();
+		var mode = $("#sht30_m option:selected").val();
+
+		$(".btns_htu21d").removeClass('badge-success');
+		$(".btns_htu21d").removeClass('badge-danger');
+
+		var input_htu21d = { "htu21d_conf": [mode,heater] };
+		fetch('/input_htu21d.json?n=' + encodeURIComponent(JSON.stringify(input_htu21d))+'&', 'GET', txjstmp, 10);
+		}
+		
+		//sht30_1
+		function btn_htu21d_Rd()
+		{
+			//bmeOBJ = $("#scntf").serializeArray(); 
+			//console.log(bmeOBJ);
+			// Rd mode
+		$(".btns_htu21d").removeClass('badge-success');
+		$(".btns_htu21d").removeClass('badge-danger');
+		fetch('/output_htu21d.json?n=' + Math.random(), 'GET', txjstmp, 10);
 		}
 		
 		//sht30_1
@@ -150,10 +177,45 @@
 					$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ");
 				}
 			}		
-			if(temp_json["sht30_1_cb"])
+			
+			if(temp_json["htu21d_cb"])
 			{
 				//$(".btns_bme280_1").removeClass('badge-success');
 				//$(".btns_bme280_1").removeClass('badge-danger');
+				if(temp_json.htu21d_cb == "OK")
+				{
+					$(".btns_htu21d").addClass('badge-success').text("ОК ");
+				}
+				else
+				{
+					$(".btns_htu21d").addClass('badge-danger').text("Ошибка ");
+				}
+			}	
+						// posle output BME280: WEB <- ESP		
+			if(temp_json["htu21d_ou"])
+			{
+
+			if(parseInt(temp_json.htu21d_ou[0], 10) != 999)
+				{
+				$("#htu21d_st").val("0x"+Number(temp_json.htu21d_ou[0]).toString(16).toUpperCase());
+				var sthtu21d = parseInt(temp_json.htu21d_ou[0], 10);
+				
+				$('#htu21d_m option').removeProp("selected");
+				$('#sht30_ht option').removeProp("selected");
+				
+				$("#htu21d_m [value="+temp_json.sht30_1_ou[1]+"]").prop("selected", "selected");
+
+				$(".btns_htu21d").addClass('badge-success').text("ОК ");
+				}
+				else
+				{
+				$(".btns_htu21d").addClass('badge-danger').text("Ошибка ");
+				}
+				//bm1s_m
+			}	
+			
+			if(temp_json["sht30_1_cb"])
+			{
 				if(temp_json.sht30_1_cb == "OK")
 				{
 					$(".btns_sht30").addClass('badge-success').text("ОК ");
@@ -196,7 +258,6 @@
 					{$("#gBM2801ch3").prop('checked', true);console.log("#gBM2801ch3 true "+bmst1);}
 					else//console.log("#gBM2801ch3 ch false");
 					{$("#gBM2801ch3").prop('checked', false);console.log("#gBM2801ch3 false "+bmst1);}
-
 					$('#bm1s_m option').removeProp("selected");
 					$('#bm1s_osrs option').removeProp("selected");
 					$('#bm1s_f option').removeProp("selected");
