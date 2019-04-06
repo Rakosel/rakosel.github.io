@@ -36,13 +36,14 @@
 			//bmeOBJ = $("#scntf").serializeArray(); 
 			//console.log(bmeOBJ);
 			// Rd mode
-		var heater = $("#sht30_ht option:selected").val();
-		var mode = $("#sht30_m option:selected").val();
+		var heater = $("#htu21d_ht option:selected").val();
+		var mode = $("#htu21d_m option:selected").val();
 
 		$(".btns_htu21d").removeClass('badge-success');
 		$(".btns_htu21d").removeClass('badge-danger');
 
 		var input_htu21d = { "htu21d_conf": [mode,heater] };
+		console.log(input_htu21d);
 		fetch('/input_htu21d.json?n=' + encodeURIComponent(JSON.stringify(input_htu21d))+'&', 'GET', txjstmp, 10);
 		}
 		
