@@ -368,7 +368,7 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 			var PP = (1.359*Math.pow(10, 8)*Math.pow(10, (-1762.39/(tht+235.66))));
 			var PPp = (PP*133.32).toString();
 			console.log(PP);	
-			$("#htu21_pp").val(PPp.substring(0, 5)); 
+			$("#htu21_pp").val(PPp); 
 			var DEW = (-(1762.39/(Math.log(thh*(PP*0.01))-8.1332)+235.66)).toString();
 			$("#htu21_dew").val(DEW.substring(0, 5));
 			
