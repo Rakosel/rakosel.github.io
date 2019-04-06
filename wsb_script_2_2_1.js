@@ -369,7 +369,7 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 			console.log(PP);	
 			$("#htu21_pp").val(PP); 
 			var DEW = -(1762.39/(log(thh*(PP*0.01))-8.1332)+235.66);
-			$("#htu21_dew").val(DEW);
+			$("#htu21_dew").val("debug");
 			
 			}
 			if(temp_json["debug"])
