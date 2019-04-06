@@ -336,7 +336,7 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 			}	
 			if(temp_json["temp"] )
 			{
-			for(i=3;i<=maOBJ.length;i++)
+			for(i=3;i<maOBJ.length;i++)
 			{
 				try
 				{
@@ -360,7 +360,7 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 				{	$("#tm_adc").val(temp_json.temt_adc);}
 				}	
 				catch(e)
-				{tmpvlof(i);console.log("ERR temp"+maOBJ[i].name);console.log(e.message); }				
+				{tmpvlof(i);console.log("ERR temp"+maOBJ[i]);console.log(e.message); }				
 			}
 			var tht = parseFloat($("#htu21_t").val());
 			console.log(tht);
