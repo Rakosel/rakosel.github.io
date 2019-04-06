@@ -1,4 +1,4 @@
-// upd64a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd65a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -43,7 +43,7 @@
 		$(".btns_htu21d").removeClass('badge-danger');
 
 		var input_htu21d = { "htu21d_conf": [mode,heater] };
-		console.log(input_htu21d);
+		//console.log(input_htu21d);
 		fetch('/input_htu21d.json?n=' + encodeURIComponent(JSON.stringify(input_htu21d))+'&', 'GET', txjstmp, 10);
 		}
 		
@@ -75,8 +75,8 @@
 
 		input_sht30 = { "sht3x_conf": [heater,mode,scr,rep,mps_sel] };
 		fetch('/input_sht30_1.json?n=' + encodeURIComponent(JSON.stringify(input_sht30))+'&', 'GET', txjstmp, 10);
-		console.log("[heater,mode,scr,rep,mps_sel]");
-		console.log(JSON.stringify(input_sht30));
+		//console.log("[heater,mode,scr,rep,mps_sel]");
+		//console.log(JSON.stringify(input_sht30));
 		}
 		
 		//sht30_1
@@ -116,7 +116,7 @@
 
 		input_bme280 = { "bme280_conf": [mode,osrs,bm1s_f,bm1_t_st,bm_alt] };
 		fetch('/input_bme280_1.json?n=' + encodeURIComponent(JSON.stringify(input_bme280))+'&', 'GET', txjstmp, 10);
-		console.log(JSON.stringify(input_bme280));
+		//console.log(JSON.stringify(input_bme280));
 
 		}
 		
@@ -362,6 +362,9 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 				catch(e)
 				{tmpvlof(i);console.log(e.message); return 0;}				
 			}
+			var thtu = parseFloat($("htu21_t").val());
+			console(thtu);
+			$("#htu21_pp").val(1.359*Math.pow(10, 8)*Math.pow(10, (-1762.39/(thtu+235.66)))); 
 			}
 			if(temp_json["debug"])
 			{
