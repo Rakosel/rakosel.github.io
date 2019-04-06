@@ -353,21 +353,22 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 				if((i-3)<=temp_json.temp.length)
 				{	
 					$("#"+maOBJ[i].name).val(temp_json.temp[i-3]);
-					console.log("i-3"+temp_json.temp[i-3]);
+					//console.log("i-3"+temp_json.temp[i-3]);
 				}
 					
 				if(temp_json["temt_adc"] )
 				{	$("#tm_adc").val(temp_json.temt_adc);}
 				}	
 				catch(e)
-				{tmpvlof(i);console.log("ERR temp"+maOBJ[i]);console.log(e.message); }				
+				{tmpvlof(i);//console.log("ERR temp"+maOBJ[i]);
+				 console.log(e.message); }				
 			}
 			var tht = parseFloat($("#htu21_t").val());
-			console.log(tht);
+			//console.log(tht);
 			var thh = parseFloat($("#htu21_h").val());
 			var PP = (1.359*Math.pow(10, 8)*Math.pow(10, (-1762.39/(tht+235.66))));
 			var PPp = ((PP*133.32)/1000).toString();
-			console.log(PP);	
+			//console.log(PP);	
 			$("#htu21_pp").val(PPp.substring(0, 5)); 
 			var DEW = (-(1762.39/(Math.log(thh*(PP*0.01))-8.1332)+235.66)).toString();
 			$("#htu21_dew").val(DEW.substring(0, 5));
