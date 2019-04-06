@@ -362,14 +362,14 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 				catch(e)
 				{tmpvlof(i);console.log(e.message); return 0;}				
 			}
-			var tht = parseFloat($("htu21_t").val());
+			var tht = parseFloat($("#htu21_t").val());
 			console.log(tht);
 			var thh = parseFloat($("#htu21_h").val());
 			var PP = 1.359*Math.pow(10, 8)*Math.pow(10, (-1762.39/(tht+235.66)));
 			console.log(PP);	
-			$("#htu21_pp").val(PP); 
+			$("#humudity").val(PP); 
 			var DEW = -(1762.39/(log(thh*(PP*0.01))-8.1332)+235.66);
-			$("#htu21_dew").val("debug");
+			$("#pressure").val("debug");
 			
 			}
 			if(temp_json["debug"])
