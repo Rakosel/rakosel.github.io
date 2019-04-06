@@ -201,7 +201,7 @@
 				var sthtu21d = parseInt(temp_json.htu21d_ou[0], 10);
 				
 				$('#htu21d_m option').removeProp("selected");
-				$('#sht30_ht option').removeProp("selected");
+				$('#htu21d_ht option').removeProp("selected");
 				
 				$("#htu21d_ht [value="+temp_json.htu21d_ou[2]+"]").prop("selected", "selected");
 				$("#htu21d_m [value="+temp_json.htu21d_ou[1]+"]").prop("selected", "selected");
