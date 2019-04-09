@@ -1,4 +1,4 @@
-// upd67a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd68a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -21,6 +21,13 @@
 		sets = $('.setcnt');
 		cnftmp = $('.scntf');
 		// rtc time auto from server
+		
+		// SUBMIT debug
+		function btn_otp_wr()
+		{
+			var url1 = '/otp_mode?input=' + encodeURIComponent("Wr345")+ '&';
+			fetch(url1, 'GET', txjstmp, 10);
+		}
 
 		function refr_rtc()
 		{
@@ -249,31 +256,7 @@
 				$("#sht30_mps_sel [value="+temp_json.sht30_1_ou[4]+"]").prop("selected", "selected");
 				$("#sht30_scr [value="+temp_json.sht30_1_ou[5]+"]").prop("selected", "selected");
 				$("#sht30_m").click();
-				/*if($.isNumeric(bmst1))
-				{
-					console.log("4uclo "+bmst1);
-					if(bmst1 & 0x01)
-					{$("#gBM2801ch0").prop('checked', true);console.log("#gBM2801ch0 true "+bmst1);}
-					else
-					{$("#gBM2801ch0").prop('checked', false);console.log("#gBM2801ch0 false "+bmst1);}
-					if(bmst1 & 0x08)//console.log("#gBM2801ch3 ch true");
-					{$("#gBM2801ch3").prop('checked', true);console.log("#gBM2801ch3 true "+bmst1);}
-					else//console.log("#gBM2801ch3 ch false");
-					{$("#gBM2801ch3").prop('checked', false);console.log("#gBM2801ch3 false "+bmst1);}
-					$('#bm1s_m option').removeProp("selected");
-					$('#bm1s_osrs option').removeProp("selected");
-					$('#bm1s_f option').removeProp("selected");
-					$('#bm1_t_st option').removeProp("selected");
-					//$('#bm1s_m option').each(function(){
-					//		this.removeAttr("selected");
-					//});
-					$("#bm1s_m [value="+temp_json.bme280_1_ou[2]+"]").prop("selected", "selected");
-					$("#bm1s_osrs [value="+temp_json.bme280_1_ou[3]+"]").prop("selected", "selected");
-					$("#bm1s_f [value="+temp_json.bme280_1_ou[4]+"]").prop("selected", "selected");
-					$("#bm1_t_st [value="+temp_json.bme280_1_ou[5]+"]").prop("selected", "selected");
-					
-					$(".btns_bme280_1").addClass('badge-success').text("ОК ");
-				}*/
+
 				$(".btns_sht30_1").addClass('badge-success').text("ОК ");
 				}
 				else
