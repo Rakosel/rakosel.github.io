@@ -1,4 +1,4 @@
-// upd68a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd68b with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -26,7 +26,14 @@
 		function btn_otp_wr()
 		{
 			var url1 = '/otp_mode?input=' + encodeURIComponent("Wr345")+ '&';
-			fetch(url1, 'GET', txjstmp, 10);
+			fetch(url1, 'GET', txjstmp, 20);
+		}
+
+		// SUBMIT debug
+		function btn_otp_rd()
+		{
+			var url1 = '/otp_mode?input=' + encodeURIComponent("Rd345")+ '&';
+			fetch(url1, 'GET', txjstmp, 20);
 		}
 
 		function refr_rtc()
