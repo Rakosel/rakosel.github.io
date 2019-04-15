@@ -3,7 +3,10 @@
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
-
+// function time(){
+// return parseInt(new Date().getTime()/1000)
+// }
+// alert(time())//1300051970
 		var stopAll = false, ra, rs, subwdeb = false, lines_in, i, url;
 		var maOBJ,seOBJ,bmeOBJ;
   		var str_out = "", str_out1="";
