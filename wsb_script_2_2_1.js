@@ -41,9 +41,8 @@
 
 		function refr_rtc()
 		{
-			//fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 10);
 			if ((subwdeb == false) && $("#autmp").prop("checked"))
-			{sub_grad();}
+			{fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 10);sub_grad();}
 			//console.log("refr_rtc");
 		}
 		
