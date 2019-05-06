@@ -1,4 +1,4 @@
-// upd68b with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd69 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -32,6 +32,12 @@
 			fetch(url1, 'GET', txjstmp, 20);
 		}
 
+
+		function btn_sensor_rd()
+		{
+			var url1 = '/otp_mode?input=' + encodeURIComponent("GiveMeas")+ '&';
+			fetch(url1, 'GET', txjstmp, 40);	
+		}
 		// SUBMIT debug
 		function btn_otp_rd()
 		{
@@ -194,7 +200,49 @@
 					$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ");
 				}
 			}		
-			
+			//
+			if(temp_json["GiveMeas_cb"])
+			{
+				//$(".btns_bme280_1").removeClass('badge-success');
+				//$(".btns_bme280_1").removeClass('badge-danger');
+				console.log(temp_json.GiveMeas_cb);
+				str_out1+=temp_json.GiveMeas_cb;
+				esp_uart_out_val.val(str_out1);
+			}	
+			//$(".btns_bme280_1").fadeIn();
+			// posle input BME280: WEB -> ESP
+			if(temp_json["Wr345_cb"])
+			{
+				//$(".btns_bme280_1").removeClass('badge-success');
+				//$(".btns_bme280_1").removeClass('badge-danger');
+				if(temp_json.Wr345_cb == "OK")
+				{
+					$(".btns_otp").removeClass('badge-danger');
+					$(".btns_otp").addClass('badge-success').text("ОК ");
+				}
+				else
+				{
+					$(".btns_otp").removeClass('badge-success');
+					$(".btns_otp").addClass('badge-danger').text("Ошибка Wr345");
+				}
+			}		
+			//$(".btns_bme280_1").fadeIn();
+			// posle input BME280: WEB -> ESP
+			if(temp_json["Rd345_cb"])
+			{
+				//$(".btns_bme280_1").removeClass('badge-success');
+				//$(".btns_bme280_1").removeClass('badge-danger');
+				if(temp_json.Wr345_cb == "OK")
+				{
+					$(".btns_otp").removeClass('badge-danger');
+					$(".btns_otp").addClass('badge-success').text("ОК ");
+				}
+				else
+				{
+					$(".btns_otp").removeClass('badge-success');
+					$(".btns_otp").addClass('badge-danger').text("Ошибка Rd345");
+				}
+			}	
 			if(temp_json["htu21d_cb"])
 			{
 				//$(".btns_bme280_1").removeClass('badge-success');
@@ -274,7 +322,6 @@
 				}
 				//bm1s_m
 			}	
-			
 			// posle output BME280: WEB <- ESP		
 			if(temp_json["bme280_1_ou"])
 			{
