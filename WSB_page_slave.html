@@ -1,4 +1,4 @@
-<!--upd21 option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
+<!--upd22 option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->				
 				<br>
 				<form id = "scntf" class="needs-validation" novalidate>
 				<div class="form-group row">
@@ -45,7 +45,7 @@
 					<div class="col-xs-3 offset-lg-1 offset-md-1 offset-sm-1 col-xl-2 col-sm-3 offset-1 col-4 col-lg-2 col-md-2"><button type="button" id="btnlm751" class="btn btn-primary" onclick="btn_lm75_1()">Задать</button></div>
 					<div class="col-xs-3 col-xl-2 col-sm-3 col-4 offset-lg-0 offset-md-0 col-md-3 col-lg-2 offset-0 offset-sm-0"><button type="button" id="btnlm751s" class="btn btn-primary" onclick="btn_lm75_1s()">Считать</button></div>
 				  <div class="col-xl-1 offset-xl-0 offset-0 col-lg-2 col-md-2 col-2">
-					<p class="badge lead text-white btns_lm75_1">ОК</p>
+					<p class="badge lead text-white btns_lm75_1"></p>
 					</div>
 				</div>
 				<p class="h5 modal-title text-center">Настройка датчика LM75_2</p>
@@ -85,7 +85,7 @@
 					<div class="col-xs-3 offset-lg-1 offset-md-1 offset-sm-1 col-sm-3 offset-1 col-4 col-xl-2 col-md-2 col-lg-2"><button type="button" id="btnlm752" class="btn btn-primary" onclick="btn_lm75_2()">Задать</button></div>
 					<div class="col-xs-3 offset-sm-1 col-xl-2 col-sm-3 col-4 offset-lg-0 offset-md-0 col-md-3 col-lg-2 offset-0"><button type="button" id="btnlm752s" class="btn btn-primary" onclick="btn_lm75_2s()">Считать</button></div>
 					<div class="col-2 col-xl-1 offset-0 offset-xl-0">
-					<p class="badge lead text-white btns_lm75_2">ОК</p>
+					<p class="badge lead text-white btns_lm75_2"></p>
 				  </div>
 				</div>		
 				<hr>
@@ -159,7 +159,7 @@
 					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnbm2801wr" class="btn btn-primary" onclick="btn_bm280_1_Wr()">Задать</button></div>
 					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnbm2801rd" class="btn btn-primary" onclick="btn_bm280_1_Rd()">Считать</button></div>
 					<div class="col-2 col-xl-1 offset-xl-0">
-					<p class="badge lead text-white btns_bme280_1">ОК</p>
+					<p class="badge lead text-white btns_bme280_1"></p>
 				  	</div>
 				</div>
 				<p class="h5 modal-title text-center">Настройка датчика BME280_2</p>	
@@ -237,7 +237,7 @@
 				<div class="form-group row">
 					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnbm2802" class="btn btn-primary" onclick="btn_bm280_2()">Задать</button></div>
 					<div class="col-2 col-xl-1 offset-xl-0">
-					<p class="text-white btns_bme280_2">ОК</p>
+					<p class="text-white btns_bme280_2"></p>
 				  	</div>
 				</div>
 				<p class="h5 modal-title text-center">Настройка датчика SHT30</p>
@@ -276,7 +276,7 @@
 				  <div class="offset-xl-1 offset-lg-1 offset-md-1 col-md-2 col-xl-2 col-lg-2">Скорость измерения:</div>
 					<div class="col-xs-3 col-md-3 offset-lg-0 mb-2 offset-xl-0 col-lg-3">
 					<select id="sht30_rep" name="sht30_rep" class="form-control">
-       				<option value="0" selected>Высокий</option>
+       				<option value="0" selected>Высий</option>
 					<option value="1">Средний</option>
 					<option value="2">Низкий</option>
 					</select>
@@ -298,7 +298,7 @@
 					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnsht30wr" class="btn btn-primary" onclick="btn_sht30_1_Wr()">Задать</button></div>
 					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnsht30rd" class="btn btn-primary" onclick="btn_sht30_1_Rd()">Считать</button></div>
 					<div class="col-2 col-xl-1 offset-xl-0">
-					<p class="badge lead text-white btns_sht30">ОК</p>
+					<p class="badge lead text-white btns_sht30"></p>
 				  	</div>
 				</div>
 				<p class="h5 modal-title text-center">Настройка датчика SHT31</p>
@@ -400,9 +400,19 @@
 					<p class="badge lead text-white btns_htu21d"></p>
 				  </div>
 				</div>
+				<p class="h5 modal-title text-center">Считать показания датчиков OTP(тестовая)</p>
+				<hr>
+				<div class="form-group row">
+					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnsensrd" class="btn btn-primary" onclick="btn_sensor_rd()">Считать</button>
+					<input type="text" class="form-control" id = "btnsens_val" name="btnsens_val" value="">
+					</div>
+					<div class="col col-sm-2 col-lg-2 col-md-2 col-xl-1 offset-xl-0 offset-sm-0">
+					<p class="badge lead text-white btnsenstxt"></p>
+				  </div>
+				</div>
 				<p class="h5 modal-title text-center">Загрузка настроек датчиков OTP</p>
 				<hr>
-					<div class="form-group row">
+				<div class="form-group row">
 					<div class="col-xs-3 offset-lg-1 col-lg-3 offset-md-1 offset-sm-1 col-xl-2 col-md-3 col-sm-2"><button type="button" id="btnotp" class="btn btn-primary" onclick="btn_otp_wr()">Записать</button></div>
 					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnotprd" class="btn btn-primary" onclick="btn_otp_rd()">Считать</button></div>
 					<div class="col col-sm-2 col-lg-2 col-md-2 col-xl-1 offset-xl-0 offset-sm-0">
