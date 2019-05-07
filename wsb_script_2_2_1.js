@@ -1,4 +1,4 @@
-// upd69 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd69b with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -206,7 +206,7 @@
 				//$(".btns_bme280_1").removeClass('badge-success');
 				//$(".btns_bme280_1").removeClass('badge-danger');
 				console.log(temp_json.GiveMeas_cb);
-				str_out1+=temp_json.GiveMeas_cb;
+				str_out1+=temp_json.GiveMeas_cb+"\n";
 				$("#esp_urx").val(str_out1);
 				//btn_sensor_rd();
 			}	
@@ -531,6 +531,8 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 		function etxclr_uart()			  
 		{	
 			$("#esp_urx").val("");
+			str_out1="";
+			
 		};
 		// main knopka
 		$('.bt0st').click(function bjst() 	
