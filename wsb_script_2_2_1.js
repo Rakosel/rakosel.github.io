@@ -207,7 +207,7 @@
 				//$(".btns_bme280_1").removeClass('badge-danger');
 				console.log(temp_json.GiveMeas_cb);
 				str_out1+=temp_json.GiveMeas_cb;
-				esp_uart_out_val.val(str_out1);
+				$("#esp_urx").val(str_out1);
 			}	
 			//$(".btns_bme280_1").fadeIn();
 			// posle input BME280: WEB -> ESP
