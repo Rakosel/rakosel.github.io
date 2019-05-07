@@ -208,6 +208,7 @@
 				console.log(temp_json.GiveMeas_cb);
 				str_out1+=temp_json.GiveMeas_cb;
 				$("#esp_urx").val(str_out1);
+				//btn_sensor_rd();
 			}	
 			//$(".btns_bme280_1").fadeIn();
 			// posle input BME280: WEB -> ESP
