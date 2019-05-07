@@ -1,4 +1,4 @@
-// upd69c with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd70a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -217,7 +217,9 @@
 				console.log(temp_json.GiveMeas_cb);
 				ast=0;
 				if(temp_json.GiveMeas_cb == "#ERR")
-				{ast=1; return;}
+				{ast=1;str_out1=""; return;}
+				if(temp_json.GiveMeas_cb == "#OVF")
+				{ast=1; $("#esp_urx").val(str_out1+"#OVF");str_out1=""; return;}
 				str_out1+=temp_json.GiveMeas_cb+"\n";
 				$("#esp_urx").val(str_out1);
 				//btn_sensor_rd();
