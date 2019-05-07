@@ -1,4 +1,4 @@
-// upd69b with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd69c with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
 //	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
 // 	#83 bme280_conf
@@ -14,7 +14,7 @@
 		var temp_json = {};
 		var input_lm75 = {};
 		var scrPos = 0, ovShBtn0 = false;
-		var ast;
+		var ast=0;
 		var ua_mode=0;
 		var tmranim = 3000; // animate [s]
 		// reverse panelki dlya debug
@@ -35,8 +35,17 @@
 
 		function btn_sensor_rd()
 		{
-			var url1 = '/otp_mode?input=' + encodeURIComponent("GiveMeas")+ '&';
+			var sval = $("#btnsens_val").val();
+			var url1;
+			var i=0;
+			if(ast == 1)
+			{return;}
+			for(i=0;i<sval;i++)
+			{
+			url1 = '/otp_mode?input=' + encodeURIComponent("GiveMeas")+ '&';
 			fetch(url1, 'GET', txjstmp, 40);	
+			}
+			
 		}
 		// SUBMIT debug
 		function btn_otp_rd()
@@ -206,6 +215,9 @@
 				//$(".btns_bme280_1").removeClass('badge-success');
 				//$(".btns_bme280_1").removeClass('badge-danger');
 				console.log(temp_json.GiveMeas_cb);
+				ast=0;
+				if(temp_json.GiveMeas_cb == "#ERR")
+				{ast=1; return;}
 				str_out1+=temp_json.GiveMeas_cb+"\n";
 				$("#esp_urx").val(str_out1);
 				//btn_sensor_rd();
