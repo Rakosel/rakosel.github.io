@@ -164,7 +164,7 @@
 		 function txjstmp(s, d) {
   			var as1=$('.pst1');
 			var as0=$('.pst0');
-
+			console.log(d);	
   			if (s != 200) {
 				as0.removeClass('badge-success');
 				as0.addClass('badge-danger');
