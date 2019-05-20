@@ -1,4 +1,4 @@
-// upd71b with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd71c with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 // function time(){
 // return parseInt(new Date().getTime()/1000)
@@ -363,6 +363,19 @@ if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0
 				else
 				{
 					$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ");
+				}
+			}		
+			if(temp_json["bme280_2_cb"])
+			{
+				//$(".btns_bme280_1").removeClass('badge-success');
+				//$(".btns_bme280_1").removeClass('badge-danger');
+				if(temp_json.bme280_2_cb == "OK")
+				{
+					$(".btns_bme280_2").addClass('badge-success').text("ОК ");
+				}
+				else
+				{
+					$(".btns_bme280_2").addClass('badge-danger').text("Ошибка ");
 				}
 			}		
 			//
