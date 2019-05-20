@@ -101,7 +101,7 @@
 		$(".btns_sht30").removeClass('badge-success');
 		$(".btns_sht30").removeClass('badge-danger');
 
-		input_sht30 = { "sht3x_conf": [heater,mode,scr,rep,mps_sel] };
+		input_sht30 = { "sht30_conf": [heater,mode,scr,rep,mps_sel] };
 fetch('/input_sht30_1.json?n=' + encodeURIComponent(JSON.stringify(input_sht30))+'&', 'GET', txjstmp, 10);
 		//console.log("[heater,mode,scr,rep,mps_sel]");
 		//console.log(JSON.stringify(input_sht30));
@@ -121,7 +121,7 @@ fetch('/input_sht30_1.json?n=' + encodeURIComponent(JSON.stringify(input_sht30))
 		$(".btns_sht31").removeClass('badge-success');
 		$(".btns_sht31").removeClass('badge-danger');
 
-		input_sht31 = { "sht3x_conf": [heater,mode,scr,rep,mps_sel] };
+		input_sht31 = { "sht31_conf": [heater,mode,scr,rep,mps_sel] };
 fetch('/input_sht30_2.json?n=' + encodeURIComponent(JSON.stringify(input_sht31))+'&', 'GET', txjstmp, 10);
 		//console.log("[heater,mode,scr,rep,mps_sel]");
 		//console.log(JSON.stringify(input_sht30));
