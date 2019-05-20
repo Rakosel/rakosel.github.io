@@ -1,7 +1,4 @@
-// upd70c3 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
-// #40 mojet check ya on dobavlyaet v ArraySerialize xyu ego znaet ?????????????
-//	24_03 Razrabotat knopki upravlenya for bme280 (potom moj dlya lm75 cchitku)
-// 	#213 message
+// upd71 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 // function time(){
 // return parseInt(new Date().getTime()/1000)
@@ -105,7 +102,27 @@
 		$(".btns_sht30").removeClass('badge-danger');
 
 		input_sht30 = { "sht3x_conf": [heater,mode,scr,rep,mps_sel] };
-		fetch('/input_sht30_1.json?n=' + encodeURIComponent(JSON.stringify(input_sht30))+'&', 'GET', txjstmp, 10);
+fetch('/input_sht30_1.json?n=' + encodeURIComponent(JSON.stringify(input_sht30))+'&', 'GET', txjstmp, 10);
+		//console.log("[heater,mode,scr,rep,mps_sel]");
+		//console.log(JSON.stringify(input_sht30));
+		}
+		//sht30_1
+		function btn_sht30_2_Wr()
+		{
+			//bmeOBJ = $("#scntf").serializeArray(); 
+			//console.log(bmeOBJ);
+			// Rd mode
+		var heater = $("#sht31_ht option:selected").val();
+		var mode = $("#sht31_m option:selected").val();
+		var scr = $("#sht31_scr option:selected").val();
+		var rep = $("#sht31_rep option:selected").val();
+		var mps_sel = $("#sht31_mps_sel option:selected").val();
+
+		$(".btns_sht31").removeClass('badge-success');
+		$(".btns_sht31").removeClass('badge-danger');
+
+		input_sht31 = { "sht3x_conf": [heater,mode,scr,rep,mps_sel] };
+fetch('/input_sht30_2.json?n=' + encodeURIComponent(JSON.stringify(input_sht31))+'&', 'GET', txjstmp, 10);
 		//console.log("[heater,mode,scr,rep,mps_sel]");
 		//console.log(JSON.stringify(input_sht30));
 		}
@@ -119,6 +136,17 @@
 		$(".btns_sht30_1").removeClass('badge-success');
 		$(".btns_sht30_1").removeClass('badge-danger');
 			fetch('/output_sht30_1.json?n=' + Math.random(), 'GET', txjstmp, 10);
+		}
+		
+		//sht30_1
+		function btn_sht30_2_Rd()
+		{
+			//bmeOBJ = $("#scntf").serializeArray(); 
+			//console.log(bmeOBJ);
+			// Rd mode
+		$(".btns_sht31").removeClass('badge-success');
+		$(".btns_sht31").removeClass('badge-danger');
+			fetch('/output_sht30_2.json?n=' + Math.random(), 'GET', txjstmp, 10);
 		}
 		
 		//bm280_1
@@ -144,11 +172,37 @@
 			//$(".altvld").css( "display", "block" );
 			return;
 		}
-
 		input_bme280 = { "bme280_conf": [mode,osrs,bm1s_f,bm1_t_st,bm_alt] };
 		fetch('/input_bme280_1.json?n=' + encodeURIComponent(JSON.stringify(input_bme280))+'&', 'GET', txjstmp, 10);
 		//console.log(JSON.stringify(input_bme280));
-
+		}
+		
+		//bm280_2
+		function btn_bm280_2_Wr()
+		{
+			//bmeOBJ = $("#scntf").serializeArray(); 
+			//console.log(bmeOBJ);
+			// Rd mode
+		var mode = $("#bm2s_m option:selected").val();
+		var osrs = $("#bm2s_osrs option:selected").val();
+		var bm1s_f = $("#bm2s_f option:selected").val();
+		var bm1_t_st = $("#bm2_t_st option:selected").val();
+		var bm_alt = $("#bm_alt").val();
+		//$("#bm_alt").removeClass('is-invalid').html();
+		//$(".altvld").css( "display", "none" );
+		//$(".btns_bme280_1").fadeIn();
+		$(".btns_bme280_2").removeClass('badge-success');
+		$(".btns_bme280_2").removeClass('badge-danger');
+		if($.isNumeric(bm_alt)==false)
+		{
+			$(".btns_bme280_2").addClass('badge-danger').text("Ошибка (смотри выше)");
+			//$("#bm_alt").addClass('is-invalid').html();
+			//$(".altvld").css( "display", "block" );
+			return;
+		}
+		input_bme280 = { "bme280_conf": [mode,osrs,bm1s_f,bm1_t_st,bm_alt] };
+fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280))+'&', 'GET', txjstmp, 10);
+		//console.log(JSON.stringify(input_bme280));
 		}
 		
 		// C4itat
@@ -157,7 +211,13 @@
 		$(".btns_bme280_1").removeClass('badge-success');
 		$(".btns_bme280_1").removeClass('badge-danger');
 			fetch('/output_bme280_1.json?n=' + Math.random(), 'GET', txjstmp, 10);
-			
+		}
+		
+		function btn_bm280_2_Rd()
+		{
+		$(".btns_bme280_2").removeClass('badge-success');
+		$(".btns_bme280_2").removeClass('badge-danger');
+			fetch('/output_bme280_2.json?n=' + Math.random(), 'GET', txjstmp, 10);
 		}
 
 		// cont: TEMP, RTC, DEBUG + Settings
@@ -196,6 +256,102 @@
   			}
 			//$(".btns_bme280_1").fadeIn();
 			// posle input BME280: WEB -> ESP
+			if(temp_json["lm_75_1_cb"])
+			{
+				//$(".btns_bme280_1").removeClass('badge-success');
+				//$(".btns_bme280_1").removeClass('badge-danger');
+				if(temp_json.lm_75_1_cb == "OK")
+				{
+					$(".btns_lm75_1").addClass('badge-success').text("ОК ");
+				}
+				else
+				{
+					$(".btns_lm75_1").addClass('badge-danger').text("Ошибка ");
+				}
+			}
+			// posle output BME280: WEB <- ESP		
+			if(temp_json["lm75_1_ou"])
+			{
+				//$(".btns_bme280_1").fadeIn();
+				//i=0;
+				//var hSt = temp_json.bme280_1_ou[0].toString(16).toUpperCase();
+				//parseInt(hSt, 16)
+if(parseInt(temp_json.lm75_1_ou[1], 10) != 999 || parseInt(temp_json.lm75_1_ou[0], 10) != 999)
+				{
+			//$("#bm1_ch").val("0x"+Number(temp_json.bme280_1_ou[0]).toString(16).toUpperCase());
+				$('.lm75thy_1').text(parseInt(temp_json.lm75_1_ou[1], 10));
+				$('.lm75tos_1').text(parseInt(temp_json.lm75_1_ou[2], 10);
+				$("#lm75sc_1").val(parseInt(temp_json.lm75_1_ou[1], 10));
+				$("#lm75so_1").val(parseInt(temp_json.lm75_1_ou[2], 10));
+
+				var statlm = parseInt(temp_json.lm75_1_ou[0], 10);
+				var i=0;
+
+				if($.isNumeric(statlm))
+				{
+					for(i=0;i<=4;i++)
+					{
+					if(statlm & (0x01<< i))
+					{$("#gLM75ch"+i.toString()).prop('checked', true);}
+					else
+					{$("#gLM75ch"+i.toString()).prop('checked', false);}
+					}
+				}
+				}
+				else
+				{
+				$(".btns_lm75_1").addClass('badge-danger').text("Ошибка ");
+				}
+				//bm1s_m
+			}	
+						// posle output BME280: WEB <- ESP		
+			if(temp_json["lm75_2_ou"])
+			{
+				//$(".btns_bme280_1").fadeIn();
+				//i=0;
+				//var hSt = temp_json.bme280_1_ou[0].toString(16).toUpperCase();
+				//parseInt(hSt, 16)
+if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0], 10) != 999)
+				{
+			//$("#bm1_ch").val("0x"+Number(temp_json.bme280_1_ou[0]).toString(16).toUpperCase());
+				$('.lm75thy_2').text(parseInt(temp_json.lm75_2_ou[1], 10));
+				$('.lm75tos_2').text(parseInt(temp_json.lm75_2_ou[2], 10);
+				$("#lm75sc_2").val(parseInt(temp_json.lm75_2_ou[1], 10));
+				$("#lm75so_2").val(parseInt(temp_json.lm75_2_ou[2], 10));
+
+				var statlm = parseInt(temp_json.lm75_2_ou[0], 10);
+				var i=0;
+
+				if($.isNumeric(statlm))
+				{
+					for(i=0;i<=4;i++)
+					{
+					if(statlm & (0x01<< i))
+					{$("#gLM752ch"+i.toString()).prop('checked', true);}
+					else
+					{$("#gLM752ch"+i.toString()).prop('checked', false);}
+					}
+				}
+				}
+				else
+				{
+				$(".btns_lm75_2").addClass('badge-danger').text("Ошибка ");
+				}
+				//bm1s_m
+			}
+			if(temp_json["lm_75_2_cb"])
+			{
+				//$(".btns_bme280_1").removeClass('badge-success');
+				//$(".btns_bme280_1").removeClass('badge-danger');
+				if(temp_json.lm_75_2_cb == "OK")
+				{
+					$(".btns_lm75_2").addClass('badge-success').text("ОК ");
+				}
+				else
+				{
+					$(".btns_lm75_2").addClass('badge-danger').text("Ошибка ");
+				}
+			}
 			if(temp_json["bme280_1_cb"])
 			{
 				//$(".btns_bme280_1").removeClass('badge-success');
@@ -308,6 +464,17 @@
 					$(".btns_sht30").addClass('badge-danger').text("Ошибка ");
 				}
 			}	
+			if(temp_json["sht30_2_cb"])
+			{
+				if(temp_json.sht30_1_cb == "OK")
+				{
+					$(".btns_sht31").addClass('badge-success').text("ОК ");
+				}
+				else
+				{
+					$(".btns_sht31").addClass('badge-danger').text("Ошибка ");
+				}
+			}
 			
 			// posle output BME280: WEB <- ESP		
 			if(temp_json["sht30_1_ou"])
@@ -331,14 +498,44 @@
 				$("#sht30_scr [value="+temp_json.sht30_1_ou[5]+"]").prop("selected", "selected");
 				$("#sht30_m").click();
 
-				$(".btns_sht30_1").addClass('badge-success').text("ОК ");
+				$(".btns_sht30").addClass('badge-success').text("ОК ");
 				}
 				else
 				{
-				$(".btns_sht30_1").addClass('badge-danger').text("Ошибка ");
+				$(".btns_sht30").addClass('badge-danger').text("Ошибка ");
 				}
 				//bm1s_m
-			}	
+			}
+			// posle output BME280: WEB <- ESP		
+			if(temp_json["sht30_2_ou"])
+			{
+
+			if(parseInt(temp_json.sht30_2_ou[0], 10) != 999)
+				{
+				$("#sht31_st").val("0x"+Number(temp_json.sht30_2_ou[0]).toString(16).toUpperCase());
+				var stsht30 = parseInt(temp_json.sht30_2_ou[0], 10);
+				
+				$('#sht31_ht option').removeProp("selected");
+				$('#sht31_m option').removeProp("selected");
+				$('#sht31_scr option').removeProp("selected");
+				$('#sht31_rep option').removeProp("selected");
+				$('#sht31_mps_sel option').removeProp("selected");
+				
+				$("#sht31_ht [value="+temp_json.sht30_2_ou[1]+"]").prop("selected", "selected");
+				$("#sht31_m [value="+temp_json.sht30_2_ou[2]+"]").prop("selected", "selected");
+				$("#sht31_rep [value="+temp_json.sht30_2_ou[3]+"]").prop("selected", "selected");
+				$("#sht31_mps_sel [value="+temp_json.sht30_2_ou[4]+"]").prop("selected", "selected");
+				$("#sht31_scr [value="+temp_json.sht30_2_ou[5]+"]").prop("selected", "selected");
+				$("#sht31_m").click();
+
+				$(".btns_sht31").addClass('badge-success').text("ОК ");
+				}
+				else
+				{
+				$(".btns_sht31").addClass('badge-danger').text("Ошибка ");
+				}
+				//bm1s_m
+			}
 			// posle output BME280: WEB <- ESP		
 			if(temp_json["bme280_1_ou"])
 			{
@@ -387,6 +584,55 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 				else
 				{$("#bm1_ch").val("Ошибка");$("#bm1_st").val("Ошибка");
 				$(".btns_bme280_1").addClass('badge-danger').text("Ошибка ");
+				}
+				//bm1s_m
+			}	
+			// posle output BME280: WEB <- ESP		
+			if(temp_json["bme280_2_ou"])
+			{
+				//$(".btns_bme280_1").fadeIn();
+				//i=0;
+				//var hSt = temp_json.bme280_1_ou[0].toString(16).toUpperCase();
+				//parseInt(hSt, 16)
+if(parseInt(temp_json.bme280_2_ou[1], 10) != 999 || parseInt(temp_json.bme280_2_ou[0], 10) != 999)
+				{
+				$("#bm2_ch").val("0x"+Number(temp_json.bme280_2_ou[0]).toString(16).toUpperCase());
+				//hSt = temp_json.bme280_1_ou[1].toString(16).toUpperCase();
+				
+				var bmst2 = parseInt(temp_json.bme280_2_ou[1], 10);
+				
+				$("#bm2_st").val("0x"+Number(temp_json.bme280_2_ou[1]).toString(16).toUpperCase());
+				//$(".btns_bme280_1").removeClass('badge-danger');
+				//$(".btns_bme280_1").removeClass('badge-success');
+				if($.isNumeric(bmst2))
+				{
+					console.log("4uclo "+bmst2);
+					if(bmst2 & 0x01)
+					{$("#gBM2802ch0").prop('checked', true);console.log("#gBM2802ch0 true "+bmst2);}
+					else
+					{$("#gBM2802ch0").prop('checked', false);console.log("#gBM2802ch0 false "+bmst2);}
+					if(bmst1 & 0x08)//console.log("#gBM2801ch3 ch true");
+					{$("#gBM2802ch3").prop('checked', true);console.log("#gBM2802ch3 true "+bmst2);}
+					else//console.log("#gBM2801ch3 ch false");
+					{$("#gBM2802ch3").prop('checked', false);console.log("#gBM2802ch3 false "+bmst2);}
+
+					$('#bm2s_m option').removeProp("selected");
+					$('#bm2s_osrs option').removeProp("selected");
+					$('#bm2s_f option').removeProp("selected");
+					$('#bm2_t_st option').removeProp("selected");
+					//$('#bm1s_m option').each(function(){
+					//		this.removeAttr("selected");
+					//});
+					$("#bm2s_m [value="+temp_json.bme280_2_ou[2]+"]").prop("selected", "selected");
+					$("#bm2s_osrs [value="+temp_json.bme280_2_ou[3]+"]").prop("selected", "selected");
+					$("#bm2s_f [value="+temp_json.bme280_2_ou[4]+"]").prop("selected", "selected");
+					$("#bm2_t_st [value="+temp_json.bme280_2_ou[5]+"]").prop("selected", "selected");
+					$(".btns_bme280_2").addClass('badge-success').text("ОК ");
+				}
+				}
+				else
+				{$("#bm2_ch").val("Ошибка");$("#bm2_st").val("Ошибка");
+				$(".btns_bme280_2").addClass('badge-danger').text("Ошибка ");
 				}
 				//bm1s_m
 			}	
@@ -673,7 +919,20 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
   			xhr.send();
   		}
 		
-		
+		function btn_lm75_1s()
+		{
+			$(".btns_lm75_1").text("");
+			$(".btns_lm75_1").removeClass('badge-danger');
+			$(".btns_lm75_1").removeClass('badge-success');
+			fetch('/output_lm75_1.json?n=' + Math.random(), 'GET', txjstmp, 10);
+		}
+		function btn_lm75_2s()
+		{
+			$(".btns_lm75_2").text("");
+			$(".btns_lm75_2").removeClass('badge-danger');
+			$(".btns_lm75_2").removeClass('badge-success');
+			fetch('/output_lm75_2.json?n=' + Math.random(), 'GET', txjstmp, 10);
+		}
 		
 		function btn_lm75_1()
 		{
@@ -724,7 +983,61 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 			tos1=tos1*2;
 
 			input_lm75 = { "lm75_conf": [tarch,thyst1,tos1] };
-			fetch('/input_lm75_2.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10);
+			fetch('/input_lm75_1.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10);
+			console.log(JSON.stringify(input_lm75));
+			//cnfOBJ = { };
+		}
+		
+		function btn_lm75_2()
+		{
+			var i=0;
+			var input_lm75 = {};
+			var tarch = 0;	// conf
+			var tos1 = 0;	// tos1
+			var thyst1 = 0;	// thyst
+			var sc_1l = $("#lm75sc_2");
+			var so_1l = $("#lm75so_2");
+			//cnfOBJ = $("#scntf").serializeArray();			
+			for(i=0;(i < 5) && ($("#gLM752ch" + i).val()!=undefined);++i )
+			{
+				if($("#gLM752ch" + i).prop("checked"))
+				{tarch|=(1 << i);}
+			}
+			tos1 = sc_1l.val();
+			thyst1 = so_1l.val();
+			console.log(tos1 + " " + thyst1);
+			if(thyst1>tos1 && (thyst1<0) && (tos1<0))
+			{
+				i=tos1;
+				thyst1 = tos1;
+				tos1 = thyst1;
+			console.log("thyst1>tos1 && (thyst1<0) && (tos1<0)" + tos1 + " " + thyst1);
+			}
+			else if(thyst1>tos1)
+			{
+				i=thyst1;
+				thyst1 = tos1;
+				tos1 = i;
+			console.log("thyst1>tos1" + tos1 + " " + thyst1);
+			}
+			if(tos1==thyst1)
+			{	
+				if(thyst1<0 && tos1<0)
+				{thyst1--;}
+				else
+				{tos1++;}
+			}
+			sc_1l.val(thyst1);so_1l.val(tos1);
+			  $('.lm75thy_2').text(sc_1l.val() +" C°");
+			  $('.lm75tos_2').text(so_1l.val() +" C°");
+			thyst1 = parseInt(sc_1l.val());
+			tos1 = parseInt(so_1l.val());
+			
+			thyst1=thyst1*2;
+			tos1=tos1*2;
+
+			input_lm75 = { "lm75_conf": [tarch,thyst1,tos1] };
+	fetch('/input_lm75_2.json?n=' + encodeURIComponent(JSON.stringify(input_lm75))+'&', 'GET', txjstmp, 10);
 			console.log(JSON.stringify(input_lm75));
 			//cnfOBJ = { };
 		}
