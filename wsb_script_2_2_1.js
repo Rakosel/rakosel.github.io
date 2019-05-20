@@ -453,19 +453,19 @@ if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0
 				}
 			}	
 						// posle output BME280: WEB <- ESP		
-			if(temp_json["htu21d_ou"])
+			if(temp_json["htu21d_conf"])
 			{
 
-			if(parseInt(temp_json.htu21d_ou[0], 10) != 999)
+			if(parseInt(temp_json.htu21d_conf[0], 10) != 999)
 				{
-				$("#htu21d_st").val("0x"+Number(temp_json.htu21d_ou[0]).toString(16).toUpperCase());
-				var sthtu21d = parseInt(temp_json.htu21d_ou[0], 10);
+				$("#htu21d_st").val("0x"+Number(temp_json.htu21d_conf[0]).toString(16).toUpperCase());
+				var sthtu21d = parseInt(temp_json.htu21d_conf[0], 10);
 				
 				$('#htu21d_m option').removeProp("selected");
 				$('#htu21d_ht option').removeProp("selected");
 				
-				$("#htu21d_ht [value="+temp_json.htu21d_ou[2]+"]").prop("selected", "selected");
-				$("#htu21d_m [value="+temp_json.htu21d_ou[1]+"]").prop("selected", "selected");
+				$("#htu21d_ht [value="+temp_json.htu21d_conf[2]+"]").prop("selected", "selected");
+				$("#htu21d_m [value="+temp_json.htu21d_conf[1]+"]").prop("selected", "selected");
 
 				$(".btns_htu21d").addClass('badge-success').text("ОК ");
 				}
