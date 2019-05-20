@@ -302,6 +302,7 @@ if(parseInt(temp_json.lm75_1_ou[1], 10) != 999 || parseInt(temp_json.lm75_1_ou[0
 					{$("#gLM75ch"+i.toString()).prop('checked', false);}
 					}
 				}
+				$(".btns_lm75_1").addClass('badge-success').text("ОК ");
 				}
 				else
 				{
@@ -342,6 +343,7 @@ if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0
 					{$("#gLM752ch"+i.toString()).prop('checked', false);}
 					}
 				}
+				$(".btns_lm75_2").addClass('badge-success').text("ОК ");
 				}
 				else
 				{
