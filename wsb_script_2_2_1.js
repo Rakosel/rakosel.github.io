@@ -489,7 +489,7 @@ if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0
 			}	
 			if(temp_json["sht30_2_cb"])
 			{
-				if(temp_json.sht30_1_cb == "OK")
+				if(temp_json.sht30_2_cb == "OK")
 				{
 					$(".btns_sht31").addClass('badge-success').text("ОК ");
 				}
