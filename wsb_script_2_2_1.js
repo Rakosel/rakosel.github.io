@@ -1,4 +1,4 @@
-// upd71c with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd71cd with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 // function time(){
 // return parseInt(new Date().getTime()/1000)
@@ -279,10 +279,15 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
 if(parseInt(temp_json.lm75_1_ou[1], 10) != 999 || parseInt(temp_json.lm75_1_ou[0], 10) != 999)
 				{
 			//$("#bm1_ch").val("0x"+Number(temp_json.bme280_1_ou[0]).toString(16).toUpperCase());
-				$('.lm75thy_1').text(parseInt(temp_json.lm75_1_ou[1], 10));
-				$('.lm75tos_1').text(parseInt(temp_json.lm75_1_ou[2], 10));
-				$("#lm75sc_1").val(parseInt(temp_json.lm75_1_ou[1], 10));
-				$("#lm75so_1").val(parseInt(temp_json.lm75_1_ou[2], 10));
+				var aou1 = parseInt(temp_json.lm75_1_ou[1], 10);
+				var aou2 = parseInt(temp_json.lm75_1_ou[2], 10);
+				aou1 = Math.round(aou1/2);
+				aou2 = Math.round(aou1/2);
+			
+				$('.lm75thy_1').text(aou1+"°C");
+				$('.lm75tos_1').text(aou2+"°C");
+				$("#lm75sc_1").val(aou1);
+				$("#lm75so_1").val(aou2);
 
 				var statlm = parseInt(temp_json.lm75_1_ou[0], 10);
 				var i=0;
@@ -314,10 +319,15 @@ if(parseInt(temp_json.lm75_1_ou[1], 10) != 999 || parseInt(temp_json.lm75_1_ou[0
 if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0], 10) != 999)
 				{
 			//$("#bm1_ch").val("0x"+Number(temp_json.bme280_1_ou[0]).toString(16).toUpperCase());
-				$('.lm75thy_2').text(parseInt(temp_json.lm75_2_ou[1], 10));
-				$('.lm75tos_2').text(parseInt(temp_json.lm75_2_ou[2], 10));
-				$("#lm75sc_2").val(parseInt(temp_json.lm75_2_ou[1], 10));
-				$("#lm75so_2").val(parseInt(temp_json.lm75_2_ou[2], 10));
+				var aou1 = parseInt(temp_json.lm75_1_ou[1], 10);
+				var aou2 = parseInt(temp_json.lm75_1_ou[2], 10);
+				aou1 = Math.round(aou1/2);
+				aou2 = Math.round(aou1/2);
+			
+				$('.lm75thy_2').text(aou1+"°C");
+				$('.lm75tos_2').text(aou2+"°C");
+				$("#lm75sc_2").val(aou1);
+				$("#lm75so_2").val(aou2);
 
 				var statlm = parseInt(temp_json.lm75_2_ou[0], 10);
 				var i=0;
