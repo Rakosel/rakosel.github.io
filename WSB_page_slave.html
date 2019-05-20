@@ -1,4 +1,4 @@
-<!--upd24global option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->	
+<!--upd24aglobal option input range 		view-source:https://rakosel.github.io/WSB_page_slave.html -->	
 				<br>
 				<form id = "scntf" class="needs-validation" novalidate>
 				<div class="form-group row">
@@ -263,7 +263,7 @@
 				  <div class="offset-xl-1 offset-lg-1 offset-md-1 col-md-2 col-xl-2 col-lg-2">Скорость измерения:</div>
 					<div class="col-xs-3 col-md-3 offset-lg-0 mb-2 offset-xl-0 col-lg-3">
 					<select id="sht30_rep" name="sht30_rep" class="form-control">
-       				<option value="0" selected>Высий</option>
+       				<option value="0" selected>Высокий</option>
 					<option value="1">Средний</option>
 					<option value="2">Низкий</option>
 					</select>
@@ -291,44 +291,62 @@
 				<p class="h5 modal-title text-center">Настройка датчика SHT31</p>
 				<hr>
 				<div class="form-group row">
-				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3">Status</div>
-				<div class="col-xs-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0 col-md-3 col-sm-3"><input type="text" class="form-control" id = "sht31_st" name="sht31_st" value="" required>
-					</div>
-				<div class="col-lg-2 offset-xl-0 col-xl-2 offset-md-0 col-md-3 offset-lg-0 col-sm-4 offset-sm-0"><button type="button" id="btn_sht31_info" class="btn btn-primary" onclick="btn_sht31_info()">Подробнее</button></div>
+				<div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Статус:</div>
+				<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0"><input type="text" class="form-control" id = "sht31_st" name="sht31_st" value="" required></div>
+				<div class="col-lg-2 offset-xl-0 col-xl-2 offset-md-0 col-md-3 offset-lg-0"><button type="button" id="btn_sht31_info" class="btn btn-primary" onclick="btn_sht31_info()">Подробнее</button></div>
 				</div>
-					<div class="form-group row">
-					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3">mode</div>
-					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3 col-sm-4"><select id="sht31_m" name="sht31_m" class="form-control">
-       				<option selected>Выбор...</option>
+				<div class="form-group row">
+				<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Внетреннее нагревание:</div>
+				<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="sht31_ht" name = "sht31_ht" class="form-control">
+       				<option value="0" selected>Выкл</option>
+					<option value="1">Вкл</option>
 					</select>
 				  </div>
 				</div>
 				<div class="form-group row">
-				  <div class="offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 offset-sm-1 col-sm-3">Measure speed</div>
-					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0 col-xl-3 col-sm-4">
+				<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Режим замера:</div>
+				<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="sht31_m" name = "sht31_m" class="form-control">
+       				<option value="0">Одиночный</option>
+					<option value="1" selected>Периодический</option>
+					<option value="2">Ускоренный</option>
+					</select>
+				  </div>
+				</div>
+				<div class="form-group row sht31_row collapse hide">
+					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2">Дополнительная задержка:</div>
+					<div class="col-xs-3 mb-2 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3"><select id="sht31_scr" name="sht31_scr" class="form-control">
+       				<option value="0" selected>Выкл</option>
+					<option value="1">Вкл</option>
+					</select>
+				  </div>
+				</div>
+				<div class="form-group row sht31_artz">
+				  <div class="offset-xl-1 offset-lg-1 offset-md-1 col-md-2 col-xl-2 col-lg-2">Скорость измерения:</div>
+					<div class="col-xs-3 col-md-3 offset-lg-0 mb-2 offset-xl-0 col-lg-3">
 					<select id="sht31_rep" name="sht31_rep" class="form-control">
-       				<option selected>Приоритет...</option>
+       				<option value="0" selected>Высокий</option>
+					<option value="1">Средний</option>
+					<option value="2">Низкий</option>
 					</select>
 					</div>
-					<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0 col-sm-3">
-					<select id="sht31_mps" name="sht31_mps" class="form-control">
-       				<option selected>mps...</option>
+					<!--<div class="col-xs-3 col-md-3 offset-lg-0 col-lg-2 mb-2 offset-xl-0 sht30_mps_ss collapse show">
+					<p class="badge lead text-white sht30_mps"></p>
+					</div>-->
+					<div class="col-xs-3 col-md-3 offset-lg-0 mb-2 offset-xl-0 col-lg-3 sht30_mps_per collapse show">
+					<select id="sht31_mps_sel" name="sht31_mps_sel" class="form-control">
+       				<option value="0" selected>0.5[сек]</option>
+					<option value="1">1.0[сек]</option>
+					<option value="2">2.0[сек]</option>
+					<option value="3">4.0[сек]</option>
+					<option value="4">10.0[сек]</option>
 					</select>
 					</div>
 				  </div>
 				<div class="form-group row">
-					<div class="col offset-xl-1 offset-lg-1 col-lg-2 offset-md-1 col-md-2 col-sm-3 offset-sm-1">Heater</div>
-					<div class="col-xs-3 offset-lg-0 col-lg-3 offset-xl-0 col-xl-3 col-md-3 col-sm-4"><select id="sht31_h" name="sht31_h" class="form-control">
-       				<option selected>Выбор...</option>
-					</select>
-				  </div>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-3 offset-lg-1 col-lg-3 offset-md-1 offset-sm-1 col-xl-2 col-md-3 col-sm-3"><button type="button" id="btnsht31" class="btn btn-primary" onclick="btn_sht30_2_Wd()">Задать</button>
-					</div>
+					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnsht30wr" class="btn btn-primary" onclick="btn_sht30_2_Wr()">Задать</button></div>
 					<div class="col-xs-3 mb-2 offset-lg-1 col-lg-3 offset-md-1 col-xl-2 col-md-3"><button type="button" id="btnsht30rd" class="btn btn-primary" onclick="btn_sht30_2_Rd()">Считать</button></div>
 					<div class="col-2 col-xl-1 offset-xl-0">
-					<p class="text-white btns_sht31"></p>
+					<p class="badge lead text-white btns_sht31"></p>
 				  	</div>
 				</div>
 				<p class="h5 modal-title text-center">Настройка датчика HTU21D</p>
@@ -450,6 +468,42 @@
 					$(".sht30_artz").addClass('collapse show');
 					$(".sht30_row").addClass('collapse hide');
 					$(".sht30_mps_per").addClass('collapse show');
+					//$(".sht30_mps_ss").addClass('collapse hide');
+				//}
+		});
+		
+		$("#sht31_m").click(function() {
+					$(".sht31_row").removeClass('collapse show');
+					$(".sht31_row").removeClass('collapse hide');
+					//$(".sht30_mps_ss").removeClass('collapse hide');
+					//$(".sht30_mps_ss").removeClass('collapse show');
+					$(".sht31_mps_per").removeClass('collapse hide');
+					$(".sht31_mps_per").removeClass('collapse show');
+					$(".sht31_artz").removeClass('collapse hide');
+					$(".sht31_artz").removeClass('collapse show');
+					//$("#sht30_st").val($("#sht30_m").val());
+				// if SINGLE
+				if($("#sht31_m").val()==0)
+				{
+					$(".sht31_row").addClass('collapse show');
+					$(".sht31_artz").addClass('collapse show');
+					//$(".sht30_mps_ss").addClass('collapse show');
+					$(".sht31_mps_per").addClass('collapse hide');
+					return;
+				}
+				if($("#sht31_m").val()==2)
+				{
+					$(".sht31_artz").addClass('collapse hide');
+					$(".sht31_row").addClass('collapse hide');
+					$(".sht31_mps_per").addClass('collapse hide');
+					return;
+				}
+				// if PERIODIC
+				//if($("sht30_m").val()==1)
+				//{
+					$(".sht31_artz").addClass('collapse show');
+					$(".sht31_row").addClass('collapse hide');
+					$(".sht31_mps_per").addClass('collapse show');
 					//$(".sht30_mps_ss").addClass('collapse hide');
 				//}
 		});
