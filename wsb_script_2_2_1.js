@@ -430,7 +430,7 @@ if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0
 			{
 				//$(".btns_bme280_1").removeClass('badge-success');
 				//$(".btns_bme280_1").removeClass('badge-danger');
-				if(temp_json.Wr345_cb == "OK")
+				if(temp_json.Rd345_cb == "OK")
 				{
 					$(".btns_otp").removeClass('badge-danger');
 					$(".btns_otp").addClass('badge-success').text("ОК ");
