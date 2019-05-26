@@ -467,8 +467,8 @@ if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0
 				$('#htu21d_m option').removeProp("selected");
 				$('#htu21d_ht option').removeProp("selected");
 				
-				$("#htu21d_ht [value="+temp_json.htu21d_conf[0]+"]").prop("selected", "selected");
-				$("#htu21d_m [value="+temp_json.htu21d_conf[1]+"]").prop("selected", "selected");
+				$("#htu21d_m [value="+temp_json.htu21d_conf[0]+"]").prop("selected", "selected");
+				$("#htu21d_ht [value="+temp_json.htu21d_conf[1]+"]").prop("selected", "selected");
 
 				$(".btns_htu21d").addClass('badge-success').text("ОК ");
 				}
