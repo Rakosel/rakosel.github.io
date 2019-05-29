@@ -262,7 +262,10 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
 			{
 				//$(".btns_bme280_1").removeClass('badge-success');
 				//$(".btns_bme280_1").removeClass('badge-danger');
-				if(temp_json.LM75_CMP[1] == "1")
+				var aou1 = parseInt(temp_json.LM75_CMP[1], 10);
+				var aou2 = parseInt(temp_json.LM75_CMP[2], 10);
+				
+				if(aou1 == 1)
 				{
 					$("#lm75_t1_chk").prop('checked', true);
 				}
@@ -270,7 +273,7 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
 				{
 					$("#lm75_t1_chk").prop('checked', false);
 				}
-				if(temp_json.LM75_CMP[2] == "1")
+				if(aou1 == 1)
 				{
 					$("#lm75_t2_chk").prop('checked', true);
 				}
