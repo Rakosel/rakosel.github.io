@@ -1,4 +1,4 @@
-// upd72a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd72a1 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 // function time(){
 // return parseInt(new Date().getTime()/1000)
@@ -262,8 +262,8 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
 			{
 				//$(".btns_bme280_1").removeClass('badge-success');
 				//$(".btns_bme280_1").removeClass('badge-danger');
-				var aou1 = parseInt(temp_json.LM75_CMP[1], 10);
-				var aou2 = parseInt(temp_json.LM75_CMP[2], 10);
+				var aou1 = parseInt(temp_json.LM75_CMP[0], 10);
+				var aou2 = parseInt(temp_json.LM75_CMP[1], 10);
 				
 				if(aou1 == 1)
 				{
@@ -306,8 +306,8 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
 if(parseInt(temp_json.lm75_1_ou[1], 10) != 999 || parseInt(temp_json.lm75_1_ou[0], 10) != 999)
 				{
 			//$("#bm1_ch").val("0x"+Number(temp_json.bme280_1_ou[0]).toString(16).toUpperCase());
-				var aou1 = parseInt(temp_json.lm75_1_ou[1], 10);
-				var aou2 = parseInt(temp_json.lm75_1_ou[2], 10);
+				var aou1 = parseInt(temp_json.lm75_1_ou[0], 10);
+				var aou2 = parseInt(temp_json.lm75_1_ou[1], 10);
 				//aou1 = aou1>>1;
 				//aou2 = aou2>>1;
 			
@@ -347,8 +347,8 @@ if(parseInt(temp_json.lm75_1_ou[1], 10) != 999 || parseInt(temp_json.lm75_1_ou[0
 if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0], 10) != 999)
 				{
 			//$("#bm1_ch").val("0x"+Number(temp_json.bme280_1_ou[0]).toString(16).toUpperCase());
-				var aou1 = parseInt(temp_json.lm75_2_ou[1], 10);
-				var aou2 = parseInt(temp_json.lm75_2_ou[2], 10);
+				var aou1 = parseInt(temp_json.lm75_2_ou[0], 10);
+				var aou2 = parseInt(temp_json.lm75_2_ou[1], 10);
 				//aou1 = aou1>>1;
 				//aou2 = aou2>>1;
 			
