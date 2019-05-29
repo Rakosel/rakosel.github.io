@@ -264,7 +264,8 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
 				//$(".btns_bme280_1").removeClass('badge-danger');
 				var aou1 = parseInt(temp_json.LM75_CMP[0], 10);
 				var aou2 = parseInt(temp_json.LM75_CMP[1], 10);
-				
+				console.log("temp_json.LM75_CMP[0]"+aou1);
+				console.log("temp_json.LM75_CMP[1]"+aou2);
 				if(aou1 == 1)
 				{
 					$("#lm75_t1_chk").prop('checked', true);
