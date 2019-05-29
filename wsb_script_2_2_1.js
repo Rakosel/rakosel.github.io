@@ -1,4 +1,4 @@
-// upd71c with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd72a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 // function time(){
 // return parseInt(new Date().getTime()/1000)
@@ -257,6 +257,29 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
   			}
 			//$(".btns_bme280_1").fadeIn();
 			// posle input BME280: WEB -> ESP
+			
+			if(temp_json["LM75_CMP"])
+			{
+				//$(".btns_bme280_1").removeClass('badge-success');
+				//$(".btns_bme280_1").removeClass('badge-danger');
+				if(temp_json.LM75_CMP[1] == "1")
+				{
+					$("#lm75_t1_chk").prop('checked', true);
+				}
+				else
+				{
+					$("#lm75_t1_chk").prop('checked', false);
+				}
+				if(temp_json.LM75_CMP[2] == "1")
+				{
+					$("#lm75_t2_chk").prop('checked', true);
+				}
+				else
+				{
+					$("#lm75_t2_chk").prop('checked', false);
+				}
+			}
+			
 			if(temp_json["lm_75_1_cb"])
 			{
 				//$(".btns_bme280_1").removeClass('badge-success');
