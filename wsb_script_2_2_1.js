@@ -273,7 +273,7 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
 				{
 					$("#lm75_t1_chk").prop('checked', false);
 				}
-				if(aou1 == 1)
+				if(aou2 == 1)
 				{
 					$("#lm75_t2_chk").prop('checked', true);
 				}
