@@ -69,7 +69,7 @@
 		var rtc_setd = { "rtc_set": [Date.now(),0,0] };
 		console.log(rtc_setd);
 		//console.log(input_htu21d);
-		fetch('/rtc_set.json?n=' + encodeURIComponent(JSON.stringify(rtc_setd))+'&', 'GET', txjstmp, 10);
+		fetch('/set_rtc.json?n=' + encodeURIComponent(JSON.stringify(rtc_setd))+'&', 'GET', txjstmp, 10);
 		}
 		
 		//sht30_1
