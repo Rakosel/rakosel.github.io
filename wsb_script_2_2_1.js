@@ -1,4 +1,4 @@
-// upd73a with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd73a1 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 // function time(){
 // return parseInt(new Date().getTime()/1000)
@@ -65,10 +65,7 @@
 			//bmeOBJ = $("#scntf").serializeArray(); 
 			
 			// Rd mode
-			
-		var result = getUnixTime(Date.now);
-
-		var rtc_setd = { "rtc_set": [result,0,0] };
+		var rtc_setd = { "rtc_set": [Math.floor(Date.now() / 1000),0,0] };
 		console.log(rtc_setd);
 		//console.log(input_htu21d);
 		fetch('/set_rtc.json?n=' + encodeURIComponent(JSON.stringify(rtc_setd))+'&', 'GET', txjstmp, 10);
