@@ -65,8 +65,10 @@
 			//bmeOBJ = $("#scntf").serializeArray(); 
 			
 			// Rd mode
+			
+		var result = getUnixTime(Date.now);
 
-		var rtc_setd = { "rtc_set": [Date.getUnixTime(),0,0] };
+		var rtc_setd = { "rtc_set": [result,0,0] };
 		console.log(rtc_setd);
 		//console.log(input_htu21d);
 		fetch('/set_rtc.json?n=' + encodeURIComponent(JSON.stringify(rtc_setd))+'&', 'GET', txjstmp, 10);
