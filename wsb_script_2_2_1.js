@@ -1181,7 +1181,7 @@ if(parseInt(temp_json.bme280_2_ou[1], 10) != 999 || parseInt(temp_json.bme280_2_
 			$('.navia').addClass('list-group-item list-group-item-action bg-light border');
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
-			rs = setInterval(refr_rtc, 2000);
+			rs = setInterval(refr_rtc, 5000);
 			i=0;
 			//$(".bsn0").collapse('show');
 			smgh();
