@@ -27,7 +27,7 @@
 		function btn_otp_wr()
 		{
 			var url1 = '/otp_mode?input=' + encodeURIComponent("Wr345")+ '&';
-			fetch(url1, 'GET', txjstmp, 20);
+			fetch(url1, 'GET', txjstmp, 30);
 		}
 
 
@@ -41,7 +41,7 @@
 			for(i=0;i<sval;i++)
 			{
 			url1 = '/otp_mode?input=' + encodeURIComponent("GiveMeas")+ '&';
-			fetch(url1, 'GET', txjstmp, 40);	
+			fetch(url1, 'GET', txjstmp, 50);	
 			}
 			
 		}
@@ -49,13 +49,13 @@
 		function btn_otp_rd()
 		{
 			var url1 = '/otp_mode?input=' + encodeURIComponent("Rd345")+ '&';
-			fetch(url1, 'GET', txjstmp, 20);
+			fetch(url1, 'GET', txjstmp, 30);
 		}
 
 		function refr_rtc()
 		{
 			if ((subwdeb == false) && $("#autmp").prop("checked"))
-			{fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 20);sub_grad();}
+			{fetch('/get_rtc.json?n=' + Math.random(), 'GET', txjstmp, 30);sub_grad();}
 			//console.log("refr_rtc");
 		}
 		
