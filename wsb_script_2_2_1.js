@@ -14,7 +14,7 @@
 		var scrPos = 0, ovShBtn0 = false;
 		var ast=0;
 		var ua_mode=0;
-		var tmranim = 3000; // animate [s]
+		var tmranim = 2000; // animate [s]
 		// reverse panelki dlya debug
 		var sds,mds,sets;
 		sds = $('.sideset');
@@ -1181,7 +1181,7 @@ if(parseInt(temp_json.bme280_2_ou[1], 10) != 999 || parseInt(temp_json.bme280_2_
 			$('.navia').addClass('list-group-item list-group-item-action bg-light border');
   		  	$("#esp_tx").val('wsbuser.prints(node.heap());');
   			$("#esp_urx").val('');
-			rs = setInterval(refr_rtc, 5000);
+			rs = setInterval(refr_rtc, 3000);
 			i=0;
 			//$(".bsn0").collapse('show');
 			smgh();
