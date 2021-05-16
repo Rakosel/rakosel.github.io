@@ -1,6 +1,6 @@
 // upd73a2 trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
-// function time(){
+// function time(){ 
 //https://stackoverflow.com/questions/221294/how-do-you-get-a-timestamp-in-javascript
 // }
 // alert(time())//1300051970
