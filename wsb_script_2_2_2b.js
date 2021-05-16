@@ -1,4 +1,4 @@
-// upd73a1 with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd73a2 trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 // function time(){
 //https://stackoverflow.com/questions/221294/how-do-you-get-a-timestamp-in-javascript
@@ -172,7 +172,7 @@ fetch('/input_sht30_2.json?n=' + encodeURIComponent(JSON.stringify(input_sht31))
 		var osrs = $("#bm1s_osrs option:selected").val();
 		var bm1s_f = $("#bm1s_f option:selected").val();
 		var bm1_t_st = $("#bm1_t_st option:selected").val();
-		var bm_alt = $("#bm_alt").val();
+		var bm_alt = $("#bm_alt").val().trim();
 		//$("#bm_alt").removeClass('is-invalid').html();
 		//$(".altvld").css( "display", "none" );
 		//$(".btns_bme280_1").fadeIn();
@@ -200,7 +200,7 @@ fetch('/input_sht30_2.json?n=' + encodeURIComponent(JSON.stringify(input_sht31))
 		var osrs = $("#bm2s_osrs option:selected").val();
 		var bm1s_f = $("#bm2s_f option:selected").val();
 		var bm1_t_st = $("#bm2_t_st option:selected").val();
-		var bm_alt = $("#bm_alt").val();
+		var bm_alt = $("#bm_alt").val().trim();
 		//$("#bm_alt").removeClass('is-invalid').html();
 		//$(".altvld").css( "display", "none" );
 		//$(".btns_bme280_1").fadeIn();
@@ -274,8 +274,8 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
 			{
 				//$(".btns_bme280_1").removeClass('badge-success');
 				//$(".btns_bme280_1").removeClass('badge-danger');
-				var aou1 = parseInt(temp_json.LM75_CMP[0], 10);
-				var aou2 = parseInt(temp_json.LM75_CMP[1], 10);
+				var aou1 = parseInt(temp_json.LM75_CMP[0].trim(), 10);
+				var aou2 = parseInt(temp_json.LM75_CMP[1].trim(), 10);
 				console.log("temp_json.LM75_CMP[0]"+aou1);
 				console.log("temp_json.LM75_CMP[1]"+aou2);
 				if(aou1 == 1)
@@ -316,11 +316,11 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
 				//i=0;
 				//var hSt = temp_json.bme280_1_ou[0].toString(16).toUpperCase();
 				//parseInt(hSt, 16)
-if(parseInt(temp_json.lm75_1_ou[1], 10) != 999 || parseInt(temp_json.lm75_1_ou[0], 10) != 999)
+if(parseInt(temp_json.lm75_1_ou[1], 10) != 999 || parseInt(temp_json.lm75_1_ou[0].trim(), 10) != 999)
 				{
 			//$("#bm1_ch").val("0x"+Number(temp_json.bme280_1_ou[0]).toString(16).toUpperCase());
-				var aou1 = parseInt(temp_json.lm75_1_ou[1], 10);
-				var aou2 = parseInt(temp_json.lm75_1_ou[2], 10);
+				var aou1 = parseInt(temp_json.lm75_1_ou[1].trim(), 10);
+				var aou2 = parseInt(temp_json.lm75_1_ou[2].trim(), 10);
 				//aou1 = aou1>>1;
 				//aou2 = aou2>>1;
 			
@@ -329,7 +329,7 @@ if(parseInt(temp_json.lm75_1_ou[1], 10) != 999 || parseInt(temp_json.lm75_1_ou[0
 				$("#lm75sc_1").val(aou1);
 				$("#lm75so_1").val(aou2);
 
-				var statlm = parseInt(temp_json.lm75_1_ou[0], 10);
+				var statlm = parseInt(temp_json.lm75_1_ou[0].trim(), 10);
 				var i=0;
 
 				if($.isNumeric(statlm))
@@ -357,11 +357,11 @@ if(parseInt(temp_json.lm75_1_ou[1], 10) != 999 || parseInt(temp_json.lm75_1_ou[0
 				//i=0;
 				//var hSt = temp_json.bme280_1_ou[0].toString(16).toUpperCase();
 				//parseInt(hSt, 16)
-if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0], 10) != 999)
+if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0].trim(), 10) != 999)
 				{
 			//$("#bm1_ch").val("0x"+Number(temp_json.bme280_1_ou[0]).toString(16).toUpperCase());
-				var aou1 = parseInt(temp_json.lm75_2_ou[1], 10);
-				var aou2 = parseInt(temp_json.lm75_2_ou[2], 10);
+				var aou1 = parseInt(temp_json.lm75_2_ou[1].trim(), 10);
+				var aou2 = parseInt(temp_json.lm75_2_ou[2].trim(), 10);
 				//aou1 = aou1>>1;
 				//aou2 = aou2>>1;
 			
@@ -370,7 +370,7 @@ if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0
 				$("#lm75sc_2").val(aou1);
 				$("#lm75so_2").val(aou2);
 
-				var statlm = parseInt(temp_json.lm75_2_ou[0], 10);
+				var statlm = parseInt(temp_json.lm75_2_ou[0].trim(), 10);
 				var i=0;
 
 				if($.isNumeric(statlm))
@@ -501,7 +501,7 @@ if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0
 			if(parseInt(temp_json.htu21d_conf[0], 10) != 999)
 				{
 				$("#htu21d_st").val("0x"+Number(temp_json.htu21d_conf[0]).toString(16).toUpperCase());
-				var sthtu21d = parseInt(temp_json.htu21d_conf[0], 10);
+				var sthtu21d = parseInt(temp_json.htu21d_conf[0]), 10);
 				
 				$('#htu21d_m option').removeProp("selected");
 				$('#htu21d_ht option').removeProp("selected");
@@ -547,8 +547,8 @@ if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0
 
 			if(parseInt(temp_json.sht30_1_ou[0], 10) != 999)
 				{
-				$("#sht30_st").val("0x"+Number(temp_json.sht30_1_ou[0]).toString(16).toUpperCase());
-				var stsht30 = parseInt(temp_json.sht30_1_ou[0], 10);
+				$("#sht30_st").val("0x"+Number(temp_json.sht30_1_ou[0].trim()).toString(16).toUpperCase());
+				var stsht30 = parseInt(temp_json.sht30_1_ou[0].trim(), 10);
 				
 				$('#sht30_ht option').removeProp("selected");
 				$('#sht30_m option').removeProp("selected");
@@ -608,14 +608,14 @@ if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0
 				//i=0;
 				//var hSt = temp_json.bme280_1_ou[0].toString(16).toUpperCase();
 				//parseInt(hSt, 16)
-if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_ou[0], 10) != 999)
+if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_ou[0].trim(), 10) != 999)
 				{
-				$("#bm1_ch").val("0x"+Number(temp_json.bme280_1_ou[0]).toString(16).toUpperCase());
+				$("#bm1_ch").val("0x"+Number(temp_json.bme280_1_ou[0].trim()).toString(16).toUpperCase());
 				//hSt = temp_json.bme280_1_ou[1].toString(16).toUpperCase();
 				
 				var bmst1 = parseInt(temp_json.bme280_1_ou[1], 10);
 				
-				$("#bm1_st").val("0x"+Number(temp_json.bme280_1_ou[1]).toString(16).toUpperCase());
+				$("#bm1_st").val("0x"+Number(temp_json.bme280_1_ou[1].trim()).toString(16).toUpperCase());
 				//$(".btns_bme280_1").removeClass('badge-danger');
 				//$(".btns_bme280_1").removeClass('badge-success');
 				if($.isNumeric(bmst1))
@@ -659,14 +659,14 @@ if(parseInt(temp_json.bme280_1_ou[1], 10) != 999 || parseInt(temp_json.bme280_1_
 				//i=0;
 				//var hSt = temp_json.bme280_1_ou[0].toString(16).toUpperCase();
 				//parseInt(hSt, 16)
-if(parseInt(temp_json.bme280_2_ou[1], 10) != 999 || parseInt(temp_json.bme280_2_ou[0], 10) != 999)
+if(parseInt(temp_json.bme280_2_ou[1], 10) != 999 || parseInt(temp_json.bme280_2_ou[0].trim(), 10) != 999)
 				{
-				$("#bm2_ch").val("0x"+Number(temp_json.bme280_2_ou[0]).toString(16).toUpperCase());
+				$("#bm2_ch").val("0x"+Number(temp_json.bme280_2_ou[0].trim()).toString(16).toUpperCase());
 				//hSt = temp_json.bme280_1_ou[1].toString(16).toUpperCase();
 				
-				var bmst2 = parseInt(temp_json.bme280_2_ou[1], 10);
+				var bmst2 = parseInt(temp_json.bme280_2_ou[1].trim(), 10);
 				
-				$("#bm2_st").val("0x"+Number(temp_json.bme280_2_ou[1]).toString(16).toUpperCase());
+				$("#bm2_st").val("0x"+Number(temp_json.bme280_2_ou[1].trim()).toString(16).toUpperCase());
 				//$(".btns_bme280_1").removeClass('badge-danger');
 				//$(".btns_bme280_1").removeClass('badge-success');
 				if($.isNumeric(bmst2))
@@ -724,15 +724,15 @@ if(parseInt(temp_json.bme280_2_ou[1], 10) != 999 || parseInt(temp_json.bme280_2_
 				}
 					
 				if(temp_json["temt_adc"] )
-				{	$("#tm_adc").val(temp_json.temt_adc);}
+				{	$("#tm_adc").val(temp_json.temt_adc.trim());}
 				}	
 				catch(e)
 				{tmpvlof(i);//console.log("ERR temp"+maOBJ[i]);
 				 console.log(e.message); }				
 			}
-			var tht = parseFloat($("#htu21_t").val());
+			var tht = parseFloat($("#htu21_t").val().trim());
 			//console.log(tht);
-			var thh = parseFloat($("#htu21_h").val());
+			var thh = parseFloat($("#htu21_h").val().trim());
 			var PP = (1.359*Math.pow(10, 8)*Math.pow(10, (-1762.39/(tht+235.66))));
 			var PPp = ((PP*133.32)/1000).toString();
 			//console.log(PP);	
