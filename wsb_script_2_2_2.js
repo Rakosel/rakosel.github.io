@@ -1,4 +1,5 @@
-// upd73a2 trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd73a3 trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// 722 stroka trim
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 // function time(){ 
 //https://stackoverflow.com/questions/221294/how-do-you-get-a-timestamp-in-javascript
@@ -719,7 +720,7 @@ if(parseInt(temp_json.bme280_2_ou[1], 10) != 999 || parseInt(temp_json.bme280_2_
 					}
 				if((i-3)<=temp_json.temp.length)
 				{	
-					$("#"+maOBJ[i].name).val(temp_json.temp[i-3]);
+					$("#"+maOBJ[i].name).val(temp_json.temp[i-3]).trim();
 					//console.log("i-3"+temp_json.temp[i-3]);
 				}
 					
