@@ -1,10 +1,11 @@
-// upd73a3 trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd74 trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // 722 stroka trim
+// except (
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 // function time(){ 
 //https://stackoverflow.com/questions/221294/how-do-you-get-a-timestamp-in-javascript
 // } 
-// https://javascript-minifier.com/ https://beautifytools.com/javascript-minifier.php
+// https://www.minifier.org/ 
 // alert(time())//1300051970
 // 469, 470
 		var stopAll = false, ra, rs, subwdeb = false, lines_in, i, url;
@@ -503,7 +504,7 @@ if(parseInt(temp_json.lm75_2_ou[1], 10) != 999 || parseInt(temp_json.lm75_2_ou[0
 			if(parseInt(temp_json.htu21d_conf[0], 10) != 999)
 				{
 				$("#htu21d_st").val("0x"+Number(temp_json.htu21d_conf[0]).toString(16).toUpperCase());
-				var sthtu21d = parseInt(temp_json.htu21d_conf[0]), 10);
+				var sthtu21d = parseInt((temp_json.htu21d_conf[0]), 10);
 				
 				$('#htu21d_m option').removeProp("selected");
 				$('#htu21d_ht option').removeProp("selected");
