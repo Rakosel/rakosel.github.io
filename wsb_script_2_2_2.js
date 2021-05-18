@@ -5,7 +5,10 @@
 // function time(){ 
 //https://stackoverflow.com/questions/221294/how-do-you-get-a-timestamp-in-javascript
 // } 
-// https://www.minifier.org/ 
+// https://beautifytools.com/javascript-minifier.php
+// https://www.minifier.org/
+// https://unminify.com/
+// https://javascript-minifier.com/
 // alert(time())//1300051970
 // 469, 470
 		var stopAll = false, ra, rs, subwdeb = false, lines_in, i, url;
