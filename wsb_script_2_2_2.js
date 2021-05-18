@@ -1,14 +1,15 @@
-// upd74 trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd74a trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // 722 stroka trim
 // except (
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
 // function time(){ 
 //https://stackoverflow.com/questions/221294/how-do-you-get-a-timestamp-in-javascript
 // } 
+// https://jscompress.com/
 // https://beautifytools.com/javascript-minifier.php
 // https://www.minifier.org/
 // https://unminify.com/
-// https://javascript-minifier.com/
+// https://javascript-minifier.com/ https://jscompress.com/
 // alert(time())//1300051970
 // 469, 470
 		var stopAll = false, ra, rs, subwdeb = false, lines_in, i, url;
