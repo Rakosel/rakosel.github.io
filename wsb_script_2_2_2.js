@@ -1,4 +1,4 @@
-// upd74a trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
+// upd76a3 trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js  
 // 722 stroka trim
 // except (
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
@@ -179,7 +179,7 @@ fetch('/input_sht30_2.json?n=' + encodeURIComponent(JSON.stringify(input_sht31))
 		var osrs = $("#bm1s_osrs option:selected").val();
 		var bm1s_f = $("#bm1s_f option:selected").val();
 		var bm1_t_st = $("#bm1_t_st option:selected").val();
-		var bm_alt = $("#bm_alt").val().trim();
+		var bm_alt = $("#bm_alt").trim().val();
 		//$("#bm_alt").removeClass('is-invalid').html();
 		//$(".altvld").css( "display", "none" );
 		//$(".btns_bme280_1").fadeIn();
@@ -207,7 +207,7 @@ fetch('/input_sht30_2.json?n=' + encodeURIComponent(JSON.stringify(input_sht31))
 		var osrs = $("#bm2s_osrs option:selected").val();
 		var bm1s_f = $("#bm2s_f option:selected").val();
 		var bm1_t_st = $("#bm2_t_st option:selected").val();
-		var bm_alt = $("#bm_alt").val().trim();
+		var bm_alt = $("#bm_alt").trim().val();
 		//$("#bm_alt").removeClass('is-invalid').html();
 		//$(".altvld").css( "display", "none" );
 		//$(".btns_bme280_1").fadeIn();
@@ -259,9 +259,10 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
   				//clearTimeout(rs.handle);
   
   			} else {
-				as1.removeClass('badge-danger');
 				as0.removeClass('badge-danger');
+				as1.removeClass('badge-danger');
 				as0.addClass('badge-success');
+				as1.addClass('badge-success');
 				as0.text("ОК ");
   				if (typeof d === 'string') {
   					//console.log("priem ok!");
@@ -281,6 +282,8 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
 			{
 				//$(".btns_bme280_1").removeClass('badge-success');
 				//$(".btns_bme280_1").removeClass('badge-danger');
+			try{
+				
 				var aou1 = parseInt(temp_json.LM75_CMP[0].trim(), 10);
 				var aou2 = parseInt(temp_json.LM75_CMP[1].trim(), 10);
 				console.log("temp_json.LM75_CMP[0]"+aou1);
@@ -301,6 +304,9 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
 				{
 					$("#lm75_t2_chk").prop('checked', false);
 				}
+			}
+			catch(e)
+			{console.log(e);}
 			}
 			
 			if(temp_json["lm_75_1_cb"])
@@ -323,7 +329,7 @@ fetch('/input_bme280_2.json?n=' + encodeURIComponent(JSON.stringify(input_bme280
 				//i=0;
 				//var hSt = temp_json.bme280_1_ou[0].toString(16).toUpperCase();
 				//parseInt(hSt, 16)
-if(parseInt(temp_json.lm75_1_ou[1], 10) != 999 || parseInt(temp_json.lm75_1_ou[0].trim(), 10) != 999)
+if(parseInt(temp_json.lm75_1_ou[1].trim(), 10) != 999 || parseInt(temp_json.lm75_1_ou[0].trim(), 10) != 999)
 				{
 			//$("#bm1_ch").val("0x"+Number(temp_json.bme280_1_ou[0]).toString(16).toUpperCase());
 				var aou1 = parseInt(temp_json.lm75_1_ou[1].trim(), 10);
@@ -714,10 +720,10 @@ if(parseInt(temp_json.bme280_2_ou[1], 10) != 999 || parseInt(temp_json.bme280_2_
 			{
 				try
 				{
-				if((temp_json.temp[i-3] == "#ERR") || (temp_json.temp[i-3] == ''))
+				if((temp_json.temp[i-3] == "#ERR") || (temp_json.temp[i-3] == '') || (temp_json.temp[i-3] == NaN))
 					{
 						//$("#"+maOBJ[i].name).addClass('is-invalid').html();
-						tmpvlof(i);
+						tmpvloff(i);
 					}
 					else
 					{
@@ -726,27 +732,43 @@ if(parseInt(temp_json.bme280_2_ou[1], 10) != 999 || parseInt(temp_json.bme280_2_
 					}
 				if((i-3)<=temp_json.temp.length)
 				{	
-					$("#"+maOBJ[i].name).val(temp_json.temp[i-3]).trim();
+					$("#"+maOBJ[i].name).val(temp_json.temp[i-3]);
+					//$("#"+maOBJ[i].name).trim();
 					//console.log("i-3"+temp_json.temp[i-3]);
 				}
-					
-				if(temp_json["temt_adc"] )
-				{	$("#tm_adc").val(temp_json.temt_adc.trim());}
 				}	
 				catch(e)
-				{tmpvlof(i);//console.log("ERR temp"+maOBJ[i]);
-				 console.log(e.message); }				
+				{console.log("ERR temp"+maOBJ[i]);console.log(e.message); }				
 			}
-			var tht = parseFloat($("#htu21_t").val().trim());
+								
+			if(temp_json["temt_adc"] )
+			{	$("#tm_adc").val(temp_json.temt_adc);}
+			
+			var tht = parseFloat($("#htu21_t").val());
 			//console.log(tht);
-			var thh = parseFloat($("#htu21_h").val().trim());
+			var thh = parseFloat($("#htu21_h").val());
 			var PP = (1.359*Math.pow(10, 8)*Math.pow(10, (-1762.39/(tht+235.66))));
 			var PPp = ((PP*133.32)/1000).toString();
 			//console.log(PP);	
+			
 			$("#htu21_pp").val(PPp.substring(0, 5)); 
 			var DEW = (-(1762.39/(Math.log(thh*(PP*0.01))-8.1332)+235.66)).toString();
 			$("#htu21_dew").val(DEW.substring(0, 5));
-			
+			if(PPp=="NaN" || DEW=="NaN" || PPp=="" || DEW=="")
+			{
+				$("#htu21_dew").removeClass('is-invalid').html();
+				$("#htu21_dew").removeClass('is-valid').html();
+				$("#htu21_dew").addClass('is-invalid').html();
+				$("#htu21_pp").removeClass('is-invalid').html();
+				$("#htu21_pp").removeClass('is-valid').html();
+				$("#htu21_pp").addClass('is-invalid').html();
+			}
+				$("#htu21_dew").removeClass('is-invalid').html();
+				$("#htu21_dew").removeClass('is-valid').html();
+				$("#htu21_dew").addClass('is-valid').html();
+				$("#htu21_pp").removeClass('is-invalid').html();
+				$("#htu21_pp").removeClass('is-valid').html();
+				$("#htu21_pp").addClass('is-valid').html();
 			}
 			if(temp_json["debug"])
 			{
