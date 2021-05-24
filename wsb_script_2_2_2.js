@@ -716,7 +716,7 @@ if(parseInt(temp_json.bme280_2_ou[1], 10) != 999 || parseInt(temp_json.bme280_2_
 			}	
 			if(temp_json["temp"] )
 			{
-			for(i=3;i<maOBJ.length;i++)
+			for(i=3;i<=maOBJ.length;i++)
 			{
 				try
 				{
@@ -730,12 +730,13 @@ if(parseInt(temp_json.bme280_2_ou[1], 10) != 999 || parseInt(temp_json.bme280_2_
 						//$("#"+maOBJ[i].name).addClass('is-valid').html()
 						tmpvlon(i);
 					}
-				if((i-3)<=temp_json.temp.length)
-				{	
-					$("#"+maOBJ[i].name).val(temp_json.temp[i-3]);
+				$("#"+maOBJ[i].name).val(temp_json.temp[i-3]);
+				//if((i-3)<=temp_json.temp.length)
+				//{	
+				//	$("#"+maOBJ[i].name).val(temp_json.temp[i-3]);
 					//$("#"+maOBJ[i].name).trim();
 					//console.log("i-3"+temp_json.temp[i-3]);
-				}
+				//}
 				}	
 				catch(e)
 				{console.log("ERR temp"+maOBJ[i]);console.log(e.message); }				
