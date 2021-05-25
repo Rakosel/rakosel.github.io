@@ -1,4 +1,4 @@
-// upd77a1 trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js
+// upd77a2 trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js
 // 722 stroka trim
 // except (
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
@@ -672,9 +672,9 @@ function txjstmp(s, d) {
 		//bm1s_m
 	}
 	if (temp_json["temp"]) {
-		for (i = 3; i <= maOBJ.length && i - 3 <= temp_json.temp.length; i++) {
+		for (i = 3; i <= maOBJ.length && (i - 3) <= temp_json.temp.length; i++) {
 			try {
-				if (temp_json.temp[i - 3] == "#ERR" || temp_json.temp[i - 3] == "" || temp_json.temp[i - 3] == NaN) {
+				if (temp_json.temp[i - 3] == "#ERR" || temp_json.temp[i - 3] == "" || temp_json.temp[i - 3] == isNaN()) {
 					//$("#"+maOBJ[i].name).addClass('is-invalid').html();
 					tmpvloff(i);
 				} else {
