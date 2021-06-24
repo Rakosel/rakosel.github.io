@@ -1,4 +1,4 @@
-// upd77a8 STABLE trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js
+// upd78a2 STABLE trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js
 // 682 stroka trim ???
 // except (
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
@@ -200,7 +200,7 @@ function btn_bm280_1_Wr() {
     var osrs = $("#bm1s_osrs option:selected").val();
     var bm1s_f = $("#bm1s_f option:selected").val();
     var bm1_t_st = $("#bm1_t_st option:selected").val();
-    var bm_alt = $("#bm_alt").trim().val();
+    var bm_alt = $("#bm_alt").val();
     //$("#bm_alt").removeClass('is-invalid').html();
     //$(".altvld").css( "display", "none" );
     //$(".btns_bme280_1").fadeIn();
@@ -228,7 +228,7 @@ function btn_bm280_2_Wr() {
     var osrs = $("#bm2s_osrs option:selected").val();
     var bm1s_f = $("#bm2s_f option:selected").val();
     var bm1_t_st = $("#bm2_t_st option:selected").val();
-    var bm_alt = $("#bm_alt").trim().val();
+    var bm_alt = $("#bm_alt").val();
     //$("#bm_alt").removeClass('is-invalid').html();
     //$(".altvld").css( "display", "none" );
     //$(".btns_bme280_1").fadeIn();
@@ -699,13 +699,13 @@ function txjstmp(s, d) {
 	     // str_out = temp_json.temp[i - 3];
 	     //var newString = str.trim()
             //$("#" + maOBJ[i].name).val(temp_json.temp[i - 3]);
-            $("#" + maOBJ[i].name).val(temp_json.temp[i - 3].trim());
+            $("#" + maOBJ[i].name).val(temp_json.temp[i - 3]);
         } 
     }
     $("#tm_adc").removeClass("is-invalid").html();
     $("#tm_adc").removeClass("is-valid").html();
     if (temp_json["temt_adc"]) {
-        $("#tm_adc").val(temp_json.temt_adc.trim());
+        $("#tm_adc").val(temp_json.temt_adc);
         if (temp_json.temt_adc == "" || temp_json.temt_adc == isNaN()) {
             $("#tm_adc").addClass('is-invalid').html();
         } else {
