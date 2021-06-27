@@ -1,4 +1,4 @@
-// upd80a8 STABLE trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js
+// upd80a9 STABLE trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js
 // 682 stroka trim ???
 // except (
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
