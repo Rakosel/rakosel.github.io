@@ -745,24 +745,24 @@ function txjstmp(s, d) {
         }
 		//console.log(+"a5 "+j_T+" "+j_H+" "+j_P+" "+T_cnt+" "+H_cnt+" "+P_cnt);
 		j_T=j_T/T_cnt; j_H=j_H/H_cnt; j_P=j_P/P_cnt;
-					    $(".temperature").removeClass("is-invalid").html();
-						$(".temperature").removeClass("is-valid").html();
-						$(".humudity").removeClass("is-invalid").html();
-						$(".humudity").removeClass("is-valid").html();
-						$(".pressure").removeClass("is-invalid").html();
-						$(".pressure").removeClass("is-valid").html();
+					    $("#" + maOBJ[0].name).removeClass("is-invalid").html();
+						$("#" + maOBJ[0].name).removeClass("is-valid").html();
+						$("#" + maOBJ[1].name).removeClass("is-invalid").html();
+						$("#" + maOBJ[1].name).removeClass("is-valid").html();
+						$("#" + maOBJ[2].name).removeClass("is-invalid").html();
+						$("#" + maOBJ[2].name).removeClass("is-valid").html();
 		if(j_T==NaN)
-		{	$(".temperature").addClass("is-invalid").html();}
+		{	$("#" + maOBJ[0].name).addClass("is-invalid").html();}
 		else
-		{ 	$(".temperature").addClass("valid").html();}
+		{ 	$("#" + maOBJ[0].name).addClass("valid").html();}
 		if(j_P==NaN)
-		{	$(".humudity").addClass("is-invalid").html();}
+		{	$("#" + maOBJ[1].name).addClass("is-invalid").html();}
 		else
-		{ 	$(".humudity").addClass("valid").html();}
+		{ 	$("#" + maOBJ[1].name).addClass("valid").html();}
 		if(j_H==NaN)
-		{	$(".pressure").addClass("is-invalid").html();}
+		{	$("#" + maOBJ[2].name).addClass("is-invalid").html();}
 		else
-		{ 	$(".pressure").addClass("valid").html();}
+		{ 	("#" + maOBJ[2].name).addClass("valid").html();}
 		
 		 $("#temperature").val(j_T.toString().substring(0, 6));
 		 $("#humudity").val(j_H.toString().substring(0, 6));
