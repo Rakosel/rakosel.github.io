@@ -1,4 +1,4 @@
-// upd80a9 STABLE trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js
+// upd80a10 STABLE trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js
 // 682 stroka trim ???
 // except (
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
@@ -745,25 +745,22 @@ function txjstmp(s, d) {
         }
 		//console.log(+"a5 "+j_T+" "+j_H+" "+j_P+" "+T_cnt+" "+H_cnt+" "+P_cnt);
 		j_T=j_T/T_cnt; j_H=j_H/H_cnt; j_P=j_P/P_cnt;
-		/*			    $("#" + maOBJ[0].name).removeClass("is-invalid").html();
-						$("#" + maOBJ[0].name).removeClass("is-valid").html();
-						$("#" + maOBJ[1].name).removeClass("is-invalid").html();
-						$("#" + maOBJ[1].name).removeClass("is-valid").html();
-						$("#" + maOBJ[2].name).removeClass("is-invalid").html();
-						$("#" + maOBJ[2].name).removeClass("is-valid").html();
+		tmpvloff(0);
+		tmpvloff(1);
+		tmpvloff(2);
 		if(j_T==NaN)
-		{	$("#" + maOBJ[0].name).addClass("is-invalid").html();}
+		{	tmpvloff(0);}
 		else
-		{ 	$("#" + maOBJ[0].name).addClass("valid").html();}
+		{ 	tmpvlon(0);}
 		if(j_P==NaN)
-		{	$("#" + maOBJ[1].name).addClass("is-invalid").html();}
+		{	tmpvloff(1);}
 		else
-		{ 	$("#" + maOBJ[1].name).addClass("valid").html();}
+		{ 	tmpvlon(1);}
 		if(j_H==NaN)
-		{	$("#" + maOBJ[2].name).addClass("is-invalid").html();}
+		{	tmpvloff(2);}
 		else
-		{ 	("#" + maOBJ[2].name).addClass("valid").html();}
-		*/
+		{ 	tmpvlon(1);}
+		
 		 $("#temperature").val(j_T.toString().substring(0, 6));
 		 $("#humudity").val(j_H.toString().substring(0, 6));
 		 $("#pressure").val(j_P.toString().substring(0, 6));
