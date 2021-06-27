@@ -16,6 +16,8 @@
 // 469, 470
 // https://playcode.io/new/
 //
+//		https://www.base64encode.org/enc/minify/
+//	
 /*
 import 'bootstrap@4.6.0'
 import $ from 'jquery'
