@@ -773,7 +773,7 @@ function txjstmp(s, d) {
     $("#tm_adc").removeClass("is-valid").html();
     if (temp_json["temt_adc"]) {
         $("#tm_adc").val(temp_json.temt_adc);
-        if (temp_json.temt_adc == "" || temp_json.temt_adc == NaN) {
+        if (temp_json.temt_adc == "" || temp_json.temt_adc == "#ERR") {
             $("#tm_adc").addClass('is-invalid').html();
         } else {
             $("#tm_adc").addClass('is-valid').html()
