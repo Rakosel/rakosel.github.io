@@ -1,4 +1,4 @@
-// upd78a2 STABLE trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js
+// upd80a5t3 STABLE trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js
 // 682 stroka trim ???
 // except (
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
@@ -49,6 +49,15 @@ var scrPos = 0,
 var ast = 0;
 var ua_mode = 0;
 var tmranim = 2000; // animate [s]
+
+let T_arr = new Array();
+let P_arr = new Array();
+let H_arr = new Array();
+let temp_arr = new Array();
+	
+T_arr = [0,1,2,4,5,16,17,20];
+H_arr = [3,8,9,18,19,21];
+P_arr = [6,7,12,13];
 // reverse panelki dlya debug
 var sds, mds, sets;
 sds = $(".sideset");
@@ -266,6 +275,17 @@ function btn_bm280_2_Rd() {
 function txjstmp(s, d) {
     var as1 = $(".pst1");
     var as0 = $(".pst0");
+	var j=0;
+		
+	var j_T = 0.0;
+	var j_H = 0.0;
+	var j_P = 0.0;
+	//var jT = 0;
+	//var jH = 0;
+	//var jP = 0;
+	var T_cnt = 0
+	var H_cnt = 0
+	var P_cnt = 0
 //    console.log(d);
     if (s != 200) {
         as0.removeClass("badge-success");
@@ -285,6 +305,7 @@ function txjstmp(s, d) {
         as0.addClass("badge-success");
         as1.addClass("badge-success");
         as0.text("ОК ");
+		as1.text("ОК ");
         if (typeof d === "string") {
             //console.log("priem ok!");
             try {
@@ -688,21 +709,47 @@ function txjstmp(s, d) {
         }
         //bm1s_m
     }
+	
     if (temp_json["temp"]) {
         for (i = 3; i <= maOBJ.length && (i - 3) <= temp_json.temp.length; i++) {
             //try {
             if (temp_json.temp[i - 3] == "#ERR" || temp_json.temp[i - 3] == "" || temp_json.temp[i - 3] == isNaN()) {
-                //$("#"+maOBJ[i].name).addClass('is-invalid').html();
                 tmpvloff(i);
             } else {
-                //$("#"+maOBJ[i].name).addClass('is-valid').html()
                 tmpvlon(i);
             }
 	     // str_out = temp_json.temp[i - 3];
 	     //var newString = str.trim()
             //$("#" + maOBJ[i].name).val(temp_json.temp[i - 3]);
             $("#" + maOBJ[i].name).val(temp_json.temp[i - 3]);
-        } 
+			//temp_arr[i-3]=$("#" + maOBJ[i].name).val();
+			temp_arr[i-3]=parseFloat(temp_json.temp[i - 3]);
+			
+        }
+		console.log(T_arr,H_arr,P_arr,temp_arr);
+        for (i = 0; i < temp_arr.length; i++) {
+            //try {
+				if(i<T_arr.length && parseFloat(temp_arr[T_arr[i]]) != isNaN())
+				{
+					j_T+=Math.abs(parseFloat(temp_arr[T_arr[i]]));T_cnt++; 
+					//console.log("a5 "+parseFloat(temp_arr[T_arr[i]])+" "+T_arr[i]+" "+temp_arr[i]+" "+T_arr+" "+T_cnt);
+				}
+				if(i<H_arr.length && parseFloat(temp_arr[H_arr[i]]) != isNaN())
+				{
+					j_H+=parseFloat(temp_arr[H_arr[i]]);H_cnt++;
+				}
+				if(i<P_arr.length && parseFloat(temp_arr[P_arr[i]]) != isNaN())
+				{
+					j_P+=parseFloat(temp_arr[P_arr[i]]);P_cnt++;
+				}	
+        }
+		console.log(+"a5 "+j_T+" "+j_H+" "+j_P+" "+T_cnt+" "+H_cnt+" "+P_cnt);
+		j_T=j_T/T_cnt; j_H=j_H/H_cnt; j_P=j_P/P_cnt;
+		
+		 $("#temperature").val(j_T.toString().substring(0, 6));
+		 $("#humudity").val(j_H.toString().substring(0, 6));
+		 $("#pressure").val(j_P.toString().substring(0, 6));
+		
     }
     $("#tm_adc").removeClass("is-invalid").html();
     $("#tm_adc").removeClass("is-valid").html();
