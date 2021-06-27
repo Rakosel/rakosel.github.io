@@ -1,4 +1,4 @@
-// upd80a6 STABLE trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js
+// upd80a7 STABLE trim with upravl timer	https://rakosel.github.io/wsb_script_2_2_1.js
 // 682 stroka trim ???
 // except (
 // http://qaru.site/questions/66646/how-to-recognize-touch-events-using-jquery-in-safari-for-ipad-is-it-possible
@@ -713,7 +713,7 @@ function txjstmp(s, d) {
     if (temp_json["temp"]) {
         for (i = 3; i <= maOBJ.length && (i - 3) <= temp_json.temp.length; i++) {
             //try {
-            if (temp_json.temp[i - 3] == "#ERR" || temp_json.temp[i - 3] == "" || temp_json.temp[i - 3] == isNaN()) {
+            if (temp_json.temp[i - 3] == "#ERR" || temp_json.temp[i - 3] == "" || temp_json.temp[i - 3] == NaN) {
                 tmpvloff(i);
             } else {
                 tmpvlon(i);
@@ -726,19 +726,19 @@ function txjstmp(s, d) {
 			temp_arr[i-3]=parseFloat(temp_json.temp[i - 3]);
 			
         }
-		console.log(T_arr,H_arr,P_arr,temp_arr);
+		//console.log(T_arr,H_arr,P_arr,temp_arr);
         for (i = 0; i < temp_arr.length; i++) {
             //try {
-				if(i<T_arr.length && parseFloat(temp_arr[T_arr[i]]) != isNaN())
+				if(i<T_arr.length && parseFloat(temp_arr[T_arr[i]]) != NaN)
 				{
 					j_T+=Math.abs(parseFloat(temp_arr[T_arr[i]]));T_cnt++; 
 					//console.log("a5 "+parseFloat(temp_arr[T_arr[i]])+" "+T_arr[i]+" "+temp_arr[i]+" "+T_arr+" "+T_cnt);
 				}
-				if(i<H_arr.length && parseFloat(temp_arr[H_arr[i]]) != isNaN())
+				if(i<H_arr.length && parseFloat(temp_arr[H_arr[i]]) != NaN)
 				{
 					j_H+=parseFloat(temp_arr[H_arr[i]]);H_cnt++;
 				}
-				if(i<P_arr.length && parseFloat(temp_arr[P_arr[i]]) != isNaN())
+				if(i<P_arr.length && parseFloat(temp_arr[P_arr[i]]) != NaN)
 				{
 					j_P+=parseFloat(temp_arr[P_arr[i]]);P_cnt++;
 				}	
@@ -751,15 +751,15 @@ function txjstmp(s, d) {
 						$("#humudity").removeClass("is-valid").html();
 						$("#pressure").removeClass("is-invalid").html();
 						$("#pressure").removeClass("is-valid").html();
-		if(j_T==isNaN())
+		if(j_T==NaN)
 		{	$("#temperature").addClass("is-invalid").html();}
 		else
 		{ 	$("#temperature").addClass("valid").html();}
-		if(j_P==isNaN())
+		if(j_P==NaN)
 		{	$("#humudity").addClass("is-invalid").html();}
 		else
 		{ 	$("#humudity").addClass("valid").html();}
-		if(j_H==isNaN())
+		if(j_H==NaN)
 		{	$("#pressure").addClass("is-invalid").html();}
 		else
 		{ 	$("#pressure").addClass("valid").html();}
@@ -773,7 +773,7 @@ function txjstmp(s, d) {
     $("#tm_adc").removeClass("is-valid").html();
     if (temp_json["temt_adc"]) {
         $("#tm_adc").val(temp_json.temt_adc);
-        if (temp_json.temt_adc == "" || temp_json.temt_adc == isNaN()) {
+        if (temp_json.temt_adc == "" || temp_json.temt_adc == NaN) {
             $("#tm_adc").addClass('is-invalid').html();
         } else {
             $("#tm_adc").addClass('is-valid').html()
