@@ -110,7 +110,7 @@ function btn_rtc_wr() {
     var rtc_setd = {
         rtc_set: [Math.floor(Date.now() / 1000), 0, 0]
     };
-    console.log(rtc_setd);
+    //console.log(rtc_setd);
     //console.log(input_htu21d);
     fetch("/set_rtc.json?n=" + encodeURIComponent(JSON.stringify(rtc_setd)) + "&", "GET", txjstmp, 10);
 }
@@ -300,7 +300,7 @@ function txjstmp(s, d) {
         as1.text("Нет связи");
         $(".swdeb").removeAttr("disabled");
         ftmpd();
-        console.log("Connection proplem!");
+        //console.log("Connection proplem!");
         return 0;
         //clearTimeout(rs.handle);
     } else {
@@ -314,15 +314,15 @@ function txjstmp(s, d) {
             //console.log("priem ok!");
             try {
                 temp_json = JSON.parse(d);
-                console.log(s, temp_json);
+                //console.log(s, temp_json);
             } catch (e) {
                 // ftvall - form clear
                 ftvall("");
-                console.log(s, e.message);
+                //console.log(s, e.message);
                 return 0;
             }
         } else {
-            console.log("d not string");
+            //console.log("d not string");
             ftvall("");
             return 0;
         }
@@ -349,7 +349,7 @@ function txjstmp(s, d) {
                 $("#lm75_t2_chk").prop("checked", false);
             }
         } catch (e) {
-            console.log(e);
+            //console.log(e);
         }
     }
 
@@ -465,7 +465,7 @@ function txjstmp(s, d) {
     if (temp_json["GiveMeas_cb"]) {
         //$(".btns_bme280_1").removeClass('badge-success');
         //$(".btns_bme280_1").removeClass('badge-danger');
-        console.log(temp_json.GiveMeas_cb);
+        //console.log(temp_json.GiveMeas_cb);
         ast = 0;
         if (temp_json.GiveMeas_cb == "#ERR") {
             ast = 1;
@@ -678,10 +678,10 @@ function txjstmp(s, d) {
                 //console.log("4uclo " + bmst2);
                 if (bmst2 & 0x01) {
                     $("#gBM2802ch0").prop("checked", true);
-                    console.log("#gBM2802ch0 true " + bmst2);
+                    //console.log("#gBM2802ch0 true " + bmst2);
                 } else {
                     $("#gBM2802ch0").prop("checked", false);
-                    console.log("#gBM2802ch0 false " + bmst2);
+                    //console.log("#gBM2802ch0 false " + bmst2);
                 }
                 if (bmst1 & 0x08) {
                     //console.log("#gBM2801ch3 ch true");
@@ -808,7 +808,7 @@ function txjstmp(s, d) {
 
     if (temp_json["debug"]) {
         //seOBJ = $("#scntf").serializeArray();
-        console.log(temp_json.debug);
+        //console.log(temp_json.debug);
         if (temp_json.debug == "ON") {
             //var	as=$('.pst1');
             //var as0=$('.pst0');
@@ -1050,7 +1050,7 @@ function clresf() {
 }
 
 function fetch(url, method, callback, time_out) {
-    console.log(url);
+    //console.log(url);
     var xhr = new XMLHttpRequest();
     xhr.onloadend = function () {
         callback(xhr.status, xhr.responseText);
@@ -1094,17 +1094,17 @@ function btn_lm75_1() {
     }
     tos1 = sc_1l.val();
     thyst1 = so_1l.val();
-    console.log(tos1 + " " + thyst1);
+    //console.log(tos1 + " " + thyst1);
     if (thyst1 > tos1 && thyst1 < 0 && tos1 < 0) {
         i = tos1;
         thyst1 = tos1;
         tos1 = thyst1;
-        console.log("thyst1>tos1 && (thyst1<0) && (tos1<0)" + tos1 + " " + thyst1);
+        //console.log("thyst1>tos1 && (thyst1<0) && (tos1<0)" + tos1 + " " + thyst1);
     } else if (thyst1 > tos1) {
         i = thyst1;
         thyst1 = tos1;
         tos1 = i;
-        console.log("thyst1>tos1" + tos1 + " " + thyst1);
+       // console.log("thyst1>tos1" + tos1 + " " + thyst1);
     }
     if (tos1 == thyst1) {
         if (thyst1 < 0 && tos1 < 0) {
@@ -1127,7 +1127,7 @@ function btn_lm75_1() {
         lm75_conf: [tarch, thyst1, tos1]
     };
     fetch("/input_lm75_1.json?n=" + encodeURIComponent(JSON.stringify(input_lm75)) + "&", "GET", txjstmp, 10);
-    console.log(JSON.stringify(input_lm75));
+    //console.log(JSON.stringify(input_lm75));
     //cnfOBJ = { };
 }
 
@@ -1147,17 +1147,17 @@ function btn_lm75_2() {
     }
     tos1 = sc_1l.val();
     thyst1 = so_1l.val();
-    console.log(tos1 + " " + thyst1);
+    //console.log(tos1 + " " + thyst1);
     if (thyst1 > tos1 && thyst1 < 0 && tos1 < 0) {
         i = tos1;
         thyst1 = tos1;
         tos1 = thyst1;
-        console.log("thyst1>tos1 && (thyst1<0) && (tos1<0)" + tos1 + " " + thyst1);
+        //console.log("thyst1>tos1 && (thyst1<0) && (tos1<0)" + tos1 + " " + thyst1);
     } else if (thyst1 > tos1) {
         i = thyst1;
         thyst1 = tos1;
         tos1 = i;
-        console.log("thyst1>tos1" + tos1 + " " + thyst1);
+        //console.log("thyst1>tos1" + tos1 + " " + thyst1);
     }
     if (tos1 == thyst1) {
         if (thyst1 < 0 && tos1 < 0) {
@@ -1180,7 +1180,7 @@ function btn_lm75_2() {
         lm75_conf: [tarch, thyst1, tos1]
     };
     fetch("/input_lm75_2.json?n=" + encodeURIComponent(JSON.stringify(input_lm75)) + "&", "GET", txjstmp, 10);
-    console.log(JSON.stringify(input_lm75));
+    //console.log(JSON.stringify(input_lm75));
     //cnfOBJ = { };
 }
 
@@ -1220,21 +1220,21 @@ function txjs_ua(s, d) {
     if (s != 200) {
         str_out1 += "Send command error" + "\n";
         //clearTimeout(rs.handle);
-        console.log("Connection proplem!");
+        //console.log("Connection proplem!");
     } else {
         if (typeof d === "string") {
-            console.log("priem ok!");
+            //console.log("priem ok!");
             try {
                 uart_json = JSON.parse(d);
             } catch (e) {
-                console.log(e);
+                //console.log(e);
                 return 0;
             }
         } else {
             uart_json.uart_out = "null";
             uart_json.uart_in = "null";
         }
-        console.log(uart_json);
+        //console.log(uart_json);
         if (uart_json.uart_out == "") {
             str_out1 += "ACK" + "\n";
         } else {
@@ -1248,7 +1248,7 @@ function txjs_ua(s, d) {
     } else {
         esp_uart_out_val.val(str_out1);
     }
-    console.log(str_out1);
+    //console.log(str_out1);
     str_out1 = "";
     //clearTimeout(rs.handle);
     //rs = to(refr, 3);
