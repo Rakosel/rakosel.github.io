@@ -745,7 +745,7 @@ function txjstmp(s, d) {
         }
 		//console.log(+"a5 "+j_T+" "+j_H+" "+j_P+" "+T_cnt+" "+H_cnt+" "+P_cnt);
 		j_T=j_T/T_cnt; j_H=j_H/H_cnt; j_P=j_P/P_cnt;
-					    $("#" + maOBJ[0].name).removeClass("is-invalid").html();
+		/*			    $("#" + maOBJ[0].name).removeClass("is-invalid").html();
 						$("#" + maOBJ[0].name).removeClass("is-valid").html();
 						$("#" + maOBJ[1].name).removeClass("is-invalid").html();
 						$("#" + maOBJ[1].name).removeClass("is-valid").html();
@@ -766,7 +766,7 @@ function txjstmp(s, d) {
 		
 		 $("#temperature").val(j_T.toString().substring(0, 6));
 		 $("#humudity").val(j_H.toString().substring(0, 6));
-		 $("#pressure").val(j_P.toString().substring(0, 6));
+		 $("#pressure").val(j_P.toString().substring(0, 6));*/
 		
     }
     $("#tm_adc").removeClass("is-invalid").html();
