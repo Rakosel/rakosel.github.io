@@ -763,10 +763,10 @@ function txjstmp(s, d) {
 		{	$("#" + maOBJ[2].name).addClass("is-invalid").html();}
 		else
 		{ 	("#" + maOBJ[2].name).addClass("valid").html();}
-		
+		*/
 		 $("#temperature").val(j_T.toString().substring(0, 6));
 		 $("#humudity").val(j_H.toString().substring(0, 6));
-		 $("#pressure").val(j_P.toString().substring(0, 6));*/
+		 $("#pressure").val(j_P.toString().substring(0, 6));
 		
     }
     $("#tm_adc").removeClass("is-invalid").html();
