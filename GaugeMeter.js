@@ -1,5 +1,5 @@
 /*
- * AshAlom Gauge Meter.  Version 2.0.0
+ * AshAlom Gauge Meter.  Version 2.1.0a
  * Copyright AshAlom.com  All rights reserved.
  * https://github.com/AshAlom/GaugeMeter <- Deleted!
  * https://github.com/githubsrinath/GaugeMeter <- Backup original.
@@ -216,7 +216,7 @@
         if (option.text_size <= 0.0 || Number.isNaN(option.text_size)) {
           option.text_size = 0.22;
         }
-        if (option.text_size > 0.5) {
+        if (option.text_size > 2.5) {
           option.text_size = 0.5;
         }
         $('<span></span>')
@@ -308,6 +308,54 @@
           'percent',
           'used',
           'min',
+          'max',
+          'colorMajorTicks',
+          'colorMinorTicks',
+          'stroke',
+          'highlights',
+          'color_plate',
+          'colorTitle',
+          'colorUnits',
+          'colorNumbers',
+          'valueBox',
+          'colorValueText',
+          'colorValueBoxRect',
+          'colorValueBoxRectEnd',
+          'colorValueBoxBackground',
+          'colorValueBoxShadow',
+          'colorValueTextShadow',
+          'colorNeedleShadowUp',
+          'colorNeedleShadowDown',
+          'colorNeedle',
+          'colorNeedleEnd',
+          'colorNeedleCircleOuter',
+          'colorNeedleCircleOuterEnd',
+          'borderShadowWidth',
+          'borders',
+          'borderInnerWidth',
+          'borderMiddleWidth',
+          'borderOuterWidth',
+          'colorBorderOuter',
+          'colorBorderOuterEnd',
+          'needleType',
+          'needleWidth',
+          'needleCircleSize',
+          'needleCircleOuter',
+          'needleCircleInner',
+          'animationDuration',
+          'animationRule',
+          'fontNumbers',
+          'fontTitle',
+          'fontUnits',
+          'fontValue',
+          'fontValueStyle',
+          'fontNumbersSize',
+          'fontNumbersStyle',
+          'fontNumbersWeight',
+          'fontTitleSize',
+          'fontUnitsSize',
+          'fontValueSize',
+          'animatedValue',
           'total',
           'size',
           'prepend',
