@@ -1,5 +1,5 @@
 /*
- * AshAlom Gauge Meter.  Version 2.1.0a
+ * AshAlom Gauge Meter.  Version 2.2.0a
  * Copyright AshAlom.com  All rights reserved.
  * https://github.com/AshAlom/GaugeMeter <- Deleted!
  * https://github.com/githubsrinath/GaugeMeter <- Backup original.
@@ -38,11 +38,15 @@
         text_size: 0.22,
         fill: '',
         showvalue: false
-      },
+      }
+		console.log('.extend'+t+'\n');
+	  ,
       t
     );
     return this.each(function () {
       function getThemeColor(e) {
+		console.log('return this.each(function ()');
+	  	console.log('getThemeColor'+e+'\n');
         if (
           option.color !== '' &&
           option.color !== null &&
@@ -192,6 +196,8 @@
       }
       /* The label below gauge. */
       function createLabel(t, a) {
+	  console.log('createLabel(t, a)'+t+'\n');
+	  console.log('createLabel(t, a)'+a+'\n');
         if (t.children('b').length === 0) {
           $('<b></b>')
             .appendTo(t)
@@ -205,6 +211,7 @@
       /* Prepend and append text, the gauge text or percentage value. */
       function createSpanTag(t) {
         var fgcolor = '';
+		console.log('createSpanTag(t)'+t+'\n');
         if (option.animate_text_colors === true) {
           fgcolor = option.fgcolor;
         }
@@ -230,6 +237,7 @@
       }
       /* Get data attributes as options from div tag. Fall back to defaults when not exists. */
       function getDataAttr(t) {
+		console.log('getDataAttr(t)'+t+'\n');
         $.each(dataAttr, function (index, element) {
           if (t.data(element) !== undefined && t.data(element) !== null) {
             option[element] = t.data(element);
@@ -258,6 +266,7 @@
       }
       /* Draws the gauge. */
       function drawGauge(a) {
+		console.log('function drawGauge(a)'+a+'\n');
         if (option.animate_gauge_colors) {
           // Set gauge color for each value change.
           option.fgcolor = getThemeColor(a * 100);
